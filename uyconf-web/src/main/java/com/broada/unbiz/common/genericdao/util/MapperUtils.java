@@ -19,7 +19,7 @@ public class MapperUtils {
      *
      * @param rs
      * @param column
-     * @param paramClass
+     * @param typeClass
      *
      * @return
      *

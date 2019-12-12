@@ -565,7 +565,7 @@
                                 <exclude>**/*Controller.class</exclude>
                                 <exclude>**/*Vo.class</exclude>
                                 <exclude>**/*Form.class</exclude>
-                                <exclude>**/baidu/ub/**/*.class</exclude>
+                                <exclude>**/broada/ub/**/*.class</exclude>
                             </excludes>
                         </instrumentation>
                     </configuration>
