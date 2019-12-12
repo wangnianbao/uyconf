@@ -60,7 +60,7 @@ public class FetcherMgrMgrTestCase extends BaseSpringTestCase {
         try {
 
             String valueString = fetcherMgr.downloadFileFromServer(requestUrl, RestfulMgrMock.defaultFileName,
-                    "./disconf");
+                    "./uyconf");
             Assert.assertEquals(RestfulMgrMock.defaultFileName, valueString);
 
         } catch (Exception e) {

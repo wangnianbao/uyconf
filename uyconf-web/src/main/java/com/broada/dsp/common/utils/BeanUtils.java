@@ -25,7 +25,7 @@ public class BeanUtils {
 
     protected static final Logger logger = LoggerFactory.getLogger(BeanUtils.class);
 
-    private static final String ENTITY_CLASS_PACKAGE = "com.baidu.dsp";
+    private static final String ENTITY_CLASS_PACKAGE = "com.broada.dsp";
 
     /**
      * 直接读取对象属性值,无视private/protected修饰符,不经过getter函数.

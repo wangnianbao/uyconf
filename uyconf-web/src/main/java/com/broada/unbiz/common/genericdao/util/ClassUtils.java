@@ -172,7 +172,7 @@ public class ClassUtils {
      * 获取一个类的field
      *
      * @param field
-     * @param class1
+     * @param clazz
      *
      * @return 下午3:01:19 created by Darwin(Tianxin)
      */
@@ -188,8 +188,8 @@ public class ClassUtils {
         return null;
     }
 
-    public final static boolean isBaiduClass(Class<?> clazz) {
+    public final static boolean isBroadaClass(Class<?> clazz) {
         Package pkg = clazz.getPackage();
-        return pkg != null && pkg.getName().startsWith("com.baidu.");
+        return pkg != null && pkg.getName().startsWith("com.broada.");
     }
 }

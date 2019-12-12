@@ -32,7 +32,7 @@ public class MultiDataSource extends AbstractRoutingDataSource {
         if (Boolean.TRUE.equals(ThreadContext.getContext("Bootstrap"))) {
             for (int i = 4; i < stackTraces.length; i++) {// 过滤掉启动的时候，初始化的时候的一次连接没有key，如果有bean去连库数目大于1的库，就需要打印log
                 String infos = stackTraces[i].getClassName();
-                if (infos.contains("com.baidu.dsp")) {
+                if (infos.contains("com.broada.dsp")) {
                     log.error("get data source key fail,will use default data source", e);
                     break;
                 }

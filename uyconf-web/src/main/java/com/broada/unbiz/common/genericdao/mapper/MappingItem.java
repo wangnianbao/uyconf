@@ -114,7 +114,7 @@ public class MappingItem {
 
     public static List<MappingItem> getMappingItems(Class<?> clazz) {
 
-        if (!ClassUtils.isBaiduClass(clazz)) {
+        if (!ClassUtils.isBroadaClass(clazz)) {
             return new ArrayList<MappingItem>(0);
         }
 
@@ -139,7 +139,7 @@ public class MappingItem {
 
             // 不做关联加载的工作
             Class<?> fType = f.getType();
-            boolean isBaiduClass = ClassUtils.isBaiduClass(fType);
+            boolean isBaiduClass = ClassUtils.isBroadaClass(fType);
             if (isBaiduClass || Collection.class.isAssignableFrom(fType) || fType.isArray()) {
                 continue;
             }
