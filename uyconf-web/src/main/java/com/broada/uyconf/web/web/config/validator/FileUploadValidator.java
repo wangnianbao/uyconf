@@ -12,7 +12,7 @@ import com.broada.dsp.common.exception.FieldException;
 
 /**
  * @author wnb
- * 14-2-20
+ *
  */
 @Component
 public class FileUploadValidator {

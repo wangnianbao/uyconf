@@ -9,7 +9,6 @@ import com.broada.dsp.common.constraint.ChineseLengthConstrant;
  * 中文长度校验实现
  *
  * @author wnb
- *  2014年1月13日下午9:26:39
  */
 public class ChineseLengthValidator implements ConstraintValidator<ChineseLengthConstrant, String> {
 

@@ -6,7 +6,7 @@ import com.broada.uyconf.web.service.role.bo.Role;
 
 /**
  * @author wnb
- *  2013-12-24
+ *  204
  */
 public interface RoleMgr {
 

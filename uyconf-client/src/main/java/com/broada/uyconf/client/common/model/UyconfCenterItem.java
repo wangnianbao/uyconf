@@ -10,7 +10,7 @@ import com.broada.uyconf.client.support.utils.ClassUtils;
  * 配置项表示
  *
  * @author wnb
- * 14-5-20
+ *
  */
 public class UyconfCenterItem extends UyconfCenterBaseModel {
 

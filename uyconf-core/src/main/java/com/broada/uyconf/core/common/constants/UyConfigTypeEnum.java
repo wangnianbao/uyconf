@@ -4,7 +4,7 @@ package com.broada.uyconf.core.common.constants;
  * 配置类型(配置文件,配置项)
  *
  * @author wnb
- * 14-5-16
+ *
  */
 public enum UyConfigTypeEnum {
 

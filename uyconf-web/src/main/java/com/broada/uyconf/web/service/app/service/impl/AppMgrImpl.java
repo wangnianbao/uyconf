@@ -24,7 +24,7 @@ import com.github.knightliao.apollo.utils.time.DateUtils;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 @Service
 @Transactional(propagation = Propagation.REQUIRED, readOnly = true)

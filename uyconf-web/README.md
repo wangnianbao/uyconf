@@ -7,48 +7,6 @@ uyconf-web
 
 注：由于迭代开发快速多变的原因，当前UI可能与下图略有改变。
 
-## 开放API
-
-- 让开发者具有自定义定制web控制台界面的能力: [Tutorial12 web开放API](https://github.com/knightliao/uyconf/wiki/Tutorial12-web%E5%BC%80%E6%94%BEAPI)  
-
-## 运行样式 ##
-
-### 主页 ###
-
-![](http://ww1.sinaimg.cn/mw1024/60c9620fgw1ekdfiw180rj20vt0gawfr.jpg)
-
-### 登录页 ###
-
-可以使用 admin   admin 进行登录。
-
-![](http://ww4.sinaimg.cn/mw1024/60c9620fgw1ekdfjkgbdcj20t70ie757.jpg)
-
-### 主界面 ###
-
-![http://ww3.sinaimg.cn/mw1024/60c9620fgw1emxv1nw0u4j20qp0homy0.jpg](http://ww3.sinaimg.cn/mw1024/60c9620fgw1emxv1nw0u4j20qp0homy0.jpg)
-
-左上角可以选择APP和环境，选择之后，就会在中间出现若干个版本，
-
-选择版本后，就会显示 APP、环境、版本 三个条件下的配置列表：
-
-![http://ww1.sinaimg.cn/mw1024/60c9620fgw1emyww39wjmj20qw0keq6m.jpg](http://ww1.sinaimg.cn/mw1024/60c9620fgw1emyww39wjmj20qw0keq6m.jpg)
-
-####表格中 各个列的意义是：
-
-- APP：使用哪个APP，及它的ID
-- KEY：配置文件或配置项
-- 配置内容：配置文件或配置项在配置中心中的值
-- 实例列表：使用此配置文件或配置项的所有实例列表，及每个实例的配置值。如果实例的配置值与配置中心的值不一致，这里会标识出来。
-- 修改时间：修改此配置的最后一次时间 
-- 操作：个性、删除、下载
-
-####右上角可以
-
-新建配置项、新建配置文件、新建APP
-
-####表格右上方 
-
-可以批量下载所有配置文件至本地，还可以查看ZK上的部署情况。
 
 ## How to deploy ##
 

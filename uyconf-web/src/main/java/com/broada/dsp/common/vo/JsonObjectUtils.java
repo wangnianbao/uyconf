@@ -19,7 +19,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
  * 通用的JSON返回器
  *
  * @author wnb
- * 13-12-3
+ *
  */
 @Component
 public class JsonObjectUtils {

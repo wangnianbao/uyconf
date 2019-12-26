@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author wnb
- * 14-6-22
+ *
  */
 public class VersionListForm {
 

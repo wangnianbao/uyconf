@@ -27,7 +27,7 @@ import com.broada.ub.common.db.DaoPageResult;
 
 /**
  * @author wnb
- * 13-11-26
+ *
  */
 public class BaseController implements ApplicationContextAware {
 

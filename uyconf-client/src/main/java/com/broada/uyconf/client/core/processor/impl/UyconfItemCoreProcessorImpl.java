@@ -21,7 +21,7 @@ import com.broada.uyconf.client.core.processor.UyconfCoreProcessor;
  * 配置项处理器实现
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public class UyconfItemCoreProcessorImpl implements UyconfCoreProcessor {
 

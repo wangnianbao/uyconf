@@ -133,7 +133,7 @@ public class ClassUtils {
      * 将from的属性copy到to中
      *
      * @param from
-     * @param to   下午4:30:58 created by Darwin(Tianxin)
+     * @param to   下午4:30:58 created by jay
      */
     public final static void copyProperties(Object from, Object to) {
 
@@ -174,7 +174,7 @@ public class ClassUtils {
      * @param field
      * @param clazz
      *
-     * @return 下午3:01:19 created by Darwin(Tianxin)
+     * @return 下午3:01:19 created by jay
      */
     public static Field getFieldFromClass(String field, Class<? extends Object> clazz) {
         try {

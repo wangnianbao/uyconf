@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  * 核心处理器
  *
  * @author wnb
- * 14-6-10
+ *
  */
 public class UyconfCoreMgrImpl implements UyconfCoreMgr {
 

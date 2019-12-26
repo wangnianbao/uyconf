@@ -9,7 +9,7 @@ import org.apache.commons.io.input.BOMInputStream;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * Created by wnb on 15/1/26.
+ * Created by miniking
  */
 public class MyStringUtils {
 

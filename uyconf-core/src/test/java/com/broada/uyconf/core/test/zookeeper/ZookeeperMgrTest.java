@@ -16,7 +16,7 @@ import mockit.NonStrictExpectations;
  * 使用Jmockit进行测试
  *
  * @author wnb
- * 14-6-16
+ *
  */
 public class ZookeeperMgrTest {
 

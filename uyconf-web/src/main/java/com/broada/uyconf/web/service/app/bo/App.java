@@ -11,7 +11,7 @@ import com.github.knightliao.apollo.db.bo.BaseObject;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 @Table(db = DB.DB_NAME, name = "app", keyColumn = Columns.APP_ID)
 public class App extends BaseObject<Long> {

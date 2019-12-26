@@ -18,7 +18,7 @@ import com.broada.uyconf.core.common.utils.ZooUtils;
  * ZK统一管理器
  *
  * @author wnb
- * 14-7-7
+ *
  */
 public class ZookeeperMgr {
 

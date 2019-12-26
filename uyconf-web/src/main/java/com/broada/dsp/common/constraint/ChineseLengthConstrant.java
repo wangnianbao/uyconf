@@ -14,7 +14,7 @@ import com.broada.dsp.common.constraint.validation.ChineseLengthValidator;
  * 中文校验
  *
  * @author wnb
- *  2014年1月13日下午9:24:42
+ *  日下午9:24:42
  */
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)

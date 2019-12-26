@@ -1,6 +1,6 @@
 /**
  * unbiz-genericdao#com.baidu.unbiz.common.genericdao.operator.Operators.java
- * 下午1:11:06 created by Darwin(Tianxin)
+ * 下午1:11:06 created by jay
  */
 package com.broada.unbiz.common.genericdao.operator;
 
@@ -9,7 +9,7 @@ import java.util.List;
 import com.broada.unbiz.common.genericdao.param.IncrParam;
 
 /**
- * @author Darwin(Tianxin)
+ * @author jay
  */
 
 public class Operators {

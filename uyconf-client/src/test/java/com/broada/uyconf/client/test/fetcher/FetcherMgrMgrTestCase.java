@@ -16,7 +16,7 @@ import junit.framework.Assert;
  * FetcherMgrMgr测试 (采用Jmockit方法测试)
  *
  * @author wnb
- * @author 2019-12-23
+ *
  */
 public class FetcherMgrMgrTestCase extends BaseSpringTestCase {
 

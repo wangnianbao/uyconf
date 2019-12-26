@@ -8,7 +8,7 @@ import com.broada.dsp.common.dao.AbstractDao;
 
 /**
  * @author wnb
- * 13-11-28
+ *
  */
 @Repository
 public class SignDaoImpl extends AbstractDao<Long, User> implements SignDao {

@@ -14,7 +14,7 @@ import com.broada.ub.common.commons.ThreadContext;
 
 /**
  * @author wnb
- * 14-2-4
+ *
  */
 public class RedisLoginImplMock implements RedisLogin {
 

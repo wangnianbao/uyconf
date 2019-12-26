@@ -14,7 +14,7 @@ import com.broada.uyconf.client.watch.impl.WatchMgrImpl;
  * 监控器 实例 工厂
  *
  * @author wnb
- * 14-7-29
+ *
  */
 public class WatchFactory {
 

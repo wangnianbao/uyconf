@@ -6,7 +6,7 @@ import com.broada.dsp.common.constant.ErrorCode;
  * 实现 RuntimeError的基类
  *
  * @author wnb
- * 13-12-2
+ *
  */
 public abstract class RuntimeGlobalException extends RuntimeException implements GlobalExceptionAware {
 

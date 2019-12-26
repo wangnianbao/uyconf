@@ -11,7 +11,7 @@ import com.broada.dsp.common.form.RequestFormBase;
  * 登录
  *
  * @author wnb
- * 14-2-5
+ *
  */
 public class SigninForm extends RequestFormBase {
 

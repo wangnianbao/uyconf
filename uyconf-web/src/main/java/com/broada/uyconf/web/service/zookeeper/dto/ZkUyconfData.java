@@ -7,7 +7,7 @@ import java.util.List;
  * 每个配置对应的数据
  *
  * @author wnb
- * 14-9-12
+ *
  */
 public class ZkUyconfData {
 
@@ -15,7 +15,7 @@ public class ZkUyconfData {
      * 每个配置对应一个实例的数据
      *
      * @author wnb
-     * 14-9-12
+     *
      */
     public static class ZkUyconfDataItem {
 

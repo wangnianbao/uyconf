@@ -8,7 +8,7 @@ import com.broada.uyconf.client.scan.inner.statically.model.ScanStaticModel;
  * 扫描静态注解，并且进行分析整合数据
  *
  * @author wnb
- * 14-6-6
+ *
  */
 public interface ScanStaticStrategy {
 

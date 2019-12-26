@@ -10,7 +10,7 @@ import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
  * uyconf web path 管理
  *
  * @author wnb
- * 14-6-10
+ *
  */
 public class UyconfWebPathMgr {
 

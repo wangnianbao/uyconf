@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * @author wnb
- * 14-7-29
+ *
  */
 public interface ScanMgr {
 

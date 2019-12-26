@@ -10,7 +10,7 @@ import com.broada.uyconf.client.store.UyconfStoreProcessorFactory;
 import com.broada.uyconf.client.usertools.IUyconfDataGetter;
 
 /**
- * Created by wnb on 16/5/28.
+ * Created by miniking
  */
 public class UyconfDataGetterDefaultImpl implements IUyconfDataGetter {
 

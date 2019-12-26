@@ -19,32 +19,48 @@ import com.broada.uyconf.core.common.utils.OsUtil;
  * 配置文件表示
  *
  * @author wnb
- * 14-5-20
+ *
  */
 public class UyconfCenterFile extends UyconfCenterBaseModel {
 
     protected static final Logger LOGGER = LoggerFactory.getLogger(UyconfCenterFile.class);
 
-    // -----key: 配置文件中的项名
-    // -----value: 默认值
+    /**
+     *
+     * -----key: 配置文件中的项名 -----value: 默认值
+     */
     private Map<String, FileItemValue> keyMaps = new HashMap<String, FileItemValue>();
 
-    // 额外的配置数据，非注解式使用它来存储
+    /**
+     *  额外的配置数据，非注解式使用它来存储
+     */
     private Map<String, Object> additionalKeyMaps = new HashMap<String, Object>();
 
-    // 是否是非注解注入方式
+    /**
+     * 是否是非注解注入方式
+     *
+     */
     private boolean isTaggedWithNonAnnotationFile = false;
 
-    // 配置文件类
+    /**
+     * 配置文件类
+     */
     private Class<?> cls;
 
-    // 文件名
+    /**
+     * 文件名
+     */
     private String fileName;
 
-    // 配置文件 指定路径下
+    /**
+     * 配置文件 指定路径下
+     */
     private String targetDirPath;
 
-    // 文件类型
+    /**
+     *
+     *  文件类型
+     */
     private SupportFileTypeEnum supportFileTypeEnum = SupportFileTypeEnum.ANY;
 
     public Class<?> getCls() {
@@ -181,7 +197,7 @@ public class UyconfCenterFile extends UyconfCenterBaseModel {
      * 配置文件Item项表示，包括了值，还有其类型
      *
      * @author wnb
-     * 14-6-16
+     *
      */
     public static class FileItemValue {
 

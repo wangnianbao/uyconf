@@ -10,7 +10,7 @@ import com.github.knightliao.apollo.db.bo.BaseObject;
  * 用户表
  *
  * @author wnb
- * 13-11-28
+ *
  */
 @Table(db = DB.DB_NAME, name = "user", keyColumn = Columns.USER_ID)
 public class User extends BaseObject<Long> {

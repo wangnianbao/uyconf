@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 
 /**
  * @author wnb
- * 14-1-23
+ *
  */
 public abstract class AbstractTestCase extends AbstractTransactionalJUnit4SpringContextTests {
 

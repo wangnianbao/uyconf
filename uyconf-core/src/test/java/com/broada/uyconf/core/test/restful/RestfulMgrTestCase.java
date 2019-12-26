@@ -19,7 +19,7 @@ import com.broada.uyconf.core.test.common.BaseCoreTestCase;
  * 使用 WireMock 进行测试
  *
  * @author wnb
- * 14-7-30
+ *
  */
 public class RestfulMgrTestCase extends BaseCoreTestCase {
 

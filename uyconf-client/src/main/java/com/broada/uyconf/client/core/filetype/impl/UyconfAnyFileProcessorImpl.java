@@ -5,7 +5,7 @@ import java.util.Map;
 import com.broada.uyconf.client.core.filetype.UyconfFileTypeProcessor;
 
 /**
- * Created by wnb on 15/1/21.
+ * Created by wnb
  * <p/>
  * 任意文件的处理
  */

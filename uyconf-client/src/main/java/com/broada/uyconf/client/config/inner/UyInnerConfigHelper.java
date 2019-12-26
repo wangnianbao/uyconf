@@ -18,7 +18,7 @@ import com.broada.uyconf.core.common.utils.OsUtil;
  * 用户配置、系统配置 的校验
  *
  * @author wnb
- * 14-6-6
+ *
  */
 public class UyInnerConfigHelper {
 

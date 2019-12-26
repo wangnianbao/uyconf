@@ -2,7 +2,7 @@ package com.broada.uyconf.web.service.app.vo;
 
 /**
  * @author wnb
- * 14-6-22
+ *
  */
 public class AppListVo {
 

@@ -6,7 +6,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/*
+/**
  * 只是进行托管的配置文件（不会注入，只负责下载和动态推送）
  */
 public class UyconfCenterHostFilesStore {

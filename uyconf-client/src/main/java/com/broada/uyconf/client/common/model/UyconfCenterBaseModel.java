@@ -4,7 +4,7 @@ package com.broada.uyconf.client.common.model;
  * 配置基类
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public abstract class UyconfCenterBaseModel {
 

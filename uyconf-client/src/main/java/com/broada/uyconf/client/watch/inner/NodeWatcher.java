@@ -17,7 +17,7 @@ import com.broada.uyconf.core.common.zookeeper.ZookeeperMgr;
  * 结点监控器
  *
  * @author wnb
- * 14-6-16
+ *
  */
 public class NodeWatcher implements Watcher {
 

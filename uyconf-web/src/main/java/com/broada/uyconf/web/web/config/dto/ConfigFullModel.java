@@ -5,7 +5,7 @@ import com.broada.uyconf.web.service.env.bo.Env;
 
 /**
  * @author wnb
- * 14-9-11
+ *
  */
 public class ConfigFullModel {
 

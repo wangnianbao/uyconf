@@ -1,7 +1,7 @@
 package com.broada.unbiz.common.genericdao.bo;
 
 /**
- * @version create on 2014年8月13日 下午5:39:32
+ * @version create
  */
 public enum InsertOption {
 

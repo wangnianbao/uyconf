@@ -7,7 +7,7 @@ import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
  * 当发生 配置更新 时 此回调会首先被调用
  *
  * @author wnb
- * 14-5-20
+ *
  */
 public interface IUyconfSysUpdate {
 

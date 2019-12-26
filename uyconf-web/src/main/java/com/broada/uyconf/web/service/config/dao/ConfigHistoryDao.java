@@ -4,7 +4,7 @@ import com.broada.uyconf.web.service.config.bo.ConfigHistory;
 import com.broada.unbiz.common.genericdao.dao.BaseDao;
 
 /**
- * Created by wnb on 15/12/25.
+ * Created by wnb
  */
 
 public interface ConfigHistoryDao extends BaseDao<Long, ConfigHistory> {

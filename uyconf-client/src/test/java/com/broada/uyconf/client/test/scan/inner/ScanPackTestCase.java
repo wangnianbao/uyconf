@@ -22,7 +22,7 @@ import com.broada.uyconf.client.support.utils.StringUtil;
  * 扫描测试
  *
  * @author wnb
- * 14-6-16
+ *
  */
 public class ScanPackTestCase extends BaseSpringTestCase {
 

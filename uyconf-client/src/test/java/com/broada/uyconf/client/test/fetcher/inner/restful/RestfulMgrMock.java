@@ -18,7 +18,7 @@ import mockit.MockUp;
  * Jmockit法测试的MOck
  *
  * @author wnb
- * 14-7-29
+ *
  */
 public class RestfulMgrMock extends MockUp<RestfulMgr> {
 

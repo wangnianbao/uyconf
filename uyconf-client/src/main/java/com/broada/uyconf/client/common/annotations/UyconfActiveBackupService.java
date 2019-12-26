@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * 包括了配置文件和配置项
  *
  * @author wnb
- * 14-5-16
+ *
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

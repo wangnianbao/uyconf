@@ -22,7 +22,7 @@ import org.springframework.context.ApplicationContextAware;
  * Uyconf Client 总入口
  *
  * @author wnb
- * 14-5-23
+ *
  */
 public class UyconfMgr implements ApplicationContextAware {
 

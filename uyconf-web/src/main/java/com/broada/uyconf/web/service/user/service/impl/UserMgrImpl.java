@@ -20,7 +20,7 @@ import com.broada.ub.common.commons.ThreadContext;
 
 /**
  * @author wnb
- * 13-12-5
+ *
  */
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

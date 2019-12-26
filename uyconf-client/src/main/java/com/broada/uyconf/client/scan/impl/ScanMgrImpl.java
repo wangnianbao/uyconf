@@ -22,7 +22,7 @@ import com.broada.uyconf.client.scan.ScanMgr;
  * 扫描模块
  *
  * @author wnb
- * 14-6-6
+ *
  */
 public class ScanMgrImpl implements ScanMgr {
 

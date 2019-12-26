@@ -8,7 +8,7 @@ import java.util.Map;
  * 这个类是为了做兼容
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public class UyconfValue {
 

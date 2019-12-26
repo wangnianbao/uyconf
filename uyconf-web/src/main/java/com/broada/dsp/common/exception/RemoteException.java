@@ -8,7 +8,7 @@ import com.broada.dsp.common.exception.base.RuntimeGlobalException;
  * 用于远程连接错误
  *
  * @author wnb
- * 14-1-26
+ *
  */
 public class RemoteException extends RuntimeGlobalException {
 

@@ -8,7 +8,7 @@ import lombok.Data;
 
 /**
  * @author wnb
- * 14-6-23
+ *
  */
 @Data
 public class ConfListForm extends RequestListBase {

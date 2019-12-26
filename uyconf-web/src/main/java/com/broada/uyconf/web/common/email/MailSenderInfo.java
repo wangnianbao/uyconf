@@ -4,7 +4,7 @@ import java.util.Properties;
 
 /**
  * @author wnb
- * 14-3-2
+ *
  */
 public class MailSenderInfo {
 

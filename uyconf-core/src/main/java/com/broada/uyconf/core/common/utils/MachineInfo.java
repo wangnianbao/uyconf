@@ -7,7 +7,7 @@ import java.net.UnknownHostException;
  * MachineInfo
  *
  * @author wnb
- * 14-7-30
+ *
  */
 public final class MachineInfo {
 

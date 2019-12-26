@@ -21,7 +21,7 @@ import org.springframework.core.PriorityOrdered;
  * 第一次扫描，静态扫描
  *
  * @author wnb
- * @author 2019-12-23
+ *
  */
 public class UyconfMgrBean implements BeanDefinitionRegistryPostProcessor, PriorityOrdered, ApplicationContextAware {
 

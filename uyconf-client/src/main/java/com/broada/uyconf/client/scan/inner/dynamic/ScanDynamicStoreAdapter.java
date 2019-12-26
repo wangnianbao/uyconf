@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  * 动态扫描 与 Store模块的转换器
  *
  * @author wnb
- * 14-6-18
+ *
  */
 public class ScanDynamicStoreAdapter {
 

@@ -33,7 +33,7 @@ import com.broada.uyconf.client.scan.inner.statically.strategy.ScanStaticStrateg
 import com.google.common.base.Predicate;
 
 /**
- * Created by wnb on 15/1/23.
+ * Created by wnb
  * <p/>
  * 扫描静态注解，并且进行分析整合数据
  * <p/>

@@ -12,7 +12,7 @@ import com.broada.uyconf.client.store.processor.model.UyconfValue;
  * 仓库算子
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public interface UyconfStoreProcessor {
 

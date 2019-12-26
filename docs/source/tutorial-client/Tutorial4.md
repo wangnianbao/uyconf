@@ -14,7 +14,7 @@ Tutorial 4 注解式分布式静态配置文件和静态配置项（最佳实践
      * 静态 配置文件 示例
      *
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @DisconfFile(filename = "static.properties")
     public class StaticConfig {

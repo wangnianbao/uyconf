@@ -3,7 +3,7 @@ package com.broada.unbiz.common.genericdao.param;
 /**
  * 反向参数
  *
- * @author Darwin(Tianxin)
+ * @author jay
  */
 public class NotParam {
     Object value;

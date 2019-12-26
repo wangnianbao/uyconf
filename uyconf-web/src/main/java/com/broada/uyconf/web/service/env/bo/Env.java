@@ -8,7 +8,7 @@ import com.github.knightliao.apollo.db.bo.BaseObject;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 @Table(db = DB.DB_NAME, name = "env", keyColumn = Columns.ENV_ID)
 public class Env extends BaseObject<Long> {

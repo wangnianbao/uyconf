@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * 分布式的配置项
  *
  * @author wnb
- * 14-5-16
+ *
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

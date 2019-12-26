@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by wnb on 15/3/20.
+ * Created by wnb miniking
  * <p/>
  * reloadable file store
  */

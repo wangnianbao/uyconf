@@ -9,7 +9,7 @@ import java.util.Set;
  * 类工具
  *
  * @author wnb
- * 14-6-11
+ *
  */
 public class ClassUtils {
 

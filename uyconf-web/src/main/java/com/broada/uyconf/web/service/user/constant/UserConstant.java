@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author wnb
- * 14-1-13
+ *
  */
 public class UserConstant {
 

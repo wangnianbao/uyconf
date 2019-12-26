@@ -4,7 +4,7 @@ package com.broada.uyconf.client.common.constants;
  * 常量定义
  *
  * @author wnb
- * 14-6-6
+ *
  */
 public class Constants {
 

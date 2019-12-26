@@ -8,7 +8,7 @@ import com.broada.dsp.common.dao.AbstractDao;
 
 /**
  * @author wnb
- * 14-1-14
+ *
  */
 @Repository
 public class RoleDaoImpl extends AbstractDao<Integer, Role> implements RoleDao {

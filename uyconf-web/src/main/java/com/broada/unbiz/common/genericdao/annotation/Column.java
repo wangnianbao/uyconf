@@ -23,7 +23,7 @@ public @interface Column {
     /**
      * 是否需要update
      *
-     * @return 上午10:15:15 created by Darwin(Tianxin)
+     * @return 上午10:15:15 created by jay
      */
     boolean maybeModified() default true;
 

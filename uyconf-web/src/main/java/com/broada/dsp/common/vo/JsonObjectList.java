@@ -10,7 +10,7 @@ import com.broada.ub.common.commons.ThreadContext;
  * JSON LIST
  *
  * @author wnb
- * 13-12-3
+ *
  */
 public class JsonObjectList extends JsonObjectBase {
 

@@ -14,7 +14,7 @@ import com.broada.uyconf.client.common.model.InstanceFingerprint;
  * 一些通用的数据
  *
  * @author wnb
- * 14-7-1
+ *
  */
 public class UyClientComConfig {
 

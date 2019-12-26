@@ -11,7 +11,7 @@ import org.reflections.Reflections;
  * 扫描静态存储的对象
  *
  * @author wnb
- * 14-6-9
+ *
  */
 public class ScanStaticModel {
 

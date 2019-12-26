@@ -24,7 +24,7 @@ import com.broada.uyconf.client.store.UyconfStoreProcessorFactory;
  * 配置拦截
  *
  * @author wnb
- * 14-6-11
+ *
  */
 @Aspect
 public class UyconfAspectJ {

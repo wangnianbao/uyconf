@@ -3,7 +3,7 @@ package com.broada.unbiz.common.genericdao.param;
 /**
  * 封装between参数
  *
- * @author Darwin(Tianxin)
+ * @author jay
  */
 public class BetweenParam {
     Object start;

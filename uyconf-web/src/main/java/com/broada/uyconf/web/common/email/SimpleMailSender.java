@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
  * 简单邮件发送器
  *
  * @author wnb
- * 14-3-2
+ *
  */
 public class SimpleMailSender {
 

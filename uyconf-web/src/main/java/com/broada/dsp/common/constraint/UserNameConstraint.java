@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 
 /**
  * @author wnb
- * 14-1-14
+ *
  */
 @NotNull
 @Size(min = 3, max = 20)

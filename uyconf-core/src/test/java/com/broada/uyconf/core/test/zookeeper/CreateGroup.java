@@ -13,7 +13,7 @@ import org.apache.zookeeper.ZooKeeper;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 public class CreateGroup implements Watcher {
 

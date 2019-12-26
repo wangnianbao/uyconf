@@ -10,7 +10,7 @@ import com.broada.uyconf.web.service.app.vo.AppListVo;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 public interface AppMgr {
 

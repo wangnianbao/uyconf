@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author wnb
- * 14-3-2
+ *
  */
 @Service
 public class EmailService {

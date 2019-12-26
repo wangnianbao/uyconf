@@ -20,7 +20,7 @@ import junit.framework.Assert;
  * Spring的测试方法 + WireMock 方法
  *
  * @author wnb
- * 14-6-11
+ *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:applicationContext.xml")

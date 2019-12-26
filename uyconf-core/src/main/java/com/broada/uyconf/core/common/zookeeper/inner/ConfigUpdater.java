@@ -8,7 +8,7 @@ import org.apache.zookeeper.KeeperException;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 public class ConfigUpdater {
 

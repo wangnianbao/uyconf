@@ -155,7 +155,7 @@ public abstract class GenericDao<KEY extends Serializable, ENTITY extends BaseOb
     /**
      * @param ids
      *
-     * @return 下午9:03:31 created by Darwin(Tianxin)
+     * @return 下午9:03:31 created by jay
      */
     private List<ENTITY> getByComplexKeys(Collection<KEY> ids) {
         List<ENTITY> entities = new ArrayList<ENTITY>(ids.size());
@@ -860,7 +860,7 @@ public abstract class GenericDao<KEY extends Serializable, ENTITY extends BaseOb
     }
 
     /**
-     * @return 下午5:39:05 created by Darwin(Tianxin)
+     * @return 下午5:39:05 created by jay
      */
     public abstract KEY getNextId();
 

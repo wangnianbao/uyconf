@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
  * </p>
  *
  * @author wnb
- * 14-8-28
+ *
  */
 public abstract class StringUtil {
 

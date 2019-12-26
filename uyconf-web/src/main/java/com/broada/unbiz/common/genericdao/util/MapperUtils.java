@@ -1,6 +1,6 @@
 /**
  * unbiz-genericdao#com.baidu.unbiz.common.genericdao.util.MapperUtils.java
- * 上午11:09:16 created by Darwin(Tianxin)
+ * 上午11:09:16 created by jay
  */
 package com.broada.unbiz.common.genericdao.util;
 
@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.Date;
 
 /**
- * @author Darwin(Tianxin)
+ * @author jay
  */
 public class MapperUtils {
 

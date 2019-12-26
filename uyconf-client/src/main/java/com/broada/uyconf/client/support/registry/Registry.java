@@ -3,7 +3,7 @@ package com.broada.uyconf.client.support.registry;
 import java.util.List;
 
 /**
- * Created by wnb on 15/11/26.
+ * Created by wnb miniking
  */
 public interface Registry {
 

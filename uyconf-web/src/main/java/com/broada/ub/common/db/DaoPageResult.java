@@ -9,7 +9,7 @@ import java.util.List;
  * @param <T>
  *
  * @author wnb
- * 14-2-20
+ *
  */
 public class DaoPageResult<T> {
 

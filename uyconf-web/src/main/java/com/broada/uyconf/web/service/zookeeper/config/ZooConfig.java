@@ -2,7 +2,7 @@ package com.broada.uyconf.web.service.zookeeper.config;
 
 /**
  * @author wnb
- * 14-6-24
+ *
  */
 public class ZooConfig {
 

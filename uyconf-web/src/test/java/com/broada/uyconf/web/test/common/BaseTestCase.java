@@ -9,7 +9,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
  * 所有测试类的基类
  * 
  * @author wnb
- * 13-12-13
+ *
  */
 @TestExecutionListeners(BaseTestBeforeClass.class)
 @ContextConfiguration(locations = "classpath:applicationContext.xml")

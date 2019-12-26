@@ -9,7 +9,7 @@ import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
  * 这个函数是系统调用的，当有配置更新时，便会进行回调
  *
  * @author wnb
- * 14-5-16
+ *
  */
 public class UyconfSysUpdateCallback implements IUyconfSysUpdate {
 

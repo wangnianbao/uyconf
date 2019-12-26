@@ -19,7 +19,7 @@ import com.google.common.collect.Multimap;
  * 扫描打印器
  *
  * @author wnb
- * 14-6-9
+ *
  */
 public class ScanPrinterUtils {
 

@@ -2,7 +2,7 @@ package com.broada.uyconf.web.web.auth.constant;
 
 /**
  * @author wnb
- * 13-11-28
+ *
  */
 public class LoginConstant {
 

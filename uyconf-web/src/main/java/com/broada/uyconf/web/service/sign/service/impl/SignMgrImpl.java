@@ -17,7 +17,7 @@ import com.broada.uyconf.web.service.sign.utils.SignUtils;
  * 与登录登出相关的
  *
  * @author wnb
- * 14-2-6
+ *
  */
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

@@ -6,7 +6,7 @@ import com.broada.dsp.common.constant.ErrorCode;
  * 所有Exception异常类的基类
  *
  * @author wnb
- * 13-12-2
+ *
  */
 public abstract class DspException extends Exception implements GlobalExceptionAware {
 

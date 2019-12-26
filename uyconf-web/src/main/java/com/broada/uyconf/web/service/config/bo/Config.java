@@ -10,7 +10,7 @@ import lombok.Data;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 @Data
 @Table(db = DB.DB_NAME, name = "config", keyColumn = Columns.CONFIG_ID)

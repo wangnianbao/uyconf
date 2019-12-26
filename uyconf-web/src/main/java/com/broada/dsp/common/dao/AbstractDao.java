@@ -26,6 +26,8 @@ import com.broada.unbiz.common.genericdao.param.NotParam;
 import com.github.knightliao.apollo.db.bo.BaseObject;
 
 /**
+ *
+ * @author miniking
  */
 public abstract class AbstractDao<KEY extends Serializable, ENTITY extends BaseObject<KEY>> extends
 		GenericDao<KEY, ENTITY> {

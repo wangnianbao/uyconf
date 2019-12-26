@@ -19,7 +19,7 @@ import com.broada.uyconf.core.common.zookeeper.ZookeeperMgr;
  * Watch 模块的一个实现
  *
  * @author wnb
- * 14-6-10
+ *
  */
 public class WatchMgrImpl implements WatchMgr {
 

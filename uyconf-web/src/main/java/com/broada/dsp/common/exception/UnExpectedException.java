@@ -6,7 +6,7 @@ import com.broada.dsp.common.exception.base.RuntimeGlobalException;
 
 /**
  * @author wnb
- * 14-6-24
+ *
  */
 public class UnExpectedException extends RuntimeGlobalException {
 

@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  * 配置仓库,是个单例
  *
  * @author wnb
- * 14-6-9
+ *
  */
 public class UyconfCenterStore {
 

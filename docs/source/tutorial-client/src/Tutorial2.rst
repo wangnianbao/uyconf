@@ -73,7 +73,7 @@ redis是根据配置生成的实例，因此，这种情况下，你有三种选
      * 一个简单的Redis服务
      *
      * @author wnb
-     * @author 2019-12-23
+     *
      */
     @Service
     @Scope("singleton")
@@ -161,7 +161,7 @@ redis是根据配置生成的实例，因此，这种情况下，你有三种选
      * 更新Redis配置时的回调函数
      *
      * @author wnb
-     * @author 2019-12-23
+     *
      */
     @Service
     @Scope("singleton")
@@ -205,7 +205,7 @@ redis是根据配置生成的实例，因此，这种情况下，你有三种选
      * Redis配置文件
      *
      * @author wnb
-     * @author 2019-12-23
+     *
      */
     @Service
     @Scope("singleton")

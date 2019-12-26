@@ -8,7 +8,7 @@ import org.apache.http.util.EntityUtils;
 import com.broada.uyconf.core.common.utils.http.HttpResponseCallbackHandler;
 
 /**
- * Created by wnb on 16/1/7.
+ * Created by wnb miniking
  */
 public class HttpResponseCallbackHandlerJsonHandler<T> implements HttpResponseCallbackHandler<T> {
 

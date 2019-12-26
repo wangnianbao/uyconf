@@ -27,7 +27,7 @@ import com.broada.uyconf.web.service.zookeeper.config.ZooConfig;
 import com.broada.dsp.common.exception.RemoteException;
 
 /**
- * Created by wnb on 15/1/14.
+ * Created by wnb
  */
 public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, DisposableBean {
 

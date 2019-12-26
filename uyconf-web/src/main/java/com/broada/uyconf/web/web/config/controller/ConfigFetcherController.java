@@ -33,7 +33,7 @@ import com.broada.dsp.common.vo.JsonObjectBase;
  * 配置获取Controller, Uyconf-client专门使用的
  *
  * @author wnb
- * 14-6-16
+ *
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/config")

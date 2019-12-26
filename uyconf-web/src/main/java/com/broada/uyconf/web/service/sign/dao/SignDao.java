@@ -5,7 +5,7 @@ import com.broada.unbiz.common.genericdao.dao.BaseDao;
 
 /**
  * @author wnb
- * 13-11-28
+ *
  */
 public interface SignDao extends BaseDao<Long, User> {
 

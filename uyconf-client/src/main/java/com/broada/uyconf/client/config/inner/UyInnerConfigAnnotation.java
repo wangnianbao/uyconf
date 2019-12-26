@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * Uyconf 自己的配置文件中的项标注
  *
  * @author wnb
- * 14-6-16
+ *
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

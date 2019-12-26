@@ -17,7 +17,7 @@ import com.github.knightliao.apollo.utils.data.JsonUtils;
 
 /**
  * @author wnb
- * 13-11-26
+ *
  */
 public class WebCommonInterceptor extends HandlerInterceptorAdapter {
 

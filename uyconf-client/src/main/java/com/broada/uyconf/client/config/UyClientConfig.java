@@ -15,7 +15,7 @@ import com.broada.uyconf.core.common.constants.Constants;
  * Uyconf Client的用户配置文件
  *
  * @author wnb
- * 14-6-6
+ *
  */
 public final class UyClientConfig {
 

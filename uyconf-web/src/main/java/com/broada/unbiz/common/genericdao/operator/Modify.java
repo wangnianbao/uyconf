@@ -1,13 +1,13 @@
 /**
  * adx-common#com.baidu.ub.generic.dao.operator.Modify.java
- * 下午8:04:36 created by Darwin(Tianxin)
+ * 下午8:04:36 created by jay
  */
 package com.broada.unbiz.common.genericdao.operator;
 
 /**
  * 一个字段的update操作
  *
- * @author Darwin(Tianxin)
+ * @author jay
  */
 public class Modify implements Pair {
 

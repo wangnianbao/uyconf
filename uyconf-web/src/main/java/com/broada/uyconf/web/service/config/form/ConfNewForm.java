@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  * 新建配置文件表格
  *
  * @author wnb
- * 14-7-3
+ *
  */
 public class ConfNewForm {
 

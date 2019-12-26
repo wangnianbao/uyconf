@@ -5,7 +5,7 @@ import java.util.Map;
 import com.broada.uyconf.client.usertools.impl.UyconfDataGetterDefaultImpl;
 
 /**
- * Created by wnb on 16/5/28.
+ * Created by miniking
  */
 public class UyconfDataGetter {
 

@@ -15,6 +15,7 @@ public class SimpleDBShardingRuleImpl implements DBShardingRule {
     private int shardingNum = 1;
     private List<String> dbCodeCollection;
 
+    @Override
     public String calculateDatabaseNo(int userid) {
         if (shardingNum == 1) {
             return null;

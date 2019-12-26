@@ -16,7 +16,7 @@ import com.broada.uyconf.core.common.utils.http.HttpResponseCallbackHandler;
  * RestFul get
  *
  * @author wnb
- * 14-6-16
+ *
  */
 public class RestfulGet<T> implements UnreliableInterface {
 

@@ -14,7 +14,7 @@ import com.google.gson.reflect.TypeToken;
  * Gson的测试
  *
  * @author wnb
- * 14-6-16
+ *
  */
 public class JsonTranslate extends BaseSpringTestCase {
 

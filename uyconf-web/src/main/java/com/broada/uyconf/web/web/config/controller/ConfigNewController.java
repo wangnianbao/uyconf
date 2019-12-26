@@ -28,7 +28,7 @@ import com.broada.dsp.common.vo.JsonObjectBase;
  * 专用于配置新建
  *
  * @author wnb
- * 14-6-24
+ *
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/web/config")

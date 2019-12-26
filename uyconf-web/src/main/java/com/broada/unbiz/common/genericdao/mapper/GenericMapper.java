@@ -75,7 +75,7 @@ public class GenericMapper<ENTITY extends BaseObject<K>, K extends Serializable>
      * @param setMethod
      * @param value
      *
-     * @throws Exception 下午4:06:04 created by Darwin(Tianxin)
+     * @throws Exception 下午4:06:04 created by jay
      */
     private void load2Entity(Object entity, Method setMethod, Object value) throws Exception {
         try {
@@ -95,7 +95,7 @@ public class GenericMapper<ENTITY extends BaseObject<K>, K extends Serializable>
      * @param meta
      * @param genericMapper2
      *
-     * @return 下午3:45:38 created by Darwin(Tianxin)
+     * @return 下午3:45:38 created by jay
      *
      * @throws SQLException
      */

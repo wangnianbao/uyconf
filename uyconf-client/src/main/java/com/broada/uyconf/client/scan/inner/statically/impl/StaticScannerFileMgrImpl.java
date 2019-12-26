@@ -30,7 +30,7 @@ import com.broada.uyconf.client.scan.inner.statically.StaticScannerMgr;
  * 配置文件的静态扫描
  *
  * @author wnb
- * 14-9-9
+ *
  */
 public class StaticScannerFileMgrImpl extends StaticScannerMgrImplBase implements StaticScannerMgr {
 

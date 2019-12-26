@@ -11,7 +11,7 @@ import lombok.Data;
  * 多层结构的 成功返回
  *
  * @author wnb
- * 13-12-3
+ *
  */
 @Data
 public class JsonObject extends JsonObjectBase {

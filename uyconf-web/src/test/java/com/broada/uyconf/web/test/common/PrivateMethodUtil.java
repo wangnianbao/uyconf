@@ -8,7 +8,7 @@ import org.springframework.aop.TargetSource;
 /**
  * 
  * @author wnb
- * 14-1-26
+ *
  */
 public final class PrivateMethodUtil {
 

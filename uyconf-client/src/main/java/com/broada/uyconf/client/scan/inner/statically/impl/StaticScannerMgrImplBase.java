@@ -5,7 +5,7 @@ import com.broada.uyconf.client.config.UyClientConfig;
 
 /**
  * @author wnb
- * 14-9-9
+ *
  */
 public class StaticScannerMgrImplBase {
 

@@ -26,7 +26,7 @@ import com.broada.unbiz.common.genericdao.param.NotParam;
 import com.github.knightliao.apollo.db.bo.BaseObject;
 
 /**
- * @author Darwin(Tianxin)
+ * @author jay
  */
 public class QueryGenerator<ENTITY extends BaseObject<KEY>, KEY extends Serializable> {
 
@@ -162,7 +162,7 @@ public class QueryGenerator<ENTITY extends BaseObject<KEY>, KEY extends Serializ
     /**
      * @param matches
      *
-     * @return 下午3:15:10 created by Darwin(Tianxin)
+     * @return 下午3:15:10 created by jay
      */
     public Query getDeleteQuery(Match... matches) {
         StringBuilder sb = new StringBuilder(100);
@@ -225,7 +225,7 @@ public class QueryGenerator<ENTITY extends BaseObject<KEY>, KEY extends Serializ
      * @param quick       時候用快速方式，快速方式無法將自動生成key填充到對象中。一般此參數為false，只有當批量創建，且由數據庫生成key時該處可選。
      * @param entities
      *
-     * @return 下午1:26:37 created by Darwin(Tianxin)
+     * @return 下午1:26:37 created by jay
      */
     public Query getCreateQuery(boolean generateKey, boolean quick, ENTITY... entities) {
         return getCreateQuery(Arrays.asList(entities), generateKey, quick, null);
@@ -320,7 +320,7 @@ public class QueryGenerator<ENTITY extends BaseObject<KEY>, KEY extends Serializ
      *
      * @param id
      *
-     * @return 上午9:45:33 created by Darwin(Tianxin)
+     * @return 上午9:45:33 created by jay
      */
     public List<Match> getKeyMatches(KEY id) {
         Set<String> keyColumn = orMapping.getKeyColumn();

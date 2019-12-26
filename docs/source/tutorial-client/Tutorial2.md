@@ -59,7 +59,7 @@ Tutorial 2 注解式分布式的配置文件高级篇: 配置更新的通知（�
      * 一个简单的Redis服务
      *
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @Service
     @Scope("singleton")
@@ -144,7 +144,7 @@ Tutorial 2 注解式分布式的配置文件高级篇: 配置更新的通知（�
      * 更新Redis配置时的回调函数
      *
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @Service
     @Scope("singleton")
@@ -181,7 +181,7 @@ confFileKeys 也可以。
      * Redis配置文件
      *
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @Service
     @Scope("singleton")

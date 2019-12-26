@@ -12,7 +12,7 @@ import mockit.MockUp;
  * Watch MOckup
  *
  * @author wnb
- * 14-7-31
+ * 1
  */
 public class WatchMgrMock extends MockUp<WatchMgr> {
 

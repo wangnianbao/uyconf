@@ -16,7 +16,7 @@ import com.broada.ub.common.commons.ThreadContext;
  * 权限验证
  *
  * @author wnb
- * 14-7-2
+ *
  */
 @Component
 public class AuthValidator {

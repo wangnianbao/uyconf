@@ -6,7 +6,7 @@ import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
  * 用于标识一个配置文件或配置项
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public class UyconfKey {
 

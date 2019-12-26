@@ -26,7 +26,7 @@ import com.github.knightliao.apollo.utils.web.CookieUtils;
  * 所有请求（一个Session可能会有多个请求）均会通过此拦截器
  *
  * @author wnb
- * 13-11-28
+ *
  */
 public class LoginInterceptor extends WebCommonInterceptor {
 

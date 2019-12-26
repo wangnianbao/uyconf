@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import com.broada.uyconf.client.support.registry.Registry;
 
 /**
- * Created by wnb on 15/11/26.
+ * Created by wnb miniking
  */
 public class SimpleRegistry implements Registry {
 

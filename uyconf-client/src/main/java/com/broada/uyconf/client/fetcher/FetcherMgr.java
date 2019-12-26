@@ -4,7 +4,7 @@ package com.broada.uyconf.client.fetcher;
  * 下载模块
  *
  * @author wnb
- * 14-6-12
+ *
  */
 public interface FetcherMgr {
 

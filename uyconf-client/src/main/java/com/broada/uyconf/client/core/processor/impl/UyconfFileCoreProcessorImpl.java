@@ -26,7 +26,7 @@ import com.broada.uyconf.core.common.utils.GsonUtils;
  * 配置文件处理器实现
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public class UyconfFileCoreProcessorImpl implements UyconfCoreProcessor {
 

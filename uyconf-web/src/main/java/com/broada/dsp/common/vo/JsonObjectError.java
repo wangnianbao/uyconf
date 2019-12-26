@@ -10,7 +10,7 @@ import com.broada.dsp.common.constant.FrontEndInterfaceConstant;
  * 错误类
  *
  * @author wnb
- * 13-12-3
+ *
  */
 public class JsonObjectError extends JsonObjectBase {
 

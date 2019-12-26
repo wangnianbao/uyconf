@@ -3,7 +3,7 @@ package com.broada.unbiz.common.genericdao.operator;
 /**
  * 一对参数
  *
- * @author Darwin(Tianxin)
+ * @author jay
  */
 public class Match implements Pair {
 

@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  * 扫描校验模块
  *
  * @author wnb
- * 14-6-15
+ *
  */
 public class ScanVerify {
 

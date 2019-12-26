@@ -39,7 +39,7 @@ import com.broada.ub.common.db.DaoPageResult;
  * 专用于配置读取
  *
  * @author wnb
- * 14-6-22
+ *
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/web/config")

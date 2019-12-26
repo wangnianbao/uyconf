@@ -11,7 +11,7 @@ import com.broada.uyconf.core.common.restful.RestfulMgr;
  * 抓取器工厂
  *
  * @author wnb
- * 14-7-29
+ *
  */
 public class FetcherFactory {
 

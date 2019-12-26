@@ -10,7 +10,7 @@ import com.broada.uyconf.client.watch.WatchMgr;
  * 核心处理器工厂
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public class UyconfCoreProcessorFactory {
 

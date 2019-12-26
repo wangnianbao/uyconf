@@ -10,7 +10,7 @@ import com.broada.uyconf.web.service.user.service.UserMgr;
 
 /**
  * @author wnb
- * 14-1-13
+ *
  */
 @Service
 public class UserFacadeImpl implements UserFacade {

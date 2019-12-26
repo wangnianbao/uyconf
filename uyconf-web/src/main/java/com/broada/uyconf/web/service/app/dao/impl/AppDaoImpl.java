@@ -14,7 +14,7 @@ import com.broada.unbiz.common.genericdao.operator.Match;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 @Service
 public class AppDaoImpl extends AbstractDao<Long, App> implements AppDao {

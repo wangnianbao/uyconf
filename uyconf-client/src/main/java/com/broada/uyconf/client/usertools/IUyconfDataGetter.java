@@ -3,7 +3,7 @@ package com.broada.uyconf.client.usertools;
 import java.util.Map;
 
 /**
- * Created by wnb on 16/5/28.
+ * Created by miniking
  * <p/>
  * 配置数据获取总控
  */

@@ -6,7 +6,7 @@ import com.broada.uyconf.core.common.constants.Constants;
  * Zoo path 管理
  *
  * @author wnb
- * 14-6-16
+ *
  */
 public class ZooPathMgr {
 

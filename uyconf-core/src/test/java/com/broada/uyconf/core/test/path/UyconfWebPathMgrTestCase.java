@@ -9,7 +9,7 @@ import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 public class UyconfWebPathMgrTestCase extends BaseCoreTestCase {
 

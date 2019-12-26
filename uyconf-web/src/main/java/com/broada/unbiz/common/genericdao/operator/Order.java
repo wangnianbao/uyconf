@@ -1,13 +1,13 @@
 /**
  * adx-common#com.baidu.ub.common.generic.dao.operator.Order.java
- * 下午2:53:44 created by Darwin(Tianxin)
+ * 下午2:53:44 created by jay
  */
 package com.broada.unbiz.common.genericdao.operator;
 
 /**
  * 排序
  *
- * @author Darwin(Tianxin)
+ * @author jay
  */
 public class Order implements Pair {
 

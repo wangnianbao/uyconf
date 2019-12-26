@@ -30,7 +30,7 @@ import com.broada.ub.common.commons.ThreadContext;
 
 /**
  * @author wnb
- * 14-1-20
+ *
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/account")

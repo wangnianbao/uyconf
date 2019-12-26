@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  * Uyconf 系统自带的配置
  *
  * @author wnb
- * 14-6-6
+ *
  */
 public class UyClientSysConfig {
 

@@ -7,7 +7,7 @@ import com.broada.dsp.common.constant.ModuleCode;
 
 /**
  * @author wnb
- * 13-12-2
+ *
  */
 public interface Codeable extends Serializable {
 

@@ -4,7 +4,7 @@ package com.broada.uyconf.client.core;
  * 核心处理模块：包括第一次扫描时配置入库; 第二次扫描时配置注入;
  *
  * @author wnb
- * 14-6-10
+ *
  */
 public interface UyconfCoreMgr {
 

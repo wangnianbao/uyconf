@@ -35,7 +35,7 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
      * Redis配置文件
      * 
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @Service
     @Scope("singleton")
@@ -118,7 +118,7 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
      * 一个简单的Redis服务
      * 
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @Service
     @Scope("singleton")
@@ -193,7 +193,7 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
      * 演示分布式配置文件、分布式配置的更新Demo
      * 
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @Service
     public class DisconfDemoTask {
@@ -295,7 +295,7 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
      * Redis配置文件
      *
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @Service
     @Scope("singleton")

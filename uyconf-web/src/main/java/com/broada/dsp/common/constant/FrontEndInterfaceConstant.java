@@ -4,7 +4,7 @@ package com.broada.dsp.common.constant;
  * 前后端接口常量
  *
  * @author wnb
- * 13-12-4
+ *
  */
 public class FrontEndInterfaceConstant {
 

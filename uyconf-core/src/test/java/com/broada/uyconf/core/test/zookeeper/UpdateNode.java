@@ -12,7 +12,7 @@ import com.broada.uyconf.core.common.zookeeper.inner.ResilientActiveKeyValueStor
  * 更新 结点
  *
  * @author wnb
- * 14-6-16
+ *
  */
 public class UpdateNode {
 

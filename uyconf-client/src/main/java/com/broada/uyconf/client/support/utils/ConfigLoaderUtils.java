@@ -18,7 +18,7 @@ import com.broada.uyconf.core.common.utils.ClassLoaderUtil;
  * 配置导入工具
  *
  * @author wnb
- * 14-6-6
+ *
  */
 public final class ConfigLoaderUtils {
 

@@ -99,7 +99,7 @@ Disconf支持配置项(配置项是指 一个类的某个域变量)的分布式�
      * 金融宝服务，计算一天赚多少钱
      * 
      * @author wnb
-     * 14-5-16
+     *
      */
     @Service
     public class BaoBaoService {
@@ -155,7 +155,7 @@ SimpleRedisServiceUpdateCallback 类，完整的代码如下：
      * 更新Redis配置时的回调函数
      * 
      * @author wnb
-     * @author 2019-12-23
+     *
      */
     @Service
     @DisconfUpdateService(classes = { JedisConfig.class }, itemKeys = { Coefficients.key })
@@ -237,7 +237,7 @@ discountRate，BaoBaoService.java 则是一个使用 discountRate
     /**
      * 
      * @author wnb
-     * 14-5-16
+     *
      */
     @Service
     public class BaoBaoService {

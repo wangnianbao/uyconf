@@ -51,7 +51,7 @@ import com.github.knightliao.apollo.utils.time.DateUtils;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 @Service
 public class ConfigMgrImpl implements ConfigMgr {

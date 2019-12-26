@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 生成测试用户SQL的工具（不会写进数据库里，只是单纯的生成SQL）
  *
  * @author wnb
- * 14-2-8
+ *
  */
 public class UserCreateTools {
 

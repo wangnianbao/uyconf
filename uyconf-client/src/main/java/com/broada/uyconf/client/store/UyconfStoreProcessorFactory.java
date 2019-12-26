@@ -8,7 +8,7 @@ import com.broada.uyconf.client.store.processor.impl.UyconfStorePipelineProcesso
  * 仓库算子仓库
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public class UyconfStoreProcessorFactory {
 

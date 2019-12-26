@@ -16,7 +16,7 @@ import com.broada.uyconf.client.config.inner.UyInnerConfigAnnotation;
  * 配置导入工具
  *
  * @author wnb
- * 14-6-6
+ *
  */
 public final class UyconfAutowareConfig {
 

@@ -1,11 +1,11 @@
 /**
  * unbiz-genericdao#com.baidu.unbiz.common.genericdao.params.Params.java
- * 下午1:11:15 created by Darwin(Tianxin)
+ * 下午1:11:15 created by jay
  */
 package com.broada.unbiz.common.genericdao.param;
 
 /**
- * @author Darwin(Tianxin)
+ * @author jay
  */
 
 public class Params {
@@ -16,7 +16,7 @@ public class Params {
      * @param start
      * @param end
      *
-     * @return 上午10:24:53 created by Darwin(Tianxin)
+     * @return 上午10:24:53 created by jay
      */
     public static Object between(Object start, Object end) {
         return new BetweenParam(start, end);
@@ -27,7 +27,7 @@ public class Params {
      *
      * @param value
      *
-     * @return 上午10:32:37 created by Darwin(Tianxin)
+     * @return 上午10:32:37 created by jay
      */
     public static Object greaterThan(Object value) {
         return new GreaterThanParam(value);
@@ -38,7 +38,7 @@ public class Params {
      *
      * @param value
      *
-     * @return 上午10:32:37 created by Darwin(Tianxin)
+     * @return 上午10:32:37 created by jay
      */
     public static Object gte(Object value) {
         return new GteParam(value);
@@ -49,7 +49,7 @@ public class Params {
      *
      * @param value
      *
-     * @return 上午10:32:52 created by Darwin(Tianxin)
+     * @return 上午10:32:52 created by jay
      */
     public static Object lessThan(Object value) {
         return new LessThanParam(value);
@@ -60,7 +60,7 @@ public class Params {
      *
      * @param value
      *
-     * @return 上午10:32:52 created by Darwin(Tianxin)
+     * @return 上午10:32:52 created by jay
      */
     public static Object lte(Object value) {
         return new LteParam(value);
@@ -69,7 +69,7 @@ public class Params {
     /**
      * 构造表达式参数
      *
-     * @return 上午10:33:02 created by Darwin(Tianxin)
+     * @return 上午10:33:02 created by jay
      */
     public static Object express() {
         return new ExpressionParam();
@@ -80,7 +80,7 @@ public class Params {
      *
      * @param value
      *
-     * @return 上午10:33:11 created by Darwin(Tianxin)
+     * @return 上午10:33:11 created by jay
      */
     public static Object not(Object value) {
         return new NotParam(value);

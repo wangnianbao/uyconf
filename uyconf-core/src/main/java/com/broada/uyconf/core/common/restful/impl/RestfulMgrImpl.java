@@ -21,7 +21,7 @@ import com.broada.uyconf.core.common.utils.http.HttpClientUtil;
  * RestFul的一个实现, 独立模块
  *
  * @author wnb
- * 14-6-10
+ *
  */
 public class RestfulMgrImpl implements RestfulMgr {
 

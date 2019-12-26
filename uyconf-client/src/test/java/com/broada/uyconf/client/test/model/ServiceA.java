@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * 服务A，他使用的是 ConfA
  *
  * @author wnb
- * 14-5-16
+ *
  */
 @Service
 public class ServiceA {

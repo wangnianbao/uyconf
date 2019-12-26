@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author wnb
- * 14-7-30
+ *
  */
 public class ScanMgrTestCase extends BaseSpringTestCase {
 

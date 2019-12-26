@@ -7,7 +7,7 @@ import java.util.Map;
  * 角色分配
  *
  * @author wnb
- * 14-1-13
+ *
  */
 public enum RoleEnum {
 

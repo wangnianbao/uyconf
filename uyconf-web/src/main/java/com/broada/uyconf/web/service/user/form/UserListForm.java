@@ -4,7 +4,7 @@ import com.broada.dsp.common.form.RequestListBase;
 
 /**
  * @author wnb
- * 14-1-24
+ *
  */
 public class UserListForm extends RequestListBase {
 

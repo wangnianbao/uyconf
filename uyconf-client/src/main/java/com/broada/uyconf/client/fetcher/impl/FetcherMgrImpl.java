@@ -18,7 +18,7 @@ import com.broada.uyconf.core.common.utils.OsUtil;
  * 抓取器, 独立模块，不依赖外部模块, 由Factory来管理此实例
  *
  * @author wnb
- * 14-7-29
+ *
  */
 public class FetcherMgrImpl implements FetcherMgr {
 

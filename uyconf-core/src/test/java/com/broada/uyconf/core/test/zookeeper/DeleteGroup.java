@@ -10,7 +10,7 @@ import com.broada.uyconf.core.common.zookeeper.inner.ConnectionWatcher;
  * 递归进行删除
  *
  * @author wnb
- * 14-6-16
+ *
  */
 public class DeleteGroup extends ConnectionWatcher {
 

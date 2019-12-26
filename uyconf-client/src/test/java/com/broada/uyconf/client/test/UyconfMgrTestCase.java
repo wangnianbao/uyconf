@@ -38,7 +38,7 @@ import mockit.MockUp;
  * 一个Demo示例, 远程的下载服务器使用WireMOck, Watch模块使用Jmockit
  *
  * @author wnb
- * 14-6-10
+ *
  */
 public class UyconfMgrTestCase extends BaseSpringMockTestCase implements ApplicationContextAware {
 

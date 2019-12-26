@@ -157,14 +157,14 @@ public class ORMapping<ENTITY extends BaseObject<K>, K extends Serializable> {
     }
 
     /**
-     * @return 下午3:01:27 created by Darwin(Tianxin)
+     * @return 下午3:01:27 created by jay
      */
     public String getSKeyColumn() {
         return sKeyColumn;
     }
 
     /**
-     * @return 下午3:07:23 created by Darwin(Tianxin)
+     * @return 下午3:07:23 created by jay
      */
     public String getTable() {
         return this.table;

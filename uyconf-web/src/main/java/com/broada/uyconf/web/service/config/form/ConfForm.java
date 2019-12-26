@@ -4,7 +4,7 @@ import com.broada.dsp.common.form.RequestFormBase;
 
 /**
  * @author wnb
- * 14-1-24
+ *
  */
 public class ConfForm extends RequestFormBase {
 

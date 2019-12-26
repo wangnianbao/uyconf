@@ -6,7 +6,7 @@ import com.broada.uyconf.client.scan.inner.statically.impl.StaticScannerNonAnnot
 
 /**
  * @author wnb
- * 14-9-9
+ *
  */
 public class StaticScannerMgrFactory {
 

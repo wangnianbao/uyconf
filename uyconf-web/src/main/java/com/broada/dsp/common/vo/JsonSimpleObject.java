@@ -6,7 +6,7 @@ import com.broada.dsp.common.constant.FrontEndInterfaceConstant;
  * 顶层结构的成功返回
  *
  * @author wnb
- * 14-1-21
+ *
  */
 public class JsonSimpleObject extends JsonObjectBase {
 

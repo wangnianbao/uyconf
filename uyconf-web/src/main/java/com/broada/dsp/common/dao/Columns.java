@@ -2,7 +2,7 @@ package com.broada.dsp.common.dao;
 
 /**
  * @author wnb
- * 14-1-14
+ *
  */
 public class Columns {
 

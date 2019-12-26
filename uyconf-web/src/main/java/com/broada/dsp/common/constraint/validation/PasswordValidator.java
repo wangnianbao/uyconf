@@ -7,7 +7,7 @@ import com.broada.dsp.common.constraint.PasswordConstraint;
 
 /**
  * @author wnb
- * 14-1-14
+ *
  */
 public class PasswordValidator implements ConstraintValidator<PasswordConstraint, String> {
 

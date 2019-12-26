@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author wnb
- * 14-4-23
+ *
  */
 public class IpUtils {
 

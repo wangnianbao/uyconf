@@ -9,7 +9,7 @@ import com.broada.dsp.common.dao.Columns;
 
 /**
  * @author wnb
- * 13-11-28
+ *
  */
 @Repository
 public class UserDaoImpl extends AbstractDao<Long, User> implements UserDao {

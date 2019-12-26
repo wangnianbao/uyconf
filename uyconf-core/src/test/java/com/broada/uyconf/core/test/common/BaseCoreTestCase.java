@@ -20,7 +20,7 @@ import com.github.tomakehurst.wiremock.junit.WireMockClassRule;
 
 /**
  * @author wnb
- * 14-6-11
+ *
  */
 public class BaseCoreTestCase {
 

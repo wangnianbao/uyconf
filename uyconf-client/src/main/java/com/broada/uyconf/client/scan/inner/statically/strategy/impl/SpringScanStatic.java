@@ -9,7 +9,7 @@ import com.broada.uyconf.client.scan.inner.statically.model.ScanStaticModel;
 import com.broada.uyconf.client.scan.inner.statically.strategy.ScanStaticStrategy;
 
 /**
- * Created by wnb on 15/1/23.
+ *Created by miniking
  */
 public class SpringScanStatic implements ScanStaticStrategy {
 

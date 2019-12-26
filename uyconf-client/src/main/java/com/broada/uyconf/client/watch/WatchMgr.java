@@ -8,7 +8,7 @@ import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
  * 监控的接口
  *
  * @author wnb
- * 14-7-29
+ *
  */
 public interface WatchMgr {
 

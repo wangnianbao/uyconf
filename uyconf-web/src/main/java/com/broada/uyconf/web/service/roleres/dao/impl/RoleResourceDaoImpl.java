@@ -8,7 +8,7 @@ import com.broada.dsp.common.dao.AbstractDao;
 
 /**
  * @author wnb
- *  2013-12-20 涓嬪崍6:35:04
+ *  200 涓嬪崍6:35:04
  */
 @Repository
 public class RoleResourceDaoImpl extends AbstractDao<Integer, RoleResource> implements RoleResourceDao {

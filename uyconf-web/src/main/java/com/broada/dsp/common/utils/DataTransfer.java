@@ -4,7 +4,7 @@ package com.broada.dsp.common.utils;
  * 数据转接接口
  *
  * @author wnb
- * 14-2-20
+ *
  */
 public interface DataTransfer<ENTITYFROM, ENTITYTO> {
 

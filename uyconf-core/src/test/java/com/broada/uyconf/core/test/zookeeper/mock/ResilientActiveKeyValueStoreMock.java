@@ -16,7 +16,7 @@ import com.google.common.collect.Maps;
  * Store的Mock
  *
  * @author wnb
- * 14-7-30
+ *
  */
 public class ResilientActiveKeyValueStoreMock extends ResilientActiveKeyValueStore {
 

@@ -16,7 +16,7 @@ import com.github.knightliao.apollo.utils.web.CookieUtils;
 
 /**
  * @author wnb
- * 14-2-4
+ *
  */
 public class RedisLoginImpl implements RedisLogin {
 

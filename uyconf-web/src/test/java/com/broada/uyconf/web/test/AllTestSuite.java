@@ -9,7 +9,7 @@ import com.broada.uyconf.web.test.service.config.dao.ConfigDaoTestCase;
 /**
  * 
  * @author wnb
- * 14-1-14
+ *
  */
 @RunWith(Suite.class)
 @SuiteClasses({ ConfigDaoTestCase.class })

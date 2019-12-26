@@ -15,7 +15,7 @@ import com.github.knightliao.apollo.utils.common.StringUtil;
 
 /**
  * @author wnb
- * 13-11-26
+ *
  */
 public class Visitor extends BaseObject<Long> implements Serializable {
 

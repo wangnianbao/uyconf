@@ -8,7 +8,7 @@ import com.broada.uyconf.web.innerapi.zookeeper.ZooKeeperDriver;
 import com.broada.uyconf.web.service.zookeeper.dto.ZkUyconfData;
 
 /**
- * Created by wnb on 15/1/14.
+ * Created by wnb
  */
 public class ZookeeperDriverMock implements ZooKeeperDriver {
 

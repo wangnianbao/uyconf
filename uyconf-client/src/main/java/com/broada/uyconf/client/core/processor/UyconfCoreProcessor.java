@@ -4,7 +4,7 @@ package com.broada.uyconf.client.core.processor;
  * 处理算子
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public interface UyconfCoreProcessor {
 

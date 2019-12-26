@@ -8,7 +8,7 @@ import com.broada.dsp.common.exception.base.RuntimeGlobalException;
  * 数据库异常错误
  *
  * @author wnb
- * 14-6-24
+ *
  */
 public class DaoException extends RuntimeGlobalException {
 

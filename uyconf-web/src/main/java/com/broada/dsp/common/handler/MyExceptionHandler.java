@@ -38,7 +38,7 @@ import com.github.knightliao.apollo.utils.io.FileUtils;
 
 /**
  * @author wnb
- * 13-12-2
+ *
  */
 @Service
 public class MyExceptionHandler extends SimpleMappingExceptionResolver implements ApplicationContextAware {

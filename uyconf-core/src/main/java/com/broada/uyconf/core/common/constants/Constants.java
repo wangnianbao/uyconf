@@ -2,7 +2,7 @@ package com.broada.uyconf.core.common.constants;
 
 /**
  * @author wnb
- * 14-6-6
+ *
  */
 public class Constants {
 

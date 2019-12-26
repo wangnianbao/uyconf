@@ -12,7 +12,7 @@ import com.broada.uyconf.client.watch.WatchMgr;
  * Core模块的工厂类
  *
  * @author wnb
- * 14-7-29
+ *
  */
 public class UyconfCoreFactory {
 

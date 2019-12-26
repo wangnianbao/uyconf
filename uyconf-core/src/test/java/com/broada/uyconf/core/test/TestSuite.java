@@ -12,7 +12,7 @@ import com.broada.uyconf.core.test.utils.MyStringUtilsTestCase;
 
 /**
  * @author wnb
- * 14-7-30
+ *
  */
 @RunWith(Suite.class)
 @SuiteClasses({ UyconfWebPathMgrTestCase.class, ZooPathMgrTestCase.class, RestfulMgrTestCase.class,

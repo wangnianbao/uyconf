@@ -158,7 +158,7 @@ UyconfMgrBean的扫描主要是静态数据的初始化，并未涉及到动态�
      * Redis配置文件
      *
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @Service
     @Scope("singleton")
@@ -239,7 +239,7 @@ UyconfMgrBean的扫描主要是静态数据的初始化，并未涉及到动态�
      * 更新Redis配置时的回调函数
      *
      * @author wnb
-     * @author 2019-12-23
+     * 
      */
     @Service
     @Scope("singleton")
@@ -372,7 +372,7 @@ uyconf-cient使用Spring AOP拦截 系统里所有含有@UyconfFileItem注解的
      * 金融宝服务，计算一天赚多少钱
      *
      * @author wnb
-     * 14-5-16
+     * 
      */
     @Service
     public class BaoBaoService {

@@ -12,7 +12,7 @@ import com.broada.uyconf.client.common.update.IUyconfUpdatePipeline;
  * 动态扫描对象
  *
  * @author wnb
- * 14-6-18
+ *
  */
 public class ScanDynamicModel {
 

@@ -20,7 +20,7 @@ import com.broada.uyconf.client.store.inner.UyconfCenterStore;
  * 配置项仓库算子实现器
  *
  * @author wnb
- * 14-8-4
+ *
  */
 public class UyconfStoreItemProcessorImpl implements UyconfStoreProcessor {
 

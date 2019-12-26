@@ -8,7 +8,7 @@ import com.github.knightliao.apollo.db.bo.BaseObject;
 
 /**
  * @author wnb
- *  2013-12-24 下午2:43:37
+ *  204 下午2:43:37
  */
 @Table(db = DB.DB_NAME, keyColumn = Columns.ROLE_ID, name = "role")
 public class Role extends BaseObject<Integer> {

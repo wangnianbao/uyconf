@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 封装一个sql操作
  *
- * @author Darwin(Tianxin)
+ * @author jay
  */
 public class Query {
 

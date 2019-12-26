@@ -8,7 +8,7 @@ import com.broada.uyconf.web.service.user.dto.Visitor;
 
 /**
  * @author wnb
- * 14-2-4
+ *
  */
 public interface RedisLogin {
 

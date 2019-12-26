@@ -10,7 +10,7 @@ import com.broada.unbiz.common.genericdao.dao.BaseDao;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 public interface ConfigDao extends BaseDao<Long, Config> {
 

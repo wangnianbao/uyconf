@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  * ZK读写
  *
  * @author wnb
- * 14-7-7
+ *
  */
 public class ResilientActiveKeyValueStore extends ConnectionWatcher {
 

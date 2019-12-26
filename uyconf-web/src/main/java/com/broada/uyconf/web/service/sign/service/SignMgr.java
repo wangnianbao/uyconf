@@ -4,7 +4,7 @@ import com.broada.uyconf.web.service.user.bo.User;
 
 /**
  * @author wnb
- * 14-2-6
+ *
  */
 public interface SignMgr {
 

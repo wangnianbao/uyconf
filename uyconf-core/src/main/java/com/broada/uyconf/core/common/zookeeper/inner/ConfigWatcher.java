@@ -9,7 +9,7 @@ import org.apache.zookeeper.Watcher.Event.EventType;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 public class ConfigWatcher implements Watcher {
 

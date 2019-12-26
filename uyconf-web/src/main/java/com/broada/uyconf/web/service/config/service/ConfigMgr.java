@@ -13,7 +13,7 @@ import com.broada.ub.common.db.DaoPageResult;
 
 /**
  * @author wnb
- * 14-6-16
+ *
  */
 public interface ConfigMgr {
 
