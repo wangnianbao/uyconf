@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 /**
  * 文件操作的方法集
  *
- * @author liaoqiqi
- * @version 2014-8-20
+ * @author wnb
+ * 14-8-20
  */
 public final class FileUtils extends org.apache.commons.io.FileUtils {
 

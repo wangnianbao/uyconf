@@ -10,8 +10,8 @@ import com.broada.dsp.common.exception.base.RuntimeGlobalException;
 /**
  * 专门用业务逻辑校验出错的异常
  *
- * @author liaoqiqi
- * @version 2013-12-2
+ * @author wnb
+ * 13-12-2
  */
 public class FieldException extends RuntimeGlobalException {
 

@@ -21,8 +21,8 @@ import org.slf4j.LoggerFactory;
 /**
  * 简单邮件发送器
  *
- * @author liaoqiqi
- * @version 2014-3-2
+ * @author wnb
+ * 14-3-2
  */
 public class SimpleMailSender {
 

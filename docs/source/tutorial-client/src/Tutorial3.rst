@@ -34,9 +34,9 @@ Disconf支持配置项(配置项是指 一个类的某个域变量)的分布式�
     package com.example.disconf.demo.config;
     import org.springframework.beans.factory.annotation.Value;
     import org.springframework.stereotype.Service;
-    import com.broada.uyconf.client.common.annotations.DisconfFile;
-    import com.broada.uyconf.client.common.annotations.DisconfFileItem;
-    import com.broada.uyconf.client.common.annotations.DisconfItem;
+    import com.broada.uyconf.client.common.annotations.UyconfFile;
+    import com.broada.uyconf.client.common.annotations.UyconfFileItem;
+    import com.broada.uyconf.client.common.annotations.UyconfItem;
 
 
     /**
@@ -92,14 +92,14 @@ Disconf支持配置项(配置项是指 一个类的某个域变量)的分布式�
     import org.springframework.beans.factory.annotation.Value;
     import org.springframework.stereotype.Service;
 
-    import com.broada.uyconf.client.common.annotations.DisconfItem;
+    import com.broada.uyconf.client.common.annotations.UyconfItem;
     import com.example.disconf.demo.config.Coefficients;
 
     /**
      * 金融宝服务，计算一天赚多少钱
      * 
-     * @author liaoqiqi
-     * @version 2014-5-16
+     * @author wnb
+     * 14-5-16
      */
     @Service
     public class BaoBaoService {
@@ -146,16 +146,16 @@ SimpleRedisServiceUpdateCallback 类，完整的代码如下：
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Service;
 
-    import com.broada.uyconf.client.common.annotations.DisconfUpdateService;
-    import com.broada.uyconf.client.common.update.IDisconfUpdate;
+    import com.broada.uyconf.client.common.annotations.UyconfUpdateService;
+    import com.broada.uyconf.client.common.update.IUyconfUpdate;
     import com.example.disconf.demo.config.Coefficients;
     import com.example.disconf.demo.config.JedisConfig;
 
     /**
      * 更新Redis配置时的回调函数
      * 
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @DisconfUpdateService(classes = { JedisConfig.class }, itemKeys = { Coefficients.key })
@@ -231,13 +231,13 @@ discountRate，BaoBaoService.java 则是一个使用 discountRate
     import org.springframework.beans.factory.annotation.Value;
     import org.springframework.stereotype.Service;
 
-    import com.broada.uyconf.client.common.annotations.DisconfItem;
+    import com.broada.uyconf.client.common.annotations.UyconfItem;
     import com.example.disconf.demo.config.Coefficients;
 
     /**
      * 
-     * @author liaoqiqi
-     * @version 2014-5-16
+     * @author wnb
+     * 14-5-16
      */
     @Service
     public class BaoBaoService {

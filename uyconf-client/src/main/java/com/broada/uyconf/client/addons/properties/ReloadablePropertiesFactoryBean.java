@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import com.broada.uyconf.client.UyconfMgr;
 import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +17,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-
-import com.broada.uyconf.client.DisconfMgr;
 
 /**
  * A properties factory bean that creates a reconfigurable Properties object.
@@ -61,9 +60,9 @@ public class ReloadablePropertiesFactoryBean extends PropertiesFactoryBean imple
             String realFileName = getFileName(filename);
 
             //
-            // register to disconf
+            // register to uyconf
             //
-            DisconfMgr.getInstance().reloadableScan(realFileName);
+            UyconfMgr.getInstance().reloadableScan(realFileName);
 
             //
             // only properties will reload
@@ -247,6 +246,7 @@ public class ReloadablePropertiesFactoryBean extends PropertiesFactoryBean imple
     class ReloadablePropertiesImpl extends ReloadablePropertiesBase implements ReconfigurableBean {
 
         // reload myself
+        @Override
         public void reloadConfiguration() throws Exception {
             ReloadablePropertiesFactoryBean.this.reload(false);
         }

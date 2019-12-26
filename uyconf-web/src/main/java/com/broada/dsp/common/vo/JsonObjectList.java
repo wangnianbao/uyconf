@@ -9,8 +9,8 @@ import com.broada.ub.common.commons.ThreadContext;
 /**
  * JSON LIST
  *
- * @author liaoqiqi
- * @version 2013-12-3
+ * @author wnb
+ * 13-12-3
  */
 public class JsonObjectList extends JsonObjectBase {
 

@@ -1,8 +1,8 @@
 package com.broada.uyconf.web.web.auth.constant;
 
 /**
- * @author liaoqiqi
- * @version 2013-11-28
+ * @author wnb
+ * 13-11-28
  */
 public class LoginConstant {
 
@@ -14,7 +14,7 @@ public class LoginConstant {
     // 30天
     public static final int SESSION_EXPIRE_TIME2 = 3600 * 24 * 30;
 
-    public static final String XONE_COOKIE_NAME_STRING = "DISCONF";
+    public static final String XONE_COOKIE_NAME_STRING = "UYCONF";
 
     /**
      * 在Cookie的时间，一年

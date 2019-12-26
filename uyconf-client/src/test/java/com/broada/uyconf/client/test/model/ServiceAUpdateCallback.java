@@ -5,20 +5,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.broada.uyconf.client.common.annotations.DisconfUpdateService;
-import com.broada.uyconf.client.common.update.IDisconfUpdate;
+import com.broada.uyconf.client.common.annotations.UyconfUpdateService;
+import com.broada.uyconf.client.common.update.IUyconfUpdate;
 
 /**
  * 分布式配置服务回调函数<br/>
  * <p/>
- * 1. 使用了分布式配置文件 @DisconfUpdateService
+ * 1. 使用了分布式配置文件 @UyconfUpdateService
  *
- * @author liaoqiqi
- * @version 2014-5-22
+ * @author wnb
+ * 14-5-22
  */
 @Service("serviceAUpdateCallback")
-@DisconfUpdateService(classes = {ConfA.class}, itemKeys = {ServiceA.keyA})
-public class ServiceAUpdateCallback implements IDisconfUpdate {
+@UyconfUpdateService(classes = {ConfA.class}, itemKeys = {ServiceA.keyA})
+public class ServiceAUpdateCallback implements IUyconfUpdate {
 
     protected static final Logger LOGGER = LoggerFactory.getLogger(ServiceAUpdateCallback.class);
 
@@ -28,6 +28,7 @@ public class ServiceAUpdateCallback implements IDisconfUpdate {
     /**
      *
      */
+    @Override
     public void reload() throws Exception {
 
         LOGGER.info(String.valueOf(serviceA.calcMoneyA()));

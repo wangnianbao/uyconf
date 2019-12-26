@@ -7,8 +7,8 @@ import com.broada.unbiz.common.genericdao.annotation.Table;
 import com.github.knightliao.apollo.db.bo.BaseObject;
 
 /**
- * @author weiwei
- * @date 2013-12-24 下午2:43:37
+ * @author wnb
+ *  2013-12-24 下午2:43:37
  */
 @Table(db = DB.DB_NAME, keyColumn = Columns.ROLE_ID, name = "role")
 public class Role extends BaseObject<Integer> {

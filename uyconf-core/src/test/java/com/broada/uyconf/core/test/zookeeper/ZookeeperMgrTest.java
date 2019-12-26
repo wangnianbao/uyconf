@@ -15,8 +15,8 @@ import mockit.NonStrictExpectations;
 /**
  * 使用Jmockit进行测试
  *
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public class ZookeeperMgrTest {
 
@@ -60,7 +60,7 @@ public class ZookeeperMgrTest {
             int randomInt = random.nextInt();
 
             // 写
-            String url = "/disconfserver/dan_dnwebbilling_1_0_online";
+            String url = "/uyconfserver/dan_dnwebbilling_1_0_online";
             ZookeeperMgr.getInstance().writePersistentUrl(url, String.valueOf(randomInt));
 
             // 读

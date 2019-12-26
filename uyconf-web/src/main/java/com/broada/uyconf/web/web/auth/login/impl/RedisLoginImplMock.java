@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.broada.ub.common.commons.ThreadContext;
 
 /**
- * @author liaoqiqi
- * @version 2014-2-4
+ * @author wnb
+ * 14-2-4
  */
 public class RedisLoginImplMock implements RedisLogin {
 

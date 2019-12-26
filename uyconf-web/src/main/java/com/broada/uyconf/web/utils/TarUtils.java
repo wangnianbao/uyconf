@@ -17,8 +17,8 @@ import com.github.knightliao.apollo.utils.io.OsUtil;
 import com.github.knightliao.apollo.utils.time.DateUtils;
 
 /**
- * @author liaoqiqi
- * @version 2014-9-15
+ * @author wnb
+ * 14-9-15
  */
 public class TarUtils {
 

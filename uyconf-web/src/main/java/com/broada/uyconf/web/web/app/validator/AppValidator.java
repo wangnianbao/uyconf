@@ -11,8 +11,8 @@ import com.broada.dsp.common.exception.FieldException;
 /**
  * 权限验证
  *
- * @author liaoqiqi
- * @version 2014-7-2
+ * @author wnb
+ * 14-7-2
  */
 @Component
 public class AppValidator {

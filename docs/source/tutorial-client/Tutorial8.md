@@ -49,11 +49,11 @@ Tutorial 8 基于XML的分布式配置文件管理,自动reload
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <!-- 使用disconf必须添加以下配置 -->
-    <bean id="disconfMgrBean" class="com.broada.uyconf.client.DisconfMgrBean"
+    <bean id="disconfMgrBean" class="com.broada.uyconf.client.UyconfMgrBean"
           destroy-method="destroy">
         <property name="scanPackage" value="com.example.disconf.demo"/>
     </bean>
-    <bean id="disconfMgrBean2" class="com.broada.uyconf.client.DisconfMgrBeanSecond"
+    <bean id="disconfMgrBean2" class="com.broada.uyconf.client.UyconfMgrBeanSecond"
           init-method="init" destroy-method="destroy">
     </bean>
 
@@ -64,11 +64,11 @@ Tutorial 8 基于XML的分布式配置文件管理,自动reload
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <!-- 使用disconf必须添加以下配置 -->
-    <bean id="disconfMgrBean" class="com.broada.uyconf.client.DisconfMgrBean"
+    <bean id="disconfMgrBean" class="com.broada.uyconf.client.UyconfMgrBean"
           destroy-method="destroy">
         <property name="scanPackage" value="com.example.disconf.demo"/>
     </bean>
-    <bean id="disconfMgrBean2" class="com.broada.uyconf.client.DisconfMgrBeanSecond"
+    <bean id="disconfMgrBean2" class="com.broada.uyconf.client.UyconfMgrBeanSecond"
           init-method="init" destroy-method="destroy">
     </bean>
 

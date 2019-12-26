@@ -1,5 +1,6 @@
 package com.broada.uyconf.web.web.config.validator;
 
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.web.service.app.bo.App;
 import com.broada.uyconf.web.service.app.service.AppMgr;
 import com.broada.uyconf.web.service.config.bo.Config;
@@ -14,12 +15,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
 import com.broada.dsp.common.exception.FieldException;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Service
 public class ConfigValidator {
@@ -156,9 +156,9 @@ public class ConfigValidator {
      * 校验新建 配置
      *
      * @param confNewForm
-     * @param disConfigTypeEnum
+     * @param uyConfigTypeEnum
      */
-    public void validateNew(ConfNewItemForm confNewForm, DisConfigTypeEnum disConfigTypeEnum) {
+    public void validateNew(ConfNewItemForm confNewForm, UyConfigTypeEnum uyConfigTypeEnum) {
 
         //
         // app
@@ -183,7 +183,7 @@ public class ConfigValidator {
         // key
         //
         Config config = configFetchMgr.getConfByParameter(app.getId(), env.getId(), confNewForm.getVersion(),
-                confNewForm.getKey(), disConfigTypeEnum);
+                confNewForm.getKey(), uyConfigTypeEnum);
         if (config != null) {
             throw new FieldException(ConfNewItemForm.KEY, "key.exist", null);
         }

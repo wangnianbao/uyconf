@@ -2,15 +2,15 @@ package com.broada.uyconf.web.service.config.dao;
 
 import java.util.List;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.web.service.config.bo.Config;
 import com.broada.dsp.common.form.RequestListBase.Page;
 import com.broada.ub.common.db.DaoPageResult;
 import com.broada.unbiz.common.genericdao.dao.BaseDao;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public interface ConfigDao extends BaseDao<Long, Config> {
 
@@ -19,11 +19,11 @@ public interface ConfigDao extends BaseDao<Long, Config> {
      * @param envId
      * @param version
      * @param key
-     * @param disConfigTypeEnum
+     * @param uyConfigTypeEnum
      *
      * @return
      */
-    Config getByParameter(Long appId, Long envId, String version, String key, DisConfigTypeEnum disConfigTypeEnum);
+    Config getByParameter(Long appId, Long envId, String version, String key, UyConfigTypeEnum uyConfigTypeEnum);
 
     /**
      * @param

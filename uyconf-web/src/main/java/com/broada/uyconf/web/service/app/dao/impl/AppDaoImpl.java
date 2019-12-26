@@ -13,8 +13,8 @@ import com.broada.dsp.common.dao.Columns;
 import com.broada.unbiz.common.genericdao.operator.Match;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Service
 public class AppDaoImpl extends AbstractDao<Long, App> implements AppDao {

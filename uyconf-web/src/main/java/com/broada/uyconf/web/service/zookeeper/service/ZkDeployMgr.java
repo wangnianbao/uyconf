@@ -2,18 +2,18 @@ package com.broada.uyconf.web.service.zookeeper.service;
 
 import java.util.Map;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
-import com.broada.uyconf.web.service.zookeeper.dto.ZkDisconfData;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
+import com.broada.uyconf.web.service.zookeeper.dto.ZkUyconfData;
 
 /**
- * @author liaoqiqi
- * @version 2014-9-11
+ * @author wnb
+ * 14-9-11
  */
 public interface ZkDeployMgr {
 
     /**
-     * @param appId
-     * @param envId
+     * @param app
+     * @param env
      * @param version
      *
      * @return
@@ -27,7 +27,7 @@ public interface ZkDeployMgr {
      *
      * @return
      */
-    Map<String, ZkDisconfData> getZkDisconfDataMap(String app, String env, String version);
+    Map<String, ZkUyconfData> getZkUyconfDataMap(String app, String env, String version);
 
     /**
      * 获取指定的数据
@@ -38,6 +38,6 @@ public interface ZkDeployMgr {
      *
      * @return
      */
-    ZkDisconfData getZkDisconfData(String app, String env, String version, DisConfigTypeEnum disConfigTypeEnum,
-                                   String keyName);
+    ZkUyconfData getZkUyconfData(String app, String env, String version, UyConfigTypeEnum uyConfigTypeEnum,
+                                 String keyName);
 }

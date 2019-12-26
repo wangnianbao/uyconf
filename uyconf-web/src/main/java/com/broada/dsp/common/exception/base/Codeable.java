@@ -6,8 +6,8 @@ import com.broada.dsp.common.constant.ErrorCode;
 import com.broada.dsp.common.constant.ModuleCode;
 
 /**
- * @author liaoqiqi
- * @version 2013-12-2
+ * @author wnb
+ * 13-12-2
  */
 public interface Codeable extends Serializable {
 

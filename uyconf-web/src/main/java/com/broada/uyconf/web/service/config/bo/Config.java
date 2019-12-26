@@ -9,8 +9,8 @@ import com.github.knightliao.apollo.db.bo.BaseObject;
 import lombok.Data;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Data
 @Table(db = DB.DB_NAME, name = "config", keyColumn = Columns.CONFIG_ID)

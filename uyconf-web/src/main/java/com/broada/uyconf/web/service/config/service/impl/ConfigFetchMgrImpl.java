@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.broada.uyconf.core.common.constants.Constants;
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.core.common.json.ValueVo;
 import com.broada.uyconf.web.service.config.bo.Config;
 import com.broada.uyconf.web.service.config.dao.ConfigDao;
@@ -16,7 +16,7 @@ import com.broada.uyconf.web.service.config.service.ConfigFetchMgr;
 import com.broada.uyconf.web.service.config.utils.ConfigUtils;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 @Service
 public class ConfigFetchMgrImpl implements ConfigFetchMgr {
@@ -31,17 +31,18 @@ public class ConfigFetchMgrImpl implements ConfigFetchMgr {
      */
     @Override
     public Config getConfByParameter(Long appId, Long envId, String version, String key,
-                                     DisConfigTypeEnum disConfigTypeEnum) {
+                                     UyConfigTypeEnum uyConfigTypeEnum) {
 
-        return configDao.getByParameter(appId, envId, version, key, disConfigTypeEnum);
+        return configDao.getByParameter(appId, envId, version, key, uyConfigTypeEnum);
     }
 
     /**
      * 根据详细参数获取配置返回
      */
+    @Override
     public ValueVo getConfItemByParameter(Long appId, Long envId, String version, String key) {
 
-        Config config = configDao.getByParameter(appId, envId, version, key, DisConfigTypeEnum.ITEM);
+        Config config = configDao.getByParameter(appId, envId, version, key, UyConfigTypeEnum.ITEM);
         if (config == null) {
             return ConfigUtils.getErrorVo("cannot find this config");
         }
@@ -56,6 +57,7 @@ public class ConfigFetchMgrImpl implements ConfigFetchMgr {
     /**
      * 根据详细参数获取配置列表返回
      */
+    @Override
     public List<Config> getConfListByParameter(Long appId, Long envId, String version, Boolean hasValue) {
         return configDao.getConfigList(appId, envId, version, hasValue);
     }

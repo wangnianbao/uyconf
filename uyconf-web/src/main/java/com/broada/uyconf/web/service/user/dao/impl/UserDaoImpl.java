@@ -8,8 +8,8 @@ import com.broada.dsp.common.dao.AbstractDao;
 import com.broada.dsp.common.dao.Columns;
 
 /**
- * @author liaoqiqi
- * @version 2013-11-28
+ * @author wnb
+ * 13-11-28
  */
 @Repository
 public class UserDaoImpl extends AbstractDao<Long, User> implements UserDao {

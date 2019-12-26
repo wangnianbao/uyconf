@@ -13,8 +13,8 @@ import com.broada.uyconf.web.web.config.dto.ConfigFullModel;
 import com.broada.dsp.common.exception.FieldException;
 
 /**
- * @author liaoqiqi
- * @version 2014-9-11
+ * @author wnb
+ * 14-9-11
  */
 @Service
 public class ZkDeployValidator {

@@ -3,8 +3,8 @@ package com.broada.dsp.common.utils;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author liaoqiqi
- * @version 2014-4-23
+ * @author wnb
+ * 14-4-23
  */
 public class IpUtils {
 

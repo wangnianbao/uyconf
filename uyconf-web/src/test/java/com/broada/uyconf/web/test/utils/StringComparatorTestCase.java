@@ -13,7 +13,7 @@ import difflib.Chunk;
 
 /**
  * 
- * @author knightliao
+ * @author wnb
  * 
  */
 public class StringComparatorTestCase {

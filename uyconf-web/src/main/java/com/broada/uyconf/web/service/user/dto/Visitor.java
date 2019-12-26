@@ -14,8 +14,8 @@ import com.github.knightliao.apollo.db.bo.BaseObject;
 import com.github.knightliao.apollo.utils.common.StringUtil;
 
 /**
- * @author liaoqiqi
- * @version 2013-11-26
+ * @author wnb
+ * 13-11-26
  */
 public class Visitor extends BaseObject<Long> implements Serializable {
 

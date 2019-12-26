@@ -3,8 +3,8 @@ package com.broada.uyconf.web.service.zookeeper.form;
 import javax.validation.constraints.NotNull;
 
 /**
- * @author liaoqiqi
- * @version 2014-9-11
+ * @author wnb
+ * 14-9-11
  */
 public class ZkDeployForm {
 

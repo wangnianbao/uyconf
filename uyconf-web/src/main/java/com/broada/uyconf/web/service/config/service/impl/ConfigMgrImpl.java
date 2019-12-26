@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import com.broada.uyconf.web.innerapi.zookeeper.ZooKeeperDriver;
-import com.broada.uyconf.web.service.zookeeper.dto.ZkDisconfData;
+import com.broada.uyconf.web.service.zookeeper.dto.ZkUyconfData;
 import com.broada.uyconf.web.service.zookeeper.service.ZkDeployMgr;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.web.common.Constants;
 import com.broada.uyconf.web.config.ApplicationPropertyConfig;
 import com.broada.uyconf.web.service.app.bo.App;
@@ -50,8 +50,8 @@ import com.github.knightliao.apollo.utils.io.OsUtil;
 import com.github.knightliao.apollo.utils.time.DateUtils;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Service
 public class ConfigMgrImpl implements ConfigMgr {
@@ -109,7 +109,7 @@ public class ConfigMgrImpl implements ConfigMgr {
      *
      * @return
      */
-    public List<File> getDisconfFileList(ConfListForm confListForm) {
+    public List<File> getUyconfFileList(ConfListForm confListForm) {
 
         List<Config> configList =
                 configDao.getConfigList(confListForm.getAppId(), confListForm.getEnvId(), confListForm.getVersion(),true);
@@ -122,7 +122,7 @@ public class ConfigMgrImpl implements ConfigMgr {
         List<File> files = new ArrayList<File>();
         for (Config config : configList) {
 
-            if (config.getType().equals(DisConfigTypeEnum.FILE.getType())) {
+            if (config.getType().equals(UyConfigTypeEnum.FILE.getType())) {
 
                 File file = new File(curTime, config.getName());
                 try {
@@ -162,11 +162,11 @@ public class ConfigMgrImpl implements ConfigMgr {
         //
         //
         final boolean myFetchZk = fetchZk;
-        Map<String, ZkDisconfData> zkDataMap = new HashMap<String, ZkDisconfData>();
+        Map<String, ZkUyconfData> zkDataMap = new HashMap<String, ZkUyconfData>();
         if (myFetchZk) {
-            zkDataMap = zkDeployMgr.getZkDisconfDataMap(app.getName(), env.getName(), confListForm.getVersion());
+            zkDataMap = zkDeployMgr.getZkUyconfDataMap(app.getName(), env.getName(), confListForm.getVersion());
         }
-        final Map<String, ZkDisconfData> myzkDataMap = zkDataMap;
+        final Map<String, ZkUyconfData> myzkDataMap = zkDataMap;
 
         //
         // 进行转换
@@ -180,18 +180,18 @@ public class ConfigMgrImpl implements ConfigMgr {
                         String appNameString = app.getName();
                         String envName = env.getName();
 
-                        ZkDisconfData zkDisconfData = null;
+                        ZkUyconfData zkUyconfData = null;
                         if (myzkDataMap != null && myzkDataMap.keySet().contains(input.getName())) {
-                            zkDisconfData = myzkDataMap.get(input.getName());
+                            zkUyconfData = myzkDataMap.get(input.getName());
                         }
-                        ConfListVo configListVo = convert(input, appNameString, envName, zkDisconfData);
+                        ConfListVo configListVo = convert(input, appNameString, envName, zkUyconfData);
 
                         // 列表操作不要显示值, 为了前端显示快速(只是内存里操作)
                         if (!myFetchZk && !getErrorMessage) {
 
                             // 列表 value 设置为 ""
                             configListVo.setValue("");
-                            configListVo.setMachineList(new ArrayList<ZkDisconfData.ZkDisconfDataItem>());
+                            configListVo.setMachineList(new ArrayList<ZkUyconfData.ZkUyconfDataItem>());
                         }
 
                         return configListVo;
@@ -204,17 +204,17 @@ public class ConfigMgrImpl implements ConfigMgr {
     /**
      * 获取ZK data
      */
-    private MachineListVo getZkData(List<ZkDisconfData.ZkDisconfDataItem> datalist, Config config) {
+    private MachineListVo getZkData(List<ZkUyconfData.ZkUyconfDataItem> datalist, Config config) {
 
         int errorNum = 0;
-        for (ZkDisconfData.ZkDisconfDataItem zkDisconfDataItem : datalist) {
+        for (ZkUyconfData.ZkUyconfDataItem zkUyconfDataItem : datalist) {
 
-            if (config.getType().equals(DisConfigTypeEnum.FILE.getType())) {
+            if (config.getType().equals(UyConfigTypeEnum.FILE.getType())) {
 
-                List<String> errorKeyList = compareConfig(zkDisconfDataItem.getValue(), config.getValue());
+                List<String> errorKeyList = compareConfig(zkUyconfDataItem.getValue(), config.getValue());
 
                 if (errorKeyList.size() != 0) {
-                    zkDisconfDataItem.setErrorList(errorKeyList);
+                    zkUyconfDataItem.setErrorList(errorKeyList);
                     errorNum++;
                 }
             } else {
@@ -223,12 +223,12 @@ public class ConfigMgrImpl implements ConfigMgr {
                 // 配置项
                 //
 
-                if (zkDisconfDataItem.getValue().trim().equals(config.getValue().trim())) {
+                if (zkUyconfDataItem.getValue().trim().equals(config.getValue().trim())) {
 
                 } else {
                     List<String> errorKeyList = new ArrayList<String>();
                     errorKeyList.add(config.getValue().trim());
-                    zkDisconfDataItem.setErrorList(errorKeyList);
+                    zkUyconfDataItem.setErrorList(errorKeyList);
                     errorNum++;
                 }
             }
@@ -249,7 +249,7 @@ public class ConfigMgrImpl implements ConfigMgr {
      *
      * @return
      */
-    private ConfListVo convert(Config config, String appNameString, String envName, ZkDisconfData zkDisconfData) {
+    private ConfListVo convert(Config config, String appNameString, String envName, ZkUyconfData zkUyconfData) {
 
         ConfListVo confListVo = new ConfListVo();
 
@@ -264,17 +264,17 @@ public class ConfigMgrImpl implements ConfigMgr {
         // StringEscapeUtils.escapeHtml escape
         confListVo.setValue(CodeUtils.unicodeToUtf8(config.getValue()));
         confListVo.setVersion(config.getVersion());
-        confListVo.setType(DisConfigTypeEnum.getByType(config.getType()).getModelName());
+        confListVo.setType(UyConfigTypeEnum.getByType(config.getType()).getModelName());
         confListVo.setTypeId(config.getType());
 
         //
         //
         //
-        if (zkDisconfData != null) {
+        if (zkUyconfData != null) {
 
-            confListVo.setMachineSize(zkDisconfData.getData().size());
+            confListVo.setMachineSize(zkUyconfData.getData().size());
 
-            List<ZkDisconfData.ZkDisconfDataItem> datalist = zkDisconfData.getData();
+            List<ZkUyconfData.ZkUyconfDataItem> datalist = zkUyconfData.getData();
 
             MachineListVo machineListVo = getZkData(datalist, config);
 
@@ -377,19 +377,19 @@ public class ConfigMgrImpl implements ConfigMgr {
         //
         //
 
-        DisConfigTypeEnum disConfigTypeEnum = DisConfigTypeEnum.FILE;
-        if (config.getType().equals(DisConfigTypeEnum.ITEM.getType())) {
-            disConfigTypeEnum = DisConfigTypeEnum.ITEM;
+        UyConfigTypeEnum uyConfigTypeEnum = UyConfigTypeEnum.FILE;
+        if (config.getType().equals(UyConfigTypeEnum.ITEM.getType())) {
+            uyConfigTypeEnum = UyConfigTypeEnum.ITEM;
         }
 
-        ZkDisconfData zkDisconfData = zkDeployMgr.getZkDisconfData(app.getName(), env.getName(), config.getVersion(),
-                disConfigTypeEnum, config.getName());
+        ZkUyconfData zkUyconfData = zkDeployMgr.getZkUyconfData(app.getName(), env.getName(), config.getVersion(),
+                uyConfigTypeEnum, config.getName());
 
-        if (zkDisconfData == null) {
+        if (zkUyconfData == null) {
             return new MachineListVo();
         }
 
-        MachineListVo machineListVo = getZkData(zkDisconfData.getData(), config);
+        MachineListVo machineListVo = getZkData(zkUyconfData.getData(), config);
         return machineListVo;
     }
 
@@ -476,16 +476,16 @@ public class ConfigMgrImpl implements ConfigMgr {
 
         ConfListVo confListVo = getConfVo(configId);
 
-        if (confListVo.getTypeId().equals(DisConfigTypeEnum.FILE.getType())) {
+        if (confListVo.getTypeId().equals(UyConfigTypeEnum.FILE.getType())) {
 
             zooKeeperDriver.notifyNodeUpdate(confListVo.getAppName(), confListVo.getEnvName(), confListVo.getVersion(),
                     confListVo.getKey(), GsonUtils.toJson(confListVo.getValue()),
-                    DisConfigTypeEnum.FILE);
+                    UyConfigTypeEnum.FILE);
 
         } else {
 
             zooKeeperDriver.notifyNodeUpdate(confListVo.getAppName(), confListVo.getEnvName(), confListVo.getVersion(),
-                    confListVo.getKey(), confListVo.getValue(), DisConfigTypeEnum.ITEM);
+                    confListVo.getKey(), confListVo.getValue(), UyConfigTypeEnum.ITEM);
         }
 
     }
@@ -502,14 +502,14 @@ public class ConfigMgrImpl implements ConfigMgr {
      * 新建配置
      */
     @Override
-    public void newConfig(ConfNewItemForm confNewForm, DisConfigTypeEnum disConfigTypeEnum) {
+    public void newConfig(ConfNewItemForm confNewForm, UyConfigTypeEnum uyConfigTypeEnum) {
 
         Config config = new Config();
 
         config.setAppId(confNewForm.getAppId());
         config.setEnvId(confNewForm.getEnvId());
         config.setName(confNewForm.getKey());
-        config.setType(disConfigTypeEnum.getType());
+        config.setType(uyConfigTypeEnum.getType());
         config.setVersion(confNewForm.getVersion());
         config.setValue(CodeUtils.utf8ToUnicode(confNewForm.getValue()));
         config.setStatus(Constants.STATUS_NORMAL);

@@ -15,7 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by knightliao on 16/1/7.
+ * Created by wnb on 16/1/7.
  */
 public class HttpClientUtil {
 
@@ -111,8 +111,8 @@ public class HttpClientUtil {
      * @return void
      *
      * @Description：关闭
-     * @author liaoqiqi
-     * @date 2013-6-16
+     * @author wnb
+     *  2013-6-16
      */
     public static void close() {
 

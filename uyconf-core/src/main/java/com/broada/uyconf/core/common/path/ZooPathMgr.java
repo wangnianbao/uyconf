@@ -5,8 +5,8 @@ import com.broada.uyconf.core.common.constants.Constants;
 /**
  * Zoo path 管理
  *
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public class ZooPathMgr {
 
@@ -14,8 +14,8 @@ public class ZooPathMgr {
      * @return String
      *
      * @Description: 获取ZOOKEEPER的应用基础路径
-     * @author liaoqiqi
-     * @date 2013-6-17
+     * @author wnb
+     *  2013-6-17
      */
     public static String getZooBaseUrl(String urlPrefix, String app, String env, String version) {
 
@@ -47,9 +47,9 @@ public class ZooPathMgr {
     /**
      * @return String
      *
-     * @Description: 获取 Disconf ITEM ZOO Path
-     * @author liaoqiqi
-     * @date 2013-6-17
+     * @Description: 获取 Uyconf ITEM ZOO Path
+     * @author wnb
+     *  2013-6-17
      */
     public static String getItemZooPath(String baseUrl) {
 
@@ -59,9 +59,9 @@ public class ZooPathMgr {
     /**
      * @return String
      *
-     * @Description: 获取 Disconf FILE ZOO Path
-     * @author liaoqiqi
-     * @date 2013-6-17
+     * @Description: 获取 Uyconf FILE ZOO Path
+     * @author wnb
+     *  2013-6-17
      */
     public static String getFileZooPath(String baseUrl) {
 

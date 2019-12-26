@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding=utf8
 """
-@author: liaoqiqi
+@author: wnb
 
 93b9e2669a8965572610063d07559e6d
 

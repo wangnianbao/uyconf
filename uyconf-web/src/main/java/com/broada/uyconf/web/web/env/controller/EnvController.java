@@ -17,8 +17,8 @@ import com.broada.dsp.common.controller.BaseController;
 import com.broada.dsp.common.vo.JsonObjectBase;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/env")

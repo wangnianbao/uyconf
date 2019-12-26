@@ -9,8 +9,8 @@ import com.broada.dsp.common.constant.FrontEndInterfaceConstant;
 /**
  * 错误类
  *
- * @author liaoqiqi
- * @version 2013-12-3
+ * @author wnb
+ * 13-12-3
  */
 public class JsonObjectError extends JsonObjectBase {
 

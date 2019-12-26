@@ -1,5 +1,7 @@
 package com.broada.uyconf.client.watch.inner;
 
+import com.broada.uyconf.client.core.processor.UyconfCoreProcessor;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -9,15 +11,13 @@ import org.apache.zookeeper.data.Stat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.broada.uyconf.client.core.processor.DisconfCoreProcessor;
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
 import com.broada.uyconf.core.common.zookeeper.ZookeeperMgr;
 
 /**
  * 结点监控器
  *
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public class NodeWatcher implements Watcher {
 
@@ -25,25 +25,25 @@ public class NodeWatcher implements Watcher {
 
     private String monitorPath = "";
     private String keyName = "";
-    private DisConfigTypeEnum disConfigTypeEnum;
-    private DisconfSysUpdateCallback disconfSysUpdateCallback;
+    private UyConfigTypeEnum uyConfigTypeEnum;
+    private UyconfSysUpdateCallback uyconfSysUpdateCallback;
     private boolean debug;
 
-    private DisconfCoreProcessor disconfCoreMgr;
+    private UyconfCoreProcessor uyconfCoreMgr;
 
     /**
      */
-    public NodeWatcher(DisconfCoreProcessor disconfCoreMgr, String monitorPath, String keyName,
-                       DisConfigTypeEnum disConfigTypeEnum, DisconfSysUpdateCallback disconfSysUpdateCallback,
+    public NodeWatcher(UyconfCoreProcessor uyconfCoreMgr, String monitorPath, String keyName,
+                       UyConfigTypeEnum uyConfigTypeEnum, UyconfSysUpdateCallback uyconfSysUpdateCallback,
                        boolean debug) {
 
         super();
         this.debug = debug;
-        this.disconfCoreMgr = disconfCoreMgr;
+        this.uyconfCoreMgr = uyconfCoreMgr;
         this.monitorPath = monitorPath;
         this.keyName = keyName;
-        this.disConfigTypeEnum = disConfigTypeEnum;
-        this.disconfSysUpdateCallback = disconfSysUpdateCallback;
+        this.uyConfigTypeEnum = uyConfigTypeEnum;
+        this.uyconfSysUpdateCallback = uyconfSysUpdateCallback;
     }
 
     /**
@@ -66,7 +66,7 @@ public class NodeWatcher implements Watcher {
             LOGGER.error("cannot monitor " + monitorPath, e);
         }
 
-        LOGGER.debug("monitor path: (" + monitorPath + "," + keyName + "," + disConfigTypeEnum.getModelName() +
+        LOGGER.debug("monitor path: (" + monitorPath + "," + keyName + "," + uyConfigTypeEnum.getModelName() +
                 ") has been added!");
     }
 
@@ -84,7 +84,7 @@ public class NodeWatcher implements Watcher {
             try {
 
                 LOGGER.info("============GOT UPDATE EVENT " + event.toString() + ": (" + monitorPath + "," + keyName
-                        + "," + disConfigTypeEnum.getModelName() + ")======================");
+                        + "," + uyConfigTypeEnum.getModelName() + ")======================");
 
                 // 调用回调函数, 回调函数里会重新进行监控
                 callback();
@@ -102,13 +102,13 @@ public class NodeWatcher implements Watcher {
 
             if (!debug) {
                 LOGGER.warn("============GOT Disconnected EVENT " + event.toString() + ": (" + monitorPath + ","
-                        + keyName + "," + disConfigTypeEnum.getModelName() + ")======================");
+                        + keyName + "," + uyConfigTypeEnum.getModelName() + ")======================");
             } else {
                 LOGGER.debug("============DEBUG MODE: GOT Disconnected EVENT " + event.toString() + ": (" +
                         monitorPath +
                         "," +
                         keyName +
-                        "," + disConfigTypeEnum.getModelName() + ")======================");
+                        "," + uyConfigTypeEnum.getModelName() + ")======================");
             }
         }
 
@@ -120,7 +120,7 @@ public class NodeWatcher implements Watcher {
             if (!debug) {
 
                 LOGGER.error("============GOT Expired  " + event.toString() + ": (" + monitorPath + "," + keyName
-                        + "," + disConfigTypeEnum.getModelName() + ")======================");
+                        + "," + uyConfigTypeEnum.getModelName() + ")======================");
 
                 // 重新连接
                 ZookeeperMgr.getInstance().reconnect();
@@ -128,7 +128,7 @@ public class NodeWatcher implements Watcher {
                 callback();
             } else {
                 LOGGER.debug("============DEBUG MODE: GOT Expired  " + event.toString() + ": (" + monitorPath + ","
-                        + "" + keyName + "," + disConfigTypeEnum.getModelName() + ")======================");
+                        + "" + keyName + "," + uyConfigTypeEnum.getModelName() + ")======================");
             }
         }
     }
@@ -142,7 +142,7 @@ public class NodeWatcher implements Watcher {
 
             // 调用回调函数, 回调函数里会重新进行监控
             try {
-                disconfSysUpdateCallback.reload(disconfCoreMgr, disConfigTypeEnum, keyName);
+                uyconfSysUpdateCallback.reload(uyconfCoreMgr, uyConfigTypeEnum, keyName);
             } catch (Exception e) {
                 LOGGER.error(e.toString(), e);
             }

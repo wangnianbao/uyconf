@@ -5,8 +5,8 @@ import com.broada.uyconf.client.scan.inner.statically.impl.StaticScannerItemMgrI
 import com.broada.uyconf.client.scan.inner.statically.impl.StaticScannerNonAnnotationFileMgrImpl;
 
 /**
- * @author liaoqiqi
- * @version 2014-9-9
+ * @author wnb
+ * 14-9-9
  */
 public class StaticScannerMgrFactory {
 
@@ -14,7 +14,7 @@ public class StaticScannerMgrFactory {
      * 配置文件处理
 
      */
-    public static StaticScannerMgr getDisconfFileStaticScanner() {
+    public static StaticScannerMgr getUyconfFileStaticScanner() {
         return new StaticScannerFileMgrImpl();
     }
 
@@ -22,7 +22,7 @@ public class StaticScannerMgrFactory {
      * 配置项处理
 
      */
-    public static StaticScannerMgr getDisconfItemStaticScanner() {
+    public static StaticScannerMgr getUyconfItemStaticScanner() {
         return new StaticScannerItemMgrImpl();
     }
 
@@ -30,7 +30,7 @@ public class StaticScannerMgrFactory {
      * 非注解的配置文件处理
 
      */
-    public static StaticScannerMgr getDisconfNonAnnotationFileStaticScanner() {
+    public static StaticScannerMgr getUyconfNonAnnotationFileStaticScanner() {
         return new StaticScannerNonAnnotationFileMgrImpl();
     }
 

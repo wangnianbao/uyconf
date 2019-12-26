@@ -7,8 +7,8 @@ import org.springframework.aop.TargetSource;
 
 /**
  * 
- * @author liaoqiqi
- * @version 2014-1-26
+ * @author wnb
+ * 14-1-26
  */
 public final class PrivateMethodUtil {
 

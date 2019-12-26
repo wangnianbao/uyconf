@@ -20,8 +20,8 @@ import com.broada.uyconf.core.common.utils.http.HttpClientUtil;
 /**
  * RestFul的一个实现, 独立模块
  *
- * @author liaoqiqi
- * @version 2014-6-10
+ * @author wnb
+ * 14-6-10
  */
 public class RestfulMgrImpl implements RestfulMgr {
 
@@ -170,7 +170,7 @@ public class RestfulMgrImpl implements RestfulMgr {
             throws Exception {
 
         if (localFileDirTemp == null) {
-            localFileDirTemp = "./disconf/download";
+            localFileDirTemp = "./uyconf/download";
         }
         String tmpFilePath = OsUtil.pathJoin(localFileDirTemp, fileName);
         String tmpFilePathUnique = MyStringUtils.getRandomName(tmpFilePath);

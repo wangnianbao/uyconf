@@ -26,8 +26,8 @@ import com.broada.dsp.common.vo.JsonObjectUtils;
 import com.broada.ub.common.db.DaoPageResult;
 
 /**
- * @author liaoqiqi
- * @version 2013-11-26
+ * @author wnb
+ * 13-11-26
  */
 public class BaseController implements ApplicationContextAware {
 

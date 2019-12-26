@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 /**
  * OsUtil
  *
- * @author knightliao
+ * @author wnb
  */
 public final class OsUtil {
 
@@ -49,8 +49,8 @@ public final class OsUtil {
      *
      * @throws Exception
      * @Description: 文件或目录是否存在
-     * @author liaoqiqi
-     * @date 2013-6-13
+     * @author wnb
+     *  2013-6-13
      */
     public static boolean isFileExist(final String filePathString) throws Exception {
 
@@ -65,8 +65,8 @@ public final class OsUtil {
      *
      * @throws Exception
      * @Description: JOIN PATH
-     * @author liaoqiqi
-     * @date 2013-6-13
+     * @author wnb
+     *  2013-6-13
      */
     public static String pathJoin(final String... pathElements) {
 
@@ -121,8 +121,8 @@ public final class OsUtil {
      * @return void
      *
      * @Description: 转移文件
-     * @author liaoqiqi
-     * @date 2013-6-20
+     * @author wnb
+     *  2013-6-20
      */
     public static void transferFile(File src, File dest) throws Exception {
 
@@ -144,8 +144,8 @@ public final class OsUtil {
      * @return void
      *
      * @Description: 具有重试机制的 ATOM 转移文件 ，并且会校验文件是否一致 才替换
-     * @author liaoqiqi
-     * @date 2013-6-20
+     * @author wnb
+     *  2013-6-20
      */
     public static void transferFileAtom(File src, File dest, boolean isDeleteSource) throws Exception {
 

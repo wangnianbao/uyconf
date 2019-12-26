@@ -3,20 +3,20 @@ package com.broada.uyconf.web.service.zookeeper.service.impl;
 import java.util.List;
 import java.util.Map;
 
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.web.innerapi.zookeeper.ZooKeeperDriver;
 import com.broada.uyconf.web.service.zookeeper.config.ZooConfig;
+import com.broada.uyconf.web.service.zookeeper.dto.ZkUyconfData;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
 import com.broada.uyconf.core.common.path.ZooPathMgr;
-import com.broada.uyconf.web.service.zookeeper.dto.ZkDisconfData;
 import com.broada.uyconf.web.service.zookeeper.service.ZkDeployMgr;
 
 /**
- * @author liaoqiqi
- * @version 2014-9-11
+ * @author wnb
+ * 14-9-11
  */
 @Service
 public class ZkDeployMgrImpl implements ZkDeployMgr {
@@ -46,15 +46,17 @@ public class ZkDeployMgrImpl implements ZkDeployMgr {
      *
      * @return
      */
-    public Map<String, ZkDisconfData> getZkDisconfDataMap(String app, String env, String version) {
+    @Override
+    public Map<String, ZkUyconfData> getZkUyconfDataMap(String app, String env, String version) {
 
-        return zooKeeperDriver.getDisconfData(app, env, version);
+        return zooKeeperDriver.getUyconfData(app, env, version);
     }
 
-    public ZkDisconfData getZkDisconfData(String app, String env, String version, DisConfigTypeEnum disConfigTypeEnum,
-                                          String keyName) {
+    @Override
+    public ZkUyconfData getZkUyconfData(String app, String env, String version, UyConfigTypeEnum uyConfigTypeEnum,
+                                        String keyName) {
 
-        return zooKeeperDriver.getDisconfData(app, env, version, disConfigTypeEnum, keyName);
+        return zooKeeperDriver.getUyconfData(app, env, version, uyConfigTypeEnum, keyName);
     }
 
 }

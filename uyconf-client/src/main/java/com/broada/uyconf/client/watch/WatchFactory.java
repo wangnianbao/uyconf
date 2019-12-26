@@ -1,20 +1,20 @@
 package com.broada.uyconf.client.watch;
 
 import com.broada.uyconf.client.config.ConfigMgr;
-import com.broada.uyconf.client.config.DisClientConfig;
-import com.broada.uyconf.client.config.DisClientSysConfig;
+import com.broada.uyconf.client.config.UyClientConfig;
+import com.broada.uyconf.client.config.UyClientSysConfig;
 import com.broada.uyconf.client.fetcher.FetcherMgr;
+import com.broada.uyconf.core.common.path.UyconfWebPathMgr;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.broada.uyconf.client.watch.impl.WatchMgrImpl;
-import com.broada.uyconf.core.common.path.DisconfWebPathMgr;
 
 /**
  * 监控器 实例 工厂
  *
- * @author liaoqiqi
- * @version 2014-7-29
+ * @author wnb
+ * 14-7-29
  */
 public class WatchFactory {
 
@@ -40,17 +40,17 @@ public class WatchFactory {
                     // 获取 Zoo Hosts
                     try {
 
-                        hosts = fetcherMgr.getValueFromServer(DisconfWebPathMgr.getZooHostsUrl(DisClientSysConfig
+                        hosts = fetcherMgr.getValueFromServer(UyconfWebPathMgr.getZooHostsUrl(UyClientSysConfig
                                                                                                    .getInstance()
                                                                                                    .CONF_SERVER_ZOO_ACTION));
 
-                        zooPrefix = fetcherMgr.getValueFromServer(DisconfWebPathMgr.getZooPrefixUrl(DisClientSysConfig
+                        zooPrefix = fetcherMgr.getValueFromServer(UyconfWebPathMgr.getZooPrefixUrl(UyClientSysConfig
                                                                                                         .getInstance
                                                                                                              ()
                                                                                                         .CONF_SERVER_ZOO_ACTION));
 
                         WatchMgr watchMgr = new WatchMgrImpl();
-                        watchMgr.init(hosts, zooPrefix, DisClientConfig.getInstance().DEBUG);
+                        watchMgr.init(hosts, zooPrefix, UyClientConfig.getInstance().DEBUG);
 
                         return watchMgr;
 

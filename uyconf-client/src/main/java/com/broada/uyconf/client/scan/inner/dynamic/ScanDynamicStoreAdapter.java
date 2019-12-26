@@ -7,29 +7,28 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.broada.uyconf.client.common.annotations.DisconfFile;
-import com.broada.uyconf.client.common.annotations.DisconfUpdateService;
-import com.broada.uyconf.client.common.model.DisconfKey;
-import com.broada.uyconf.client.common.update.IDisconfUpdate;
-import com.broada.uyconf.client.common.update.IDisconfUpdatePipeline;
-import com.broada.uyconf.client.config.DisClientConfig;
+import com.broada.uyconf.client.common.annotations.UyconfFile;
+import com.broada.uyconf.client.common.annotations.UyconfUpdateService;
+import com.broada.uyconf.client.common.model.UyconfKey;
+import com.broada.uyconf.client.common.update.IUyconfUpdate;
+import com.broada.uyconf.client.common.update.IUyconfUpdatePipeline;
+import com.broada.uyconf.client.config.UyClientConfig;
 import com.broada.uyconf.client.scan.inner.common.ScanVerify;
 import com.broada.uyconf.client.scan.inner.dynamic.model.ScanDynamicModel;
 import com.broada.uyconf.client.scan.inner.statically.model.ScanStaticModel;
-import com.broada.uyconf.client.store.DisconfStorePipelineProcessor;
-import com.broada.uyconf.client.store.DisconfStoreProcessor;
-import com.broada.uyconf.client.store.DisconfStoreProcessorFactory;
+import com.broada.uyconf.client.store.UyconfStorePipelineProcessor;
+import com.broada.uyconf.client.store.UyconfStoreProcessor;
+import com.broada.uyconf.client.store.UyconfStoreProcessorFactory;
 import com.broada.uyconf.client.support.registry.Registry;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
 
 /**
  * 动态扫描 与 Store模块的转换器
  *
- * @author liaoqiqi
- * @version 2014-6-18
+ * @author wnb
+ * 14-6-18
  */
 public class ScanDynamicStoreAdapter {
 
@@ -41,11 +40,11 @@ public class ScanDynamicStoreAdapter {
     public static void scanUpdateCallbacks(ScanStaticModel scanModel, Registry registry) {
 
         // 扫描出来
-        ScanDynamicModel scanDynamicModel = analysis4DisconfUpdate(scanModel, registry);
+        ScanDynamicModel scanDynamicModel = analysis4UyconfUpdate(scanModel, registry);
 
         // 写到仓库中
-        transformUpdateService(scanDynamicModel.getDisconfUpdateServiceInverseIndexMap());
-        transformPipelineService(scanDynamicModel.getDisconfUpdatePipeline());
+        transformUpdateService(scanDynamicModel.getUyconfUpdateServiceInverseIndexMap());
+        transformPipelineService(scanDynamicModel.getUyconfUpdatePipeline());
     }
 
     /**
@@ -53,53 +52,53 @@ public class ScanDynamicStoreAdapter {
      * <p/>
      * 分析出更新操作的相关配置文件内容
      */
-    private static ScanDynamicModel analysis4DisconfUpdate(ScanStaticModel scanModel, Registry registry) {
+    private static ScanDynamicModel analysis4UyconfUpdate(ScanStaticModel scanModel, Registry registry) {
 
         // 配置项或文件
-        Map<DisconfKey, List<IDisconfUpdate>> inverseMap = new HashMap<DisconfKey, List<IDisconfUpdate>>();
+        Map<UyconfKey, List<IUyconfUpdate>> inverseMap = new HashMap<UyconfKey, List<IUyconfUpdate>>();
 
-        Set<Class<?>> disconfUpdateServiceSet = scanModel.getDisconfUpdateService();
-        for (Class<?> disconfUpdateServiceClass : disconfUpdateServiceSet) {
+        Set<Class<?>> uyconfUpdateServiceSet = scanModel.getUyconfUpdateService();
+        for (Class<?> uyconfUpdateServiceClass : uyconfUpdateServiceSet) {
 
             // 回调对应的参数
-            DisconfUpdateService disconfUpdateService =
-                    disconfUpdateServiceClass.getAnnotation(DisconfUpdateService.class);
+            UyconfUpdateService uyconfUpdateService =
+                    uyconfUpdateServiceClass.getAnnotation(UyconfUpdateService.class);
 
             //
-            // 校验是否有继承正确,是否继承IDisconfUpdate
-            if (!ScanVerify.hasIDisconfUpdate(disconfUpdateServiceClass)) {
+            // 校验是否有继承正确,是否继承IUyconfUpdate
+            if (!ScanVerify.hasIUyconfUpdate(uyconfUpdateServiceClass)) {
                 continue;
             }
 
             //
             // 获取回调接口实例
-            IDisconfUpdate iDisconfUpdate = getIDisconfUpdateInstance(disconfUpdateServiceClass, registry);
-            if (iDisconfUpdate == null) {
+            IUyconfUpdate iUyconfUpdate = getIUyconfUpdateInstance(uyconfUpdateServiceClass, registry);
+            if (iUyconfUpdate == null) {
                 continue;
             }
 
             //
             // 配置项
-            processItems(inverseMap, disconfUpdateService, iDisconfUpdate);
+            processItems(inverseMap, uyconfUpdateService, iUyconfUpdate);
 
             //
             // 配置文件
-            processFiles(inverseMap, disconfUpdateService, iDisconfUpdate);
+            processFiles(inverseMap, uyconfUpdateService, iUyconfUpdate);
 
         }
 
         // set data
         ScanDynamicModel scanDynamicModel = new ScanDynamicModel();
-        scanDynamicModel.setDisconfUpdateServiceInverseIndexMap(inverseMap);
+        scanDynamicModel.setUyconfUpdateServiceInverseIndexMap(inverseMap);
 
         //
         // set update pipeline
         //
-        if (scanModel.getiDisconfUpdatePipeline() != null) {
-            IDisconfUpdatePipeline iDisconfUpdatePipeline = getIDisconfUpdatePipelineInstance(scanModel
-                    .getiDisconfUpdatePipeline(), registry);
-            if (iDisconfUpdatePipeline != null) {
-                scanDynamicModel.setDisconfUpdatePipeline(iDisconfUpdatePipeline);
+        if (scanModel.getiUyconfUpdatePipeline() != null) {
+            IUyconfUpdatePipeline iUyconfUpdatePipeline = getIUyconfUpdatePipelineInstance(scanModel
+                    .getiUyconfUpdatePipeline(), registry);
+            if (iUyconfUpdatePipeline != null) {
+                scanDynamicModel.setUyconfUpdatePipeline(iUyconfUpdatePipeline);
             }
         }
 
@@ -109,48 +108,48 @@ public class ScanDynamicStoreAdapter {
     /**
      * 获取回调对应配置项列表
      */
-    private static void processItems(Map<DisconfKey, List<IDisconfUpdate>> inverseMap,
-                                     DisconfUpdateService disconfUpdateService, IDisconfUpdate iDisconfUpdate) {
+    private static void processItems(Map<UyconfKey, List<IUyconfUpdate>> inverseMap,
+                                     UyconfUpdateService uyconfUpdateService, IUyconfUpdate iUyconfUpdate) {
 
-        List<String> itemKeys = Arrays.asList(disconfUpdateService.itemKeys());
+        List<String> itemKeys = Arrays.asList(uyconfUpdateService.itemKeys());
 
         // 反索引
         for (String key : itemKeys) {
 
-            DisconfKey disconfKey = new DisconfKey(DisConfigTypeEnum.ITEM, key);
-            addOne2InverseMap(disconfKey, inverseMap, iDisconfUpdate);
+            UyconfKey uyconfKey = new UyconfKey(UyConfigTypeEnum.ITEM, key);
+            addOne2InverseMap(uyconfKey, inverseMap, iUyconfUpdate);
         }
     }
 
     /**
      * 获取回调对应的配置文件列表
      */
-    private static void processFiles(Map<DisconfKey, List<IDisconfUpdate>> inverseMap,
-                                     DisconfUpdateService disconfUpdateService, IDisconfUpdate iDisconfUpdate) {
+    private static void processFiles(Map<UyconfKey, List<IUyconfUpdate>> inverseMap,
+                                     UyconfUpdateService uyconfUpdateService, IUyconfUpdate iUyconfUpdate) {
 
         // 反索引
-        List<Class<?>> classes = Arrays.asList(disconfUpdateService.classes());
+        List<Class<?>> classes = Arrays.asList(uyconfUpdateService.classes());
         for (Class<?> curClass : classes) {
 
             // 获取其注解
-            DisconfFile disconfFile = curClass.getAnnotation(DisconfFile.class);
-            if (disconfFile == null) {
+            UyconfFile uyconfFile = curClass.getAnnotation(UyconfFile.class);
+            if (uyconfFile == null) {
 
-                LOGGER.error("cannot find DisconfFile annotation for class when set callback: {} ",
+                LOGGER.error("cannot find UyconfFile annotation for class when set callback: {} ",
                         curClass.toString());
                 continue;
             }
 
-            DisconfKey disconfKey = new DisconfKey(DisConfigTypeEnum.FILE, disconfFile.filename());
-            addOne2InverseMap(disconfKey, inverseMap, iDisconfUpdate);
+            UyconfKey uyconfKey = new UyconfKey(UyConfigTypeEnum.FILE, uyconfFile.filename());
+            addOne2InverseMap(uyconfKey, inverseMap, iUyconfUpdate);
         }
 
         // 反索引
-        List<String> fileKeyList = Arrays.asList(disconfUpdateService.confFileKeys());
+        List<String> fileKeyList = Arrays.asList(uyconfUpdateService.confFileKeys());
         for (String fileKey : fileKeyList) {
 
-            DisconfKey disconfKey = new DisconfKey(DisConfigTypeEnum.FILE, fileKey);
-            addOne2InverseMap(disconfKey, inverseMap, iDisconfUpdate);
+            UyconfKey uyconfKey = new UyconfKey(UyConfigTypeEnum.FILE, fileKey);
+            addOne2InverseMap(uyconfKey, inverseMap, iUyconfUpdate);
         }
 
     }
@@ -163,13 +162,13 @@ public class ScanDynamicStoreAdapter {
      * // Spring要GetBean
      * //
      */
-    private static IDisconfUpdate getIDisconfUpdateInstance(Class<?> disconfUpdateServiceClass, Registry registry) {
+    private static IUyconfUpdate getIUyconfUpdateInstance(Class<?> uyconfUpdateServiceClass, Registry registry) {
 
-        Object iDisconfUpdate = registry.getFirstByType(disconfUpdateServiceClass, true);
-        if (iDisconfUpdate == null) {
+        Object iUyconfUpdate = registry.getFirstByType(uyconfUpdateServiceClass, true);
+        if (iUyconfUpdate == null) {
             return null;
         }
-        return (IDisconfUpdate) iDisconfUpdate;
+        return (IUyconfUpdate) iUyconfUpdate;
 
     }
 
@@ -177,37 +176,37 @@ public class ScanDynamicStoreAdapter {
      * 获取回调接口的实现
      * //
      */
-    private static IDisconfUpdatePipeline getIDisconfUpdatePipelineInstance(
-            Class<IDisconfUpdatePipeline> disconfUpdateServiceClass,
+    private static IUyconfUpdatePipeline getIUyconfUpdatePipelineInstance(
+            Class<IUyconfUpdatePipeline> uyconfUpdateServiceClass,
             Registry registry) {
 
-        Object iDisconfUpdate = registry.getFirstByType(disconfUpdateServiceClass, true);
-        if (iDisconfUpdate == null) {
+        Object iUyconfUpdate = registry.getFirstByType(uyconfUpdateServiceClass, true);
+        if (iUyconfUpdate == null) {
             return null;
         }
-        return (IDisconfUpdatePipeline) iDisconfUpdate;
+        return (IUyconfUpdatePipeline) iUyconfUpdate;
 
     }
 
     /**
      * 将一个配置回调item写到map里
      */
-    private static void addOne2InverseMap(DisconfKey disconfKey, Map<DisconfKey, List<IDisconfUpdate>> inverseMap,
-                                          IDisconfUpdate iDisconfUpdate) {
+    private static void addOne2InverseMap(UyconfKey uyconfKey, Map<UyconfKey, List<IUyconfUpdate>> inverseMap,
+                                          IUyconfUpdate iUyconfUpdate) {
 
         // 忽略的key 应该忽略掉
-        if (DisClientConfig.getInstance().getIgnoreDisconfKeySet().contains(disconfKey.getKey())) {
+        if (UyClientConfig.getInstance().getIgnoreUyconfKeySet().contains(uyconfKey.getKey())) {
             return;
         }
 
-        List<IDisconfUpdate> serviceList;
+        List<IUyconfUpdate> serviceList;
 
-        if (inverseMap.containsKey(disconfKey)) {
-            inverseMap.get(disconfKey).add(iDisconfUpdate);
+        if (inverseMap.containsKey(uyconfKey)) {
+            inverseMap.get(uyconfKey).add(iUyconfUpdate);
         } else {
-            serviceList = new ArrayList<IDisconfUpdate>();
-            serviceList.add(iDisconfUpdate);
-            inverseMap.put(disconfKey, serviceList);
+            serviceList = new ArrayList<IUyconfUpdate>();
+            serviceList.add(iUyconfUpdate);
+            inverseMap.put(uyconfKey, serviceList);
         }
     }
 
@@ -215,56 +214,56 @@ public class ScanDynamicStoreAdapter {
      * 第二次扫描<br/>
      * 转换 pipeline 回调函数，将其写到 仓库中
      */
-    private static void transformPipelineService(IDisconfUpdatePipeline iDisconfUpdatePipeline) {
+    private static void transformPipelineService(IUyconfUpdatePipeline iUyconfUpdatePipeline) {
 
-        DisconfStorePipelineProcessor disconfStorePipelineProcessor = DisconfStoreProcessorFactory
-                .getDisconfStorePipelineProcessor();
-        disconfStorePipelineProcessor.setDisconfUpdatePipeline(iDisconfUpdatePipeline);
+        UyconfStorePipelineProcessor uyconfStorePipelineProcessor = UyconfStoreProcessorFactory
+                .getUyconfStorePipelineProcessor();
+        uyconfStorePipelineProcessor.setUyconfUpdatePipeline(iUyconfUpdatePipeline);
     }
 
     /**
      * 第二次扫描<br/>
      * 转换 更新 回调函数，将其写到 仓库中
      */
-    private static void transformUpdateService(Map<DisconfKey,
-            List<IDisconfUpdate>> disconfUpdateServiceInverseIndexMap) {
+    private static void transformUpdateService(Map<UyconfKey,
+            List<IUyconfUpdate>> uyconfUpdateServiceInverseIndexMap) {
 
-        DisconfStoreProcessor disconfStoreProcessorFile = DisconfStoreProcessorFactory.getDisconfStoreFileProcessor();
-        DisconfStoreProcessor disconfStoreProcessorItem = DisconfStoreProcessorFactory.getDisconfStoreItemProcessor();
+        UyconfStoreProcessor uyconfStoreProcessorFile = UyconfStoreProcessorFactory.getUyconfStoreFileProcessor();
+        UyconfStoreProcessor uyconfStoreProcessorItem = UyconfStoreProcessorFactory.getUyconfStoreItemProcessor();
 
-        for (DisconfKey disconfKey : disconfUpdateServiceInverseIndexMap.keySet()) {
+        for (UyconfKey uyconfKey : uyconfUpdateServiceInverseIndexMap.keySet()) {
 
             //
             //
             //
 
             try {
-                if (disconfKey.getDisConfigTypeEnum().equals(DisConfigTypeEnum.FILE)) {
+                if (uyconfKey.getUyConfigTypeEnum().equals(UyConfigTypeEnum.FILE)) {
 
-                    if (!disconfStoreProcessorFile.hasThisConf(disconfKey.getKey())) {
+                    if (!uyconfStoreProcessorFile.hasThisConf(uyconfKey.getKey())) {
                         throw new Exception();
                     }
 
-                    disconfStoreProcessorFile.addUpdateCallbackList(disconfKey.getKey(),
-                            disconfUpdateServiceInverseIndexMap
-                                    .get(disconfKey));
+                    uyconfStoreProcessorFile.addUpdateCallbackList(uyconfKey.getKey(),
+                            uyconfUpdateServiceInverseIndexMap
+                                    .get(uyconfKey));
 
-                } else if (disconfKey.getDisConfigTypeEnum().equals(DisConfigTypeEnum.ITEM)) {
+                } else if (uyconfKey.getUyConfigTypeEnum().equals(UyConfigTypeEnum.ITEM)) {
 
-                    if (!disconfStoreProcessorItem.hasThisConf(disconfKey.getKey())) {
+                    if (!uyconfStoreProcessorItem.hasThisConf(uyconfKey.getKey())) {
                         throw new Exception();
                     }
 
-                    disconfStoreProcessorItem.addUpdateCallbackList(disconfKey.getKey(),
-                            disconfUpdateServiceInverseIndexMap
-                                    .get(disconfKey));
+                    uyconfStoreProcessorItem.addUpdateCallbackList(uyconfKey.getKey(),
+                            uyconfUpdateServiceInverseIndexMap
+                                    .get(uyconfKey));
                 }
 
             } catch (Exception e) {
                 // 找不到回调对应的配置，这是用户配置 错误了
                 StringBuffer sb = new StringBuffer();
-                sb.append("cannot find " + disconfKey + "for: ");
-                for (IDisconfUpdate serClass : disconfUpdateServiceInverseIndexMap.get(disconfKey)) {
+                sb.append("cannot find " + uyconfKey + "for: ");
+                for (IUyconfUpdate serClass : uyconfUpdateServiceInverseIndexMap.get(uyconfKey)) {
                     sb.append(serClass.toString() + "\t");
                 }
                 LOGGER.error(sb.toString());

@@ -3,8 +3,8 @@ package com.broada.uyconf.client.common.model;
 /**
  * 实例指纹
  *
- * @author liaoqiqi
- * @version 2014-6-27
+ * @author wnb
+ * 14-6-27
  */
 public class InstanceFingerprint {
 

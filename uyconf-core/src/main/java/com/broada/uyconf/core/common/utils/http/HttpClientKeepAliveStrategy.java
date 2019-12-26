@@ -9,7 +9,7 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
 
 /**
- * Created by knightliao on 16/1/7.
+ * Created by wnb on 16/1/7.
  */
 public class HttpClientKeepAliveStrategy implements ConnectionKeepAliveStrategy {
 

@@ -1,4 +1,4 @@
-disconf-client Install
+uyconf-client Install
 ^^^^^^^^^^^^^^^^^^^^^^
 
 在您的 Maven POM 文件里加入：
@@ -7,6 +7,6 @@ disconf-client Install
 
     <dependency>
         <groupId>com.broada.uyconf</groupId>
-        <artifactId>disconf-client</artifactId>
+        <artifactId>uyconf-client</artifactId>
         <version>2.6.36</version>
     </dependency>

@@ -15,8 +15,8 @@ import com.github.knightliao.apollo.redis.RedisCacheManager;
 import com.github.knightliao.apollo.utils.web.CookieUtils;
 
 /**
- * @author liaoqiqi
- * @version 2014-2-4
+ * @author wnb
+ * 14-2-4
  */
 public class RedisLoginImpl implements RedisLogin {
 

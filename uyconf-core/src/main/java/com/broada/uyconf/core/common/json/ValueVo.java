@@ -5,8 +5,8 @@ import com.broada.uyconf.core.common.constants.Constants;
 /**
  * 通用的Value Vo
  *
- * @author liaoqiqi
- * @version 2014-6-10
+ * @author wnb
+ * 14-6-10
  */
 public class ValueVo {
 

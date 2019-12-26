@@ -16,8 +16,8 @@ import com.broada.dsp.common.vo.JsonObjectUtils;
 import com.github.knightliao.apollo.utils.data.JsonUtils;
 
 /**
- * @author liaoqiqi
- * @version 2013-11-26
+ * @author wnb
+ * 13-11-26
  */
 public class WebCommonInterceptor extends HandlerInterceptorAdapter {
 

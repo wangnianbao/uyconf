@@ -7,8 +7,8 @@ import com.broada.uyconf.web.service.user.dto.Visitor;
 import com.broada.uyconf.web.service.user.vo.VisitorVo;
 
 /**
- * @author liaoqiqi
- * @version 2013-11-28
+ * @author wnb
+ * 13-11-28
  */
 public interface UserMgr {
 

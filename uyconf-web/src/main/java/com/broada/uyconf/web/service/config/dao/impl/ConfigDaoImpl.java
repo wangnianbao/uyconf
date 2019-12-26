@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.web.common.Constants;
 import com.broada.uyconf.web.service.config.bo.Config;
 import com.broada.uyconf.web.service.config.dao.ConfigDao;
@@ -23,8 +23,8 @@ import com.broada.unbiz.common.genericdao.operator.Order;
 import com.github.knightliao.apollo.utils.time.DateUtils;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Service
 public class ConfigDaoImpl extends AbstractDao<Long, Config> implements ConfigDao {
@@ -34,10 +34,10 @@ public class ConfigDaoImpl extends AbstractDao<Long, Config> implements ConfigDa
      */
     @Override
     public Config getByParameter(Long appId, Long envId, String version, String key,
-                                 DisConfigTypeEnum disConfigTypeEnum) {
+                                 UyConfigTypeEnum uyConfigTypeEnum) {
 
         return findOne(new Match(Columns.APP_ID, appId), new Match(Columns.ENV_ID, envId),
-                new Match(Columns.VERSION, version), new Match(Columns.TYPE, disConfigTypeEnum.getType()),
+                new Match(Columns.VERSION, version), new Match(Columns.TYPE, uyConfigTypeEnum.getType()),
                 new Match(Columns.NAME, key), new Match(Columns.STATUS, Constants.STATUS_NORMAL));
     }
 

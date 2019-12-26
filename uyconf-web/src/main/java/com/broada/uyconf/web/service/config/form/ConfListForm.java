@@ -7,8 +7,8 @@ import com.broada.dsp.common.form.RequestListBase;
 import lombok.Data;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-23
+ * @author wnb
+ * 14-6-23
  */
 @Data
 public class ConfListForm extends RequestListBase {

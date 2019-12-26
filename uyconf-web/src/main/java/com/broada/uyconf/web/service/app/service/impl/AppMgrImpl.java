@@ -23,8 +23,8 @@ import com.broada.dsp.common.constant.DataFormatConstants;
 import com.github.knightliao.apollo.utils.time.DateUtils;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Service
 @Transactional(propagation = Propagation.REQUIRED, readOnly = true)

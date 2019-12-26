@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 连接管理
  *
- * @author liaoqiqi
+ * @author wnb
  */
 public class ConnectionWatcher implements Watcher {
 
@@ -50,8 +50,8 @@ public class ConnectionWatcher implements Watcher {
      * @throws IOException
      * @throws InterruptedException
      * @Description: 连接ZK
-     * @author liaoqiqi
-     * @date 2013-6-14
+     * @author wnb
+     *  2013-6-14
      */
     public void connect(String hosts) throws IOException, InterruptedException {
         internalHost = hosts;
@@ -139,8 +139,8 @@ public class ConnectionWatcher implements Watcher {
      *
      * @throws InterruptedException
      * @Description: 关闭
-     * @author liaoqiqi
-     * @date 2013-6-14
+     * @author wnb
+     *  2013-6-14
      */
     public void close() throws InterruptedException {
         zk.close();

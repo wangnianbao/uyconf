@@ -15,7 +15,7 @@ import com.github.knightliao.apollo.utils.tool.TokenUtil;
 /**
  * 全局的异常处理拦截器
  *
- * @author liaoqiqi
+ * @author wnb
  */
 public class SessionInterceptor extends WebCommonInterceptor {
 

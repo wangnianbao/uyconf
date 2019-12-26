@@ -3,8 +3,8 @@ package com.broada.uyconf.web.common.email;
 import java.util.Properties;
 
 /**
- * @author liaoqiqi
- * @version 2014-3-2
+ * @author wnb
+ * 14-3-2
  */
 public class MailSenderInfo {
 

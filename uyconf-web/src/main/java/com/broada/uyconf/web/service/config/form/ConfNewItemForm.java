@@ -7,8 +7,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 /**
  * 新建配置项表格
  *
- * @author liaoqiqi
- * @version 2014-7-3
+ * @author wnb
+ * 14-7-3
  */
 public class ConfNewItemForm extends ConfNewForm {
 

@@ -543,7 +543,7 @@
             </resource>
         </resources>
 
-        <finalName>disconf-base</finalName>
+        <finalName>uyconf-base</finalName>
 
         <pluginManagement>
             <!-- 覆盖率 mvn test -->

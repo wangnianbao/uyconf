@@ -14,7 +14,7 @@ import org.springframework.util.StringUtils;
 import com.broada.dsp.common.exception.FieldException;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 @Service
 public class ConfigValidator4Fetch {

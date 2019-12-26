@@ -5,8 +5,8 @@ import java.util.List;
 import com.broada.uyconf.web.service.role.bo.Role;
 
 /**
- * @author weiwei
- * @date 2013-12-24
+ * @author wnb
+ *  2013-12-24
  */
 public interface RoleMgr {
 

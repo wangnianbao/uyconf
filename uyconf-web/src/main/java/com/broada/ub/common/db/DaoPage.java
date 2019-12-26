@@ -8,7 +8,7 @@ import com.broada.unbiz.common.genericdao.operator.Order;
 /**
  * 专门 用于DAO的Page 外部模块不能使用
  *
- * @author liaoqiqi
+ * @author wnb
  */
 public class DaoPage {
 

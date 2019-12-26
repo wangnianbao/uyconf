@@ -11,8 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.broada.uyconf.client.common.annotations.*;
 import com.broada.uyconf.client.common.constants.Constants;
-import com.broada.uyconf.client.common.update.IDisconfUpdatePipeline;
+import com.broada.uyconf.client.common.update.IUyconfUpdatePipeline;
 import org.reflections.Reflections;
 import org.reflections.scanners.FieldAnnotationsScanner;
 import org.reflections.scanners.MethodAnnotationsScanner;
@@ -25,18 +26,14 @@ import org.reflections.util.FilterBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.broada.uyconf.client.common.annotations.DisconfActiveBackupService;
-import com.broada.uyconf.client.common.annotations.DisconfFile;
-import com.broada.uyconf.client.common.annotations.DisconfFileItem;
-import com.broada.uyconf.client.common.annotations.DisconfItem;
-import com.broada.uyconf.client.common.annotations.DisconfUpdateService;
+import com.broada.uyconf.client.common.annotations.UyconfFile;
 import com.broada.uyconf.client.scan.inner.common.ScanVerify;
 import com.broada.uyconf.client.scan.inner.statically.model.ScanStaticModel;
 import com.broada.uyconf.client.scan.inner.statically.strategy.ScanStaticStrategy;
 import com.google.common.base.Predicate;
 
 /**
- * Created by knightliao on 15/1/23.
+ * Created by wnb on 15/1/23.
  * <p/>
  * 扫描静态注解，并且进行分析整合数据
  * <p/>
@@ -69,7 +66,7 @@ public class ReflectionScanStatic implements ScanStaticStrategy {
         //
         // filter
         //
-        FilterBuilder filterBuilder = new FilterBuilder().includePackage(Constants.DISCONF_PACK_NAME);
+        FilterBuilder filterBuilder = new FilterBuilder().includePackage(Constants.UYCONF_PACK_NAME);
 
         for (String packName : packNameList) {
             filterBuilder = filterBuilder.includePackage(packName);
@@ -105,41 +102,41 @@ public class ReflectionScanStatic implements ScanStaticStrategy {
     private void analysis(ScanStaticModel scanModel) {
 
         // 分析出配置文件MAP
-        analysis4DisconfFile(scanModel);
+        analysis4UyconfFile(scanModel);
     }
 
     /**
      * 分析出配置文件与配置文件中的Field的Method的MAP
      */
-    private void analysis4DisconfFile(ScanStaticModel scanModel) {
+    private void analysis4UyconfFile(ScanStaticModel scanModel) {
 
-        Map<Class<?>, Set<Method>> disconfFileItemMap = new HashMap<Class<?>, Set<Method>>();
+        Map<Class<?>, Set<Method>> uyconfFileItemMap = new HashMap<Class<?>, Set<Method>>();
 
         //
         // 配置文件MAP
         //
-        Set<Class<?>> classdata = scanModel.getDisconfFileClassSet();
+        Set<Class<?>> classdata = scanModel.getUyconfFileClassSet();
         for (Class<?> classFile : classdata) {
-            disconfFileItemMap.put(classFile, new HashSet<Method>());
+            uyconfFileItemMap.put(classFile, new HashSet<Method>());
         }
 
         //
         // 将配置文件与配置文件中的配置项进行关联
         //
-        Set<Method> af1 = scanModel.getDisconfFileItemMethodSet();
+        Set<Method> af1 = scanModel.getUyconfFileItemMethodSet();
         for (Method method : af1) {
 
             Class<?> thisClass = method.getDeclaringClass();
 
-            if (disconfFileItemMap.containsKey(thisClass)) {
-                Set<Method> fieldSet = disconfFileItemMap.get(thisClass);
+            if (uyconfFileItemMap.containsKey(thisClass)) {
+                Set<Method> fieldSet = uyconfFileItemMap.get(thisClass);
                 fieldSet.add(method);
-                disconfFileItemMap.put(thisClass, fieldSet);
+                uyconfFileItemMap.put(thisClass, fieldSet);
 
             } else {
 
-                LOGGER.error("cannot find CLASS ANNOTATION " + DisconfFile.class.getName()
-                        + " for disconf file item: " +
+                LOGGER.error("cannot find CLASS ANNOTATION " + UyconfFile.class.getName()
+                        + " for uyconf file item: " +
                         method.toString());
             }
         }
@@ -147,28 +144,28 @@ public class ReflectionScanStatic implements ScanStaticStrategy {
         //
         // 最后的校验
         //
-        Iterator<Class<?>> iterator = disconfFileItemMap.keySet().iterator();
+        Iterator<Class<?>> iterator = uyconfFileItemMap.keySet().iterator();
         while (iterator.hasNext()) {
 
             Class<?> classFile = iterator.next();
 
             // 校验是否所有配置文件都含有配置
-            if (disconfFileItemMap.get(classFile).isEmpty()) {
-                LOGGER.info("disconf file hasn't any items: " + classFile.getName());
+            if (uyconfFileItemMap.get(classFile).isEmpty()) {
+                LOGGER.info("uyconf file hasn't any items: " + classFile.getName());
                 continue;
             }
 
             // 校验配置文件类型是否合适(目前只支持.properties类型)
-            DisconfFile disconfFile = classFile.getAnnotation(DisconfFile.class);
-            boolean fileTypeRight = ScanVerify.isDisconfFileTypeRight(disconfFile);
+            UyconfFile uyconfFile = classFile.getAnnotation(UyconfFile.class);
+            boolean fileTypeRight = ScanVerify.isUyconfFileTypeRight(uyconfFile);
             if (!fileTypeRight) {
-                LOGGER.warn("now do not support this file type" + disconfFile.toString());
+                LOGGER.warn("now do not support this file type" + uyconfFile.toString());
                 continue;
             }
         }
 
         // 设置
-        scanModel.setDisconfFileItemMap(disconfFileItemMap);
+        scanModel.setUyconfFileItemMap(uyconfFileItemMap);
     }
 
     /**
@@ -185,41 +182,41 @@ public class ReflectionScanStatic implements ScanStaticStrategy {
         scanModel.setReflections(reflections);
 
         //
-        // 获取DisconfFile class
+        // 获取UyconfFile class
         //
-        Set<Class<?>> classdata = reflections.getTypesAnnotatedWith(DisconfFile.class);
-        scanModel.setDisconfFileClassSet(classdata);
+        Set<Class<?>> classdata = reflections.getTypesAnnotatedWith(UyconfFile.class);
+        scanModel.setUyconfFileClassSet(classdata);
 
         //
-        // 获取DisconfFileItem method
+        // 获取UyconfFileItem method
         //
-        Set<Method> af1 = reflections.getMethodsAnnotatedWith(DisconfFileItem.class);
-        scanModel.setDisconfFileItemMethodSet(af1);
+        Set<Method> af1 = reflections.getMethodsAnnotatedWith(UyconfFileItem.class);
+        scanModel.setUyconfFileItemMethodSet(af1);
 
         //
-        // 获取DisconfItem method
+        // 获取UyconfItem method
         //
-        af1 = reflections.getMethodsAnnotatedWith(DisconfItem.class);
-        scanModel.setDisconfItemMethodSet(af1);
+        af1 = reflections.getMethodsAnnotatedWith(UyconfItem.class);
+        scanModel.setUyconfItemMethodSet(af1);
 
         //
-        // 获取DisconfActiveBackupService
+        // 获取UyconfActiveBackupService
         //
-        classdata = reflections.getTypesAnnotatedWith(DisconfActiveBackupService.class);
-        scanModel.setDisconfActiveBackupServiceClassSet(classdata);
+        classdata = reflections.getTypesAnnotatedWith(UyconfActiveBackupService.class);
+        scanModel.setUyconfActiveBackupServiceClassSet(classdata);
 
         //
-        // 获取DisconfUpdateService
+        // 获取UyconfUpdateService
         //
-        classdata = reflections.getTypesAnnotatedWith(DisconfUpdateService.class);
-        scanModel.setDisconfUpdateService(classdata);
+        classdata = reflections.getTypesAnnotatedWith(UyconfUpdateService.class);
+        scanModel.setUyconfUpdateService(classdata);
 
         // update pipeline
-        Set<Class<? extends IDisconfUpdatePipeline>> iDisconfUpdatePipeline = reflections.getSubTypesOf
-                (IDisconfUpdatePipeline
+        Set<Class<? extends IUyconfUpdatePipeline>> iUyconfUpdatePipeline = reflections.getSubTypesOf
+                (IUyconfUpdatePipeline
                         .class);
-        if (iDisconfUpdatePipeline != null && iDisconfUpdatePipeline.size() != 0) {
-            scanModel.setiDisconfUpdatePipeline((Class<IDisconfUpdatePipeline>) iDisconfUpdatePipeline
+        if (iUyconfUpdatePipeline != null && iUyconfUpdatePipeline.size() != 0) {
+            scanModel.setiUyconfUpdatePipeline((Class<IUyconfUpdatePipeline>) iUyconfUpdatePipeline
                     .toArray()[0]);
         }
 

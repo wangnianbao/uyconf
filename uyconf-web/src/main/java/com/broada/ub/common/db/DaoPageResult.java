@@ -8,8 +8,8 @@ import java.util.List;
  *
  * @param <T>
  *
- * @author liaoqiqi
- * @version 2014-2-20
+ * @author wnb
+ * 14-2-20
  */
 public class DaoPageResult<T> {
 

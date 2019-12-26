@@ -19,8 +19,8 @@ import com.broada.uyconf.web.service.user.vo.VisitorVo;
 import com.broada.ub.common.commons.ThreadContext;
 
 /**
- * @author liaoqiqi
- * @version 2013-12-5
+ * @author wnb
+ * 13-12-5
  */
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

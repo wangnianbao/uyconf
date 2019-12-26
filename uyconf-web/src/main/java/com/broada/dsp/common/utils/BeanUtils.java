@@ -95,7 +95,7 @@ public class BeanUtils {
      *
      * @return
      *
-     * @author guojichun
+     * @author wnb
      * @since 1.0.0
      */
     @SuppressWarnings({"rawtypes", "unchecked"})
@@ -170,7 +170,7 @@ public class BeanUtils {
      *
      * @return
      *
-     * @author guojichun
+     * @author wnb
      * @since 1.0.0
      */
     @SuppressWarnings("rawtypes")
@@ -198,7 +198,7 @@ public class BeanUtils {
      *
      * @return
      *
-     * @author ying
+     * @author wnb
      * @since 1.0.0
      */
     @SuppressWarnings({"rawtypes", "unchecked"})

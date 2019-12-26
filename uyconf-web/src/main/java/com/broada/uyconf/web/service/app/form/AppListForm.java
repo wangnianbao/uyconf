@@ -3,8 +3,8 @@ package com.broada.uyconf.web.service.app.form;
 import com.broada.dsp.common.form.RequestListBase;
 
 /**
- * @author liaoqiqi
- * @version 2014-1-24
+ * @author wnb
+ * 14-1-24
  */
 public class AppListForm extends RequestListBase {
 

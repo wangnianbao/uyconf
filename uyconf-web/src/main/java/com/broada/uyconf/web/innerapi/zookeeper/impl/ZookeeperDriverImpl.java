@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
+import com.broada.uyconf.web.service.zookeeper.dto.ZkUyconfData;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;
@@ -18,16 +20,14 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
 import com.broada.uyconf.core.common.path.ZooPathMgr;
 import com.broada.uyconf.core.common.zookeeper.ZookeeperMgr;
 import com.broada.uyconf.web.innerapi.zookeeper.ZooKeeperDriver;
 import com.broada.uyconf.web.service.zookeeper.config.ZooConfig;
-import com.broada.uyconf.web.service.zookeeper.dto.ZkDisconfData;
 import com.broada.dsp.common.exception.RemoteException;
 
 /**
- * Created by knightliao on 15/1/14.
+ * Created by wnb on 15/1/14.
  */
 public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, DisposableBean {
 
@@ -47,11 +47,11 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
      * @param app
      * @param env
      * @param version
-     * @param disConfigTypeEnum
+     * @param uyConfigTypeEnum
      */
     @Override
     public void notifyNodeUpdate(String app, String env, String version, String key, String value,
-                                 DisConfigTypeEnum disConfigTypeEnum) {
+                                 UyConfigTypeEnum uyConfigTypeEnum) {
 
         //
         // 获取路径
@@ -59,7 +59,7 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
         String baseUrlString = ZooPathMgr.getZooBaseUrl(zooConfig.getZookeeperUrlPrefix(), app, env, version);
 
         String path = "";
-        if (disConfigTypeEnum.equals(DisConfigTypeEnum.ITEM)) {
+        if (uyConfigTypeEnum.equals(UyConfigTypeEnum.ITEM)) {
 
             path = ZooPathMgr.getItemZooPath(baseUrlString);
         } else {
@@ -99,16 +99,16 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
      * @return
      */
     @Override
-    public Map<String, ZkDisconfData> getDisconfData(String app, String env, String version) {
+    public Map<String, ZkUyconfData> getUyconfData(String app, String env, String version) {
 
         String baseUrl = ZooPathMgr.getZooBaseUrl(zooConfig.getZookeeperUrlPrefix(), app, env, version);
 
-        Map<String, ZkDisconfData> fileMap = new HashMap<String, ZkDisconfData>();
+        Map<String, ZkUyconfData> fileMap = new HashMap<String, ZkUyconfData>();
 
         try {
 
-            fileMap = getDisconfData(ZooPathMgr.getFileZooPath(baseUrl));
-            Map<String, ZkDisconfData> itemMap = getDisconfData(ZooPathMgr.getItemZooPath(baseUrl));
+            fileMap = getUyconfData(ZooPathMgr.getFileZooPath(baseUrl));
+            Map<String, ZkUyconfData> itemMap = getUyconfData(ZooPathMgr.getItemZooPath(baseUrl));
             fileMap.putAll(itemMap);
 
         } catch (KeeperException e) {
@@ -130,8 +130,8 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
      * @return
      */
     @Override
-    public ZkDisconfData getDisconfData(String app, String env, String version, DisConfigTypeEnum disConfigTypeEnum,
-                                        String keyName) {
+    public ZkUyconfData getUyconfData(String app, String env, String version, UyConfigTypeEnum uyConfigTypeEnum,
+                                      String keyName) {
 
         String baseUrl = ZooPathMgr.getZooBaseUrl(zooConfig.getZookeeperUrlPrefix(), app, env, version);
 
@@ -140,13 +140,13 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
             ZookeeperMgr zooKeeperMgr = ZookeeperMgr.getInstance();
             ZooKeeper zooKeeper = zooKeeperMgr.getZk();
 
-            if (disConfigTypeEnum.equals(DisConfigTypeEnum.FILE)) {
+            if (uyConfigTypeEnum.equals(UyConfigTypeEnum.FILE)) {
 
-                return getDisconfData(ZooPathMgr.getFileZooPath(baseUrl), keyName, zooKeeper);
+                return getUyconfData(ZooPathMgr.getFileZooPath(baseUrl), keyName, zooKeeper);
 
-            } else if (disConfigTypeEnum.equals(DisConfigTypeEnum.ITEM)) {
+            } else if (uyConfigTypeEnum.equals(UyConfigTypeEnum.ITEM)) {
 
-                return getDisconfData(ZooPathMgr.getItemZooPath(baseUrl), keyName, zooKeeper);
+                return getUyconfData(ZooPathMgr.getItemZooPath(baseUrl), keyName, zooKeeper);
             }
 
         } catch (KeeperException e) {
@@ -166,9 +166,9 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
      * @throws InterruptedException
      * @throws KeeperException
      */
-    private Map<String, ZkDisconfData> getDisconfData(String path) throws KeeperException, InterruptedException {
+    private Map<String, ZkUyconfData> getUyconfData(String path) throws KeeperException, InterruptedException {
 
-        Map<String, ZkDisconfData> ret = new HashMap<String, ZkDisconfData>();
+        Map<String, ZkUyconfData> ret = new HashMap<String, ZkUyconfData>();
 
         ZookeeperMgr zooKeeperMgr = ZookeeperMgr.getInstance();
         ZooKeeper zooKeeper = zooKeeperMgr.getZk();
@@ -180,9 +180,9 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
         List<String> children = zooKeeper.getChildren(path, false);
         for (String firstKey : children) {
 
-            ZkDisconfData zkDisconfData = getDisconfData(path, firstKey, zooKeeper);
-            if (zkDisconfData != null) {
-                ret.put(firstKey, zkDisconfData);
+            ZkUyconfData zkUyconfData = getUyconfData(path, firstKey, zooKeeper);
+            if (zkUyconfData != null) {
+                ret.put(firstKey, zkUyconfData);
             }
         }
 
@@ -197,7 +197,7 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
      * @throws InterruptedException
      * @throws KeeperException
      */
-    private ZkDisconfData getDisconfData(String path, String keyName, ZooKeeper zooKeeper)
+    private ZkUyconfData getUyconfData(String path, String keyName, ZooKeeper zooKeeper)
             throws KeeperException, InterruptedException {
 
         String curPath = path + "/" + keyName;
@@ -206,34 +206,34 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
             return null;
         }
 
-        ZkDisconfData zkDisconfData = new ZkDisconfData();
-        zkDisconfData.setKey(keyName);
+        ZkUyconfData zkUyconfData = new ZkUyconfData();
+        zkUyconfData.setKey(keyName);
 
         List<String> secChiList = zooKeeper.getChildren(curPath, false);
-        List<ZkDisconfData.ZkDisconfDataItem> zkDisconfDataItems = new ArrayList<ZkDisconfData.ZkDisconfDataItem>();
+        List<ZkUyconfData.ZkUyconfDataItem> zkUyconfDataItems = new ArrayList<ZkUyconfData.ZkUyconfDataItem>();
 
         // list
         for (String secKey : secChiList) {
 
             // machine
-            ZkDisconfData.ZkDisconfDataItem zkDisconfDataItem = new ZkDisconfData.ZkDisconfDataItem();
-            zkDisconfDataItem.setMachine(secKey);
+            ZkUyconfData.ZkUyconfDataItem zkUyconfDataItem = new ZkUyconfData.ZkUyconfDataItem();
+            zkUyconfDataItem.setMachine(secKey);
 
             String thirdPath = curPath + "/" + secKey;
 
             // value
             byte[] data = zooKeeper.getData(thirdPath, null, null);
             if (data != null) {
-                zkDisconfDataItem.setValue(new String(data, CHARSET));
+                zkUyconfDataItem.setValue(new String(data, CHARSET));
             }
 
             // add
-            zkDisconfDataItems.add(zkDisconfDataItem);
+            zkUyconfDataItems.add(zkUyconfDataItem);
         }
 
-        zkDisconfData.setData(zkDisconfDataItems);
+        zkUyconfData.setData(zkUyconfDataItems);
 
-        return zkDisconfData;
+        return zkUyconfData;
     }
 
     /**

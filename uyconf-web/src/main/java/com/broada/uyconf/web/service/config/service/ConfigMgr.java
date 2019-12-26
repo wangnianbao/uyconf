@@ -3,7 +3,7 @@ package com.broada.uyconf.web.service.config.service;
 import java.io.File;
 import java.util.List;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.web.service.config.bo.Config;
 import com.broada.uyconf.web.service.config.form.ConfListForm;
 import com.broada.uyconf.web.service.config.form.ConfNewItemForm;
@@ -12,8 +12,8 @@ import com.broada.uyconf.web.service.config.vo.MachineListVo;
 import com.broada.ub.common.db.DaoPageResult;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public interface ConfigMgr {
 
@@ -65,9 +65,9 @@ public interface ConfigMgr {
 
     /**
      * @param confNewForm
-     * @param disConfigTypeEnum
+     * @param uyConfigTypeEnum
      */
-    void newConfig(ConfNewItemForm confNewForm, DisConfigTypeEnum disConfigTypeEnum);
+    void newConfig(ConfNewItemForm confNewForm, UyConfigTypeEnum uyConfigTypeEnum);
 
     void delete(Long configId);
 
@@ -76,6 +76,6 @@ public interface ConfigMgr {
      *
      * @return
      */
-    List<File> getDisconfFileList(ConfListForm confListForm);
+    List<File> getUyconfFileList(ConfListForm confListForm);
 
 }

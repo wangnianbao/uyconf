@@ -1,5 +1,6 @@
 package com.broada.uyconf.client.test.common;
 
+import com.broada.uyconf.client.config.UyClientConfig;
 import com.broada.uyconf.client.test.support.utils.NetUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,9 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.broada.uyconf.client.config.ConfigMgr;
-import com.broada.uyconf.client.config.DisClientConfig;
-import com.broada.uyconf.client.config.DisClientSysConfig;
-import com.broada.uyconf.core.common.path.DisconfWebPathMgr;
+import com.broada.uyconf.client.config.UyClientSysConfig;
+import com.broada.uyconf.core.common.path.UyconfWebPathMgr;
 import com.broada.uyconf.core.test.common.BaseCoreTestCase;
 
 import junit.framework.Assert;
@@ -19,8 +19,8 @@ import junit.framework.Assert;
 /**
  * Spring的测试方法 + WireMock 方法
  *
- * @author liaoqiqi
- * @version 2014-6-11
+ * @author wnb
+ * 14-6-11
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
@@ -48,9 +48,9 @@ public class BaseSpringMockTestCase extends BaseCoreTestCase {
             Assert.assertTrue(false);
         }
 
-        if (!NetUtils.pingUrl(DisClientConfig.getInstance().getHostList().get(0) + DisconfWebPathMgr
+        if (!NetUtils.pingUrl(UyClientConfig.getInstance().getHostList().get(0) + UyconfWebPathMgr
                 .getZooHostsUrl
-                        (DisClientSysConfig
+                        (UyClientSysConfig
                                 .getInstance().CONF_SERVER_ZOO_ACTION))) {
             return false;
         }

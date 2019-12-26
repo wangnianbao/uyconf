@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 import com.broada.ub.common.commons.ThreadContext;
 
 /**
- * @author liaoqiqi
- * @version 2014-4-8
+ * @author wnb
+ * 14-4-8
  */
 @Service
 public class LogMailBean {

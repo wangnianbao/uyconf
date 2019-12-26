@@ -3,8 +3,8 @@ package com.broada.uyconf.web.service.config.form;
 import com.broada.dsp.common.form.RequestFormBase;
 
 /**
- * @author liaoqiqi
- * @version 2014-1-24
+ * @author wnb
+ * 14-1-24
  */
 public class ConfForm extends RequestFormBase {
 

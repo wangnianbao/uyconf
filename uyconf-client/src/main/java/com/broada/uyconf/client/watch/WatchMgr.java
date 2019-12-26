@@ -1,14 +1,14 @@
 package com.broada.uyconf.client.watch;
 
-import com.broada.uyconf.client.common.model.DisConfCommonModel;
-import com.broada.uyconf.client.core.processor.DisconfCoreProcessor;
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
+import com.broada.uyconf.client.common.model.UyConfCommonModel;
+import com.broada.uyconf.client.core.processor.UyconfCoreProcessor;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 
 /**
  * 监控的接口
  *
- * @author liaoqiqi
- * @version 2014-7-29
+ * @author wnb
+ * 14-7-29
  */
 public interface WatchMgr {
 
@@ -22,8 +22,8 @@ public interface WatchMgr {
     /**
      * 监控路径,监控前会事先创建路径,并且会新建一个自己的Temp子结点
      */
-    void watchPath(DisconfCoreProcessor disconfCoreMgr, DisConfCommonModel disConfCommonModel, String keyName,
-                   DisConfigTypeEnum disConfigTypeEnum, String value) throws Exception;
+    void watchPath(UyconfCoreProcessor uyconfCoreProcessor, UyConfCommonModel uyConfCommonModel, String keyName,
+                   UyConfigTypeEnum uyConfigTypeEnum, String value) throws Exception;
 
     void release();
 }

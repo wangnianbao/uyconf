@@ -1,8 +1,8 @@
 package com.broada.uyconf.client.fetcher;
 
 import com.broada.uyconf.client.config.ConfigMgr;
-import com.broada.uyconf.client.config.DisClientConfig;
-import com.broada.uyconf.client.config.DisClientSysConfig;
+import com.broada.uyconf.client.config.UyClientConfig;
+import com.broada.uyconf.client.config.UyClientSysConfig;
 import com.broada.uyconf.client.fetcher.impl.FetcherMgrImpl;
 import com.broada.uyconf.core.common.restful.RestfulFactory;
 import com.broada.uyconf.core.common.restful.RestfulMgr;
@@ -10,8 +10,8 @@ import com.broada.uyconf.core.common.restful.RestfulMgr;
 /**
  * 抓取器工厂
  *
- * @author liaoqiqi
- * @version 2014-7-29
+ * @author wnb
+ * 14-7-29
  */
 public class FetcherFactory {
 
@@ -28,12 +28,12 @@ public class FetcherFactory {
         RestfulMgr restfulMgr = RestfulFactory.getRestfulMgrNomal();
 
         FetcherMgr fetcherMgr =
-                new FetcherMgrImpl(restfulMgr, DisClientConfig.getInstance().CONF_SERVER_URL_RETRY_TIMES,
-                        DisClientConfig.getInstance().confServerUrlRetrySleepSeconds,
-                        DisClientConfig.getInstance().enableLocalDownloadDirInClassPath,
-                        DisClientConfig.getInstance().userDefineDownloadDir,
-                        DisClientSysConfig.getInstance().LOCAL_DOWNLOAD_DIR,
-                        DisClientConfig.getInstance().getHostList());
+                new FetcherMgrImpl(restfulMgr, UyClientConfig.getInstance().CONF_SERVER_URL_RETRY_TIMES,
+                        UyClientConfig.getInstance().confServerUrlRetrySleepSeconds,
+                        UyClientConfig.getInstance().enableLocalDownloadDirInClassPath,
+                        UyClientConfig.getInstance().userDefineDownloadDir,
+                        UyClientSysConfig.getInstance().LOCAL_DOWNLOAD_DIR,
+                        UyClientConfig.getInstance().getHostList());
 
         return fetcherMgr;
     }

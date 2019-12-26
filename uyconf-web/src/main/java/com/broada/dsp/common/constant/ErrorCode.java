@@ -3,8 +3,8 @@ package com.broada.dsp.common.constant;
 /**
  * 错误代码定义
  *
- * @author liaoqiqi
- * @version 2013-12-2
+ * @author wnb
+ * 13-12-2
  */
 public enum ErrorCode {
 

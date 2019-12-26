@@ -9,8 +9,8 @@ import com.broada.uyconf.core.common.restful.retry.RetryStrategy;
 /**
  * 轮循重试
  *
- * @author liaoqiqi
- * @version 2014-8-4
+ * @author wnb
+ * 14-8-4
  */
 public class RetryStrategyRoundBin implements RetryStrategy {
 

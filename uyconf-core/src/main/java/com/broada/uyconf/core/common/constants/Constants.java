@@ -1,8 +1,8 @@
 package com.broada.uyconf.core.common.constants;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-6
+ * @author wnb
+ * 14-6-6
  */
 public class Constants {
 
@@ -21,7 +21,7 @@ public class Constants {
     public final static String TYPE = "type";
 
     /**
-     * Disconf-web返回的常量
+     * Uyconf-web返回的常量
      */
     public static final Integer OK = 1;
     public static final Integer NOTOK = 0;

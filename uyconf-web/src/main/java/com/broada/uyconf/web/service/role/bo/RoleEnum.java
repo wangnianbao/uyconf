@@ -6,8 +6,8 @@ import java.util.Map;
 /**
  * 角色分配
  *
- * @author liaoqiqi
- * @version 2014-1-13
+ * @author wnb
+ * 14-1-13
  */
 public enum RoleEnum {
 

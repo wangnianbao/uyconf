@@ -4,48 +4,50 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.broada.uyconf.client.common.model.DisconfKey;
-import com.broada.uyconf.client.common.update.IDisconfUpdate;
-import com.broada.uyconf.client.common.update.IDisconfUpdatePipeline;
+import com.broada.uyconf.client.common.model.UyconfKey;
+import com.broada.uyconf.client.common.update.IUyconfUpdate;
+import com.broada.uyconf.client.common.update.IUyconfUpdatePipeline;
 
 /**
  * 动态扫描对象
  *
- * @author liaoqiqi
- * @version 2014-6-18
+ * @author wnb
+ * 14-6-18
  */
 public class ScanDynamicModel {
 
-    // 配置及影响的回调函数, Key为配置项KEY 或 配置文件
-    private Map<DisconfKey, List<IDisconfUpdate>> disconfUpdateServiceInverseIndexMap =
-            new HashMap<DisconfKey, List<IDisconfUpdate>>();
+    /**
+     * 配置及影响的回调函数, Key为配置项KEY 或 配置文件
+     */
+    private Map<UyconfKey, List<IUyconfUpdate>> uyconfUpdateServiceInverseIndexMap =
+            new HashMap<UyconfKey, List<IUyconfUpdate>>();
 
-    private IDisconfUpdatePipeline disconfUpdatePipeline;
+    private IUyconfUpdatePipeline uyconfUpdatePipeline;
 
-    public Map<DisconfKey, List<IDisconfUpdate>> getDisconfUpdateServiceInverseIndexMap() {
-        return disconfUpdateServiceInverseIndexMap;
+    public Map<UyconfKey, List<IUyconfUpdate>> getUyconfUpdateServiceInverseIndexMap() {
+        return uyconfUpdateServiceInverseIndexMap;
     }
 
-    public IDisconfUpdatePipeline getDisconfUpdatePipeline() {
-        return disconfUpdatePipeline;
+    public IUyconfUpdatePipeline getUyconfUpdatePipeline() {
+        return uyconfUpdatePipeline;
     }
 
-    public void setDisconfUpdatePipeline(
-            IDisconfUpdatePipeline disconfUpdatePipeline) {
-        this.disconfUpdatePipeline = disconfUpdatePipeline;
+    public void setUyconfUpdatePipeline(
+            IUyconfUpdatePipeline uyconfUpdatePipeline) {
+        this.uyconfUpdatePipeline = uyconfUpdatePipeline;
     }
 
-    public void setDisconfUpdateServiceInverseIndexMap(Map<DisconfKey,
-            List<IDisconfUpdate>>
-                                                               disconfUpdateServiceInverseIndexMap) {
-        this.disconfUpdateServiceInverseIndexMap = disconfUpdateServiceInverseIndexMap;
+    public void setUyconfUpdateServiceInverseIndexMap(Map<UyconfKey,
+            List<IUyconfUpdate>>
+                                                              uyconfUpdateServiceInverseIndexMap) {
+        this.uyconfUpdateServiceInverseIndexMap = uyconfUpdateServiceInverseIndexMap;
     }
 
     @Override
     public String toString() {
         return "ScanDynamicModel{" +
-                "disconfUpdateServiceInverseIndexMap=" + disconfUpdateServiceInverseIndexMap +
-                ", disconfUpdatePipeline=" + disconfUpdatePipeline +
+                "uyconfUpdateServiceInverseIndexMap=" + uyconfUpdateServiceInverseIndexMap +
+                ", uyconfUpdatePipeline=" + uyconfUpdatePipeline +
                 '}';
     }
 }

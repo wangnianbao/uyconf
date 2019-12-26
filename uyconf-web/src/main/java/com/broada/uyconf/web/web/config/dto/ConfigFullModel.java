@@ -4,8 +4,8 @@ import com.broada.uyconf.web.service.app.bo.App;
 import com.broada.uyconf.web.service.env.bo.Env;
 
 /**
- * @author liaoqiqi
- * @version 2014-9-11
+ * @author wnb
+ * 14-9-11
  */
 public class ConfigFullModel {
 

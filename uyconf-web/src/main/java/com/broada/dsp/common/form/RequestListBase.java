@@ -12,8 +12,8 @@ import com.broada.ub.common.commons.ThreadContext;
 /**
  * 所有的List请求的基类
  *
- * @author liaoqiqi
- * @version 2013-12-4
+ * @author wnb
+ * 13-12-4
  */
 public abstract class RequestListBase implements Serializable {
 
@@ -52,8 +52,8 @@ public abstract class RequestListBase implements Serializable {
     /**
      * Page对象,通过ThreadContext存储FE传进来的参数数据
      *
-     * @author liaoqiqi
-     * @version 2013-12-4
+     * @author wnb
+     * 13-12-4
      */
     public class Page implements Serializable {
 

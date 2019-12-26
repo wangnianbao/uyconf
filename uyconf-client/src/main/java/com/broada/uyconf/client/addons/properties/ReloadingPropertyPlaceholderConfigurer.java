@@ -42,7 +42,9 @@ public class ReloadingPropertyPlaceholderConfigurer extends DefaultPropertyPlace
 
     protected static final Logger logger = LoggerFactory.getLogger(ReloadingPropertyPlaceholderConfigurer.class);
 
-    // 默认的 property 标识符
+    /**
+     * 默认的 property 标识符
+     */
     private String placeholderPrefix = DEFAULT_PLACEHOLDER_PREFIX;
 
     private String placeholderSuffix = DEFAULT_PLACEHOLDER_SUFFIX;

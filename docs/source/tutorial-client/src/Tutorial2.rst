@@ -72,8 +72,8 @@ redis是根据配置生成的实例，因此，这种情况下，你有三种选
     /**
      * 一个简单的Redis服务
      *
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @Scope("singleton")
@@ -151,8 +151,8 @@ redis是根据配置生成的实例，因此，这种情况下，你有三种选
     import org.springframework.context.annotation.Scope;
     import org.springframework.stereotype.Service;
 
-    import com.broada.uyconf.client.common.annotations.DisconfUpdateService;
-    import com.broada.uyconf.client.common.update.IDisconfUpdate;
+    import com.broada.uyconf.client.common.annotations.UyconfUpdateService;
+    import com.broada.uyconf.client.common.update.IUyconfUpdate;
     import com.example.disconf.demo.config.Coefficients;
     import com.example.disconf.demo.config.JedisConfig;
     import com.example.disconf.demo.service.SimpleRedisService;
@@ -160,8 +160,8 @@ redis是根据配置生成的实例，因此，这种情况下，你有三种选
     /**
      * 更新Redis配置时的回调函数
      *
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @Scope("singleton")
@@ -204,8 +204,8 @@ redis是根据配置生成的实例，因此，这种情况下，你有三种选
     /**
      * Redis配置文件
      *
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @Scope("singleton")

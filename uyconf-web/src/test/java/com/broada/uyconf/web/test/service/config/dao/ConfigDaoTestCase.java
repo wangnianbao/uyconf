@@ -19,8 +19,8 @@ import com.github.knightliao.apollo.utils.io.FileUtils;
 import junit.framework.Assert;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-17
+ * @author wnb
+ * @author 2019-12-23
  */
 public class ConfigDaoTestCase extends BaseTestCase {
 

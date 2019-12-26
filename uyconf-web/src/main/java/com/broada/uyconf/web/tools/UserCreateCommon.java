@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import com.github.knightliao.apollo.utils.common.RandomUtil;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 public class UserCreateCommon {
 

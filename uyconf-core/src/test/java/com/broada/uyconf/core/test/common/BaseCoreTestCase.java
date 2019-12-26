@@ -19,8 +19,8 @@ import com.broada.uyconf.core.test.restful.RemoteMockServer;
 import com.github.tomakehurst.wiremock.junit.WireMockClassRule;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-11
+ * @author wnb
+ * 14-6-11
  */
 public class BaseCoreTestCase {
 

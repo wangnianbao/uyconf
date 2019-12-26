@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author liaoqiqi
- * @version 2014-3-2
+ * @author wnb
+ * 14-3-2
  */
 @Service
 public class EmailService {

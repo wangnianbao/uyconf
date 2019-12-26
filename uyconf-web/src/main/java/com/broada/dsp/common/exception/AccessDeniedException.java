@@ -5,7 +5,7 @@ import com.broada.dsp.common.constant.ModuleCode;
 import com.broada.dsp.common.exception.base.RuntimeGlobalException;
 
 /**
- * @author weiwei
+ * @author wnb
  * @Description: the method is not accessible to current user
  */
 public class AccessDeniedException extends RuntimeGlobalException {

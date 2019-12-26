@@ -17,7 +17,7 @@ import javax.validation.Payload;
 import com.broada.dsp.common.constraint.validation.MaxValidatorForDouble;
 
 /**
- * @author liaoqiqi
+ * @author wnb
  */
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER})
 @Retention(RUNTIME)

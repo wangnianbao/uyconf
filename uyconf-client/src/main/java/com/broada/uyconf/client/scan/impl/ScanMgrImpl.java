@@ -3,7 +3,7 @@ package com.broada.uyconf.client.scan.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.broada.uyconf.client.config.DisClientConfig;
+import com.broada.uyconf.client.config.UyClientConfig;
 import com.broada.uyconf.client.scan.inner.dynamic.ScanDynamicStoreAdapter;
 import com.broada.uyconf.client.scan.inner.statically.StaticScannerMgr;
 import com.broada.uyconf.client.scan.inner.statically.StaticScannerMgrFactory;
@@ -11,7 +11,7 @@ import com.broada.uyconf.client.scan.inner.statically.impl.StaticScannerNonAnnot
 import com.broada.uyconf.client.scan.inner.statically.model.ScanStaticModel;
 import com.broada.uyconf.client.scan.inner.statically.strategy.ScanStaticStrategy;
 import com.broada.uyconf.client.scan.inner.statically.strategy.impl.ReflectionScanStatic;
-import com.broada.uyconf.client.store.inner.DisconfCenterHostFilesStore;
+import com.broada.uyconf.client.store.inner.UyconfCenterHostFilesStore;
 import com.broada.uyconf.client.support.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,8 +21,8 @@ import com.broada.uyconf.client.scan.ScanMgr;
 /**
  * 扫描模块
  *
- * @author liaoqiqi
- * @version 2014-6-6
+ * @author wnb
+ * 14-6-6
  */
 public class ScanMgrImpl implements ScanMgr {
 
@@ -46,13 +46,13 @@ public class ScanMgrImpl implements ScanMgr {
         this.registry = registry;
 
         // 配置文件
-        staticScannerMgrList.add(StaticScannerMgrFactory.getDisconfFileStaticScanner());
+        staticScannerMgrList.add(StaticScannerMgrFactory.getUyconfFileStaticScanner());
 
         // 配置项
-        staticScannerMgrList.add(StaticScannerMgrFactory.getDisconfItemStaticScanner());
+        staticScannerMgrList.add(StaticScannerMgrFactory.getUyconfItemStaticScanner());
 
         // 非注解 托管的配置文件
-        staticScannerMgrList.add(StaticScannerMgrFactory.getDisconfNonAnnotationFileStaticScanner());
+        staticScannerMgrList.add(StaticScannerMgrFactory.getUyconfNonAnnotationFileStaticScanner());
     }
 
     /**
@@ -68,7 +68,7 @@ public class ScanMgrImpl implements ScanMgr {
         scanModel = scanStaticStrategy.scan(packageNameList);
 
         // 增加非注解的配置
-        scanModel.setJustHostFiles(DisconfCenterHostFilesStore.getInstance().getJustHostFiles());
+        scanModel.setJustHostFiles(UyconfCenterHostFilesStore.getInstance().getJustHostFiles());
 
         // 放进仓库
         for (StaticScannerMgr scannerMgr : staticScannerMgrList) {
@@ -77,7 +77,7 @@ public class ScanMgrImpl implements ScanMgr {
             scannerMgr.scanData2Store(scanModel);
 
             // 忽略哪些KEY
-            scannerMgr.exclude(DisClientConfig.getInstance().getIgnoreDisconfKeySet());
+            scannerMgr.exclude(UyClientConfig.getInstance().getIgnoreUyconfKeySet());
         }
     }
 
@@ -86,8 +86,8 @@ public class ScanMgrImpl implements ScanMgr {
      */
     public void secondScan() throws Exception {
 
-        // 开启disconf才需要处理回调
-        if (DisClientConfig.getInstance().ENABLE_DISCONF) {
+        // 开启uyconf才需要处理回调
+        if (UyClientConfig.getInstance().ENABLE_UYCONF) {
 
             if (scanModel == null) {
                 synchronized(scanModel) {

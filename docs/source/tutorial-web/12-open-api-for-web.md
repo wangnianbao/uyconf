@@ -1,4 +1,4 @@
-Tutorial 12 disconf-web 为界面 开放的 Http API
+Tutorial 12 uyconf-web 为界面 开放的 Http API
 =======
 
 ## 前言
@@ -17,7 +17,7 @@ Tutorial 12 disconf-web 为界面 开放的 Http API
 - 返回示例:
 
     {"message":{},"sessionId":"3e560be1-9000-4a5c-8371-35312040d8ac","success":"true","page":{"result":[
-{"id":2,"name":"disconf_demo"}],"order":null,"orderBy":null,"totalCount":1,"pageNo":null,"pageSize":null
+{"id":2,"name":"uyconf_demo"}],"order":null,"orderBy":null,"totalCount":1,"pageNo":null,"pageSize":null
 ,"footResult":null}}
 
 ### /api/app
@@ -180,11 +180,11 @@ Tutorial 12 disconf-web 为界面 开放的 Http API
 - 返回示例:
 
     {"message":{},"sessionId":"95839567-d098-4456-b44a-dd556454ec65","success":"true","page":{"result":[
-{"configId":148,"appName":"disconf_demo","appId":2,"version":"1_0_0_0","envId":1,"envName":"rd","type"
+{"configId":148,"appName":"uyconf_demo","appId":2,"version":"1_0_0_0","envId":1,"envName":"rd","type"
 :"配置文件","typeId":0,"key":"autoconfig.properties","value":"auto=bbdxxjdccdcccdxdcdc\nxx","createTime"
 :"20150320130619","modifyTime":"201603271140","machineSize":1,"machineList":[{"machine":"localhost_0_4b860678-290a-4bdf-9a79-2600598f419b"
 ,"value":"{\"auto\":\"bbdxxjdccdcccdxdcdc\",\"xx\":\"\"}","errorList":[]}],"errorNum":0},{"configId"
-:149,"appName":"disconf_demo","appId":2,"version":"1_0_0_0","envId":1,"envName":"rd","type":"配置文件","typeId"
+:149,"appName":"uyconf_demo","appId":2,"version":"1_0_0_0","envId":1,"envName":"rd","type":"配置文件","typeId"
 :0,"key":"autoconfig2.properties","value":"auto2=cd你好 坑爹 22fd d","createTime":"20150320130625","modifyTime"
 :"201602011810","machineSize":1,"machineList":[{"machine":"localhost_0_4b860678-290a-4bdf-9a79-2600598f419b"
 ,"value":"{\"auto2\":\"cd你好 坑爹 22fd d\"}","errorList":[]}],"errorNum":0}.....
@@ -224,7 +224,7 @@ Tutorial 12 disconf-web 为界面 开放的 Http API
 - 返回示例:
 
     {"message":{},"sessionId":"2944fb48-3735-48a0-a1bf-ad1bf4980c71","success":"true","result":{"configId"
-:148,"appName":"disconf_demo","appId":2,"version":"1_0_0_0","envId":1,"envName":"rd","type":"配置文件","typeId"
+:148,"appName":"uyconf_demo","appId":2,"version":"1_0_0_0","envId":1,"envName":"rd","type":"配置文件","typeId"
 :0,"key":"autoconfig.properties","value":"auto=bbdxxjdccdcccdxdcdc\nxx","createTime":"20150320130619"
 ,"modifyTime":"201603271140","machineSize":0,"machineList":null,"errorNum":0}}
 

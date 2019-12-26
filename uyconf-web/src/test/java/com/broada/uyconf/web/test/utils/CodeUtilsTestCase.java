@@ -10,7 +10,7 @@ import org.junit.Test;
 import com.broada.uyconf.web.utils.CodeUtils;
 
 /**
- * Created by knightliao on 15/1/7.
+ * Created by wnb on 15/1/7.
  */
 public class CodeUtilsTestCase {
 

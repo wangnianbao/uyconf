@@ -17,8 +17,8 @@ import com.broada.uyconf.core.common.utils.ClassLoaderUtil;
 /**
  * 配置导入工具
  *
- * @author liaoqiqi
- * @version 2014-6-6
+ * @author wnb
+ * 14-6-6
  */
 public final class ConfigLoaderUtils {
 
@@ -35,8 +35,8 @@ public final class ConfigLoaderUtils {
      * @return void
      *
      * @Description: 使用TOMCAT方式来导入
-     * @author liaoqiqi
-     * @date 2013-6-19
+     * @author wnb
+     *  2013-6-19
      */
     private static Properties loadWithTomcatMode(final String propertyFilePath)
             throws Exception {
@@ -67,8 +67,8 @@ public final class ConfigLoaderUtils {
      * @return void
      *
      * @Description: 使用普通模式导入
-     * @author liaoqiqi
-     * @date 2013-6-19
+     * @author wnb
+     *  2013-6-19
      */
     private static Properties loadWithNormalMode(final String propertyFilePath)
             throws Exception {
@@ -85,8 +85,8 @@ public final class ConfigLoaderUtils {
      *
      * @throws Exception
      * @Description: 配置文件载入器助手
-     * @author liaoqiqi
-     * @date 2013-6-19
+     * @author wnb
+     *  2013-6-19
      */
     public static Properties loadConfig(final String propertyFilePath)
             throws Exception {
@@ -116,8 +116,8 @@ public final class ConfigLoaderUtils {
      * @return InputStream
      *
      * @Description: 采用两种方式来载入文件
-     * @author liaoqiqi
-     * @date 2013-6-20
+     * @author wnb
+     *  2013-6-20
      */
     public static InputStream loadFile(String filePath) {
 

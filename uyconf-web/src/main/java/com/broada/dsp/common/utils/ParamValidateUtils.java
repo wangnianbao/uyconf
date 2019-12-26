@@ -22,8 +22,8 @@ import com.broada.dsp.common.vo.JsonObjectUtils;
 /**
  * 参数错误的工具
  *
- * @author liaoqiqi
- * @version 2014-3-3
+ * @author wnb
+ * 14-3-3
  */
 @Component
 public class ParamValidateUtils {

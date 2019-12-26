@@ -6,8 +6,8 @@ import java.net.UnknownHostException;
 /**
  * MachineInfo
  *
- * @author liaoqiqi
- * @version 2014-7-30
+ * @author wnb
+ * 14-7-30
  */
 public final class MachineInfo {
 

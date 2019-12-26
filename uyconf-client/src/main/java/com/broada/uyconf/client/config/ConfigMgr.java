@@ -1,15 +1,15 @@
 package com.broada.uyconf.client.config;
 
-import com.broada.uyconf.client.config.inner.DisClientComConfig;
-import com.broada.uyconf.client.config.inner.DisInnerConfigHelper;
+import com.broada.uyconf.client.config.inner.UyClientComConfig;
+import com.broada.uyconf.client.config.inner.UyInnerConfigHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * 配置模块
  *
- * @author liaoqiqi
- * @version 2014-6-6
+ * @author wnb
+ * 14-6-6
  */
 public class ConfigMgr {
 
@@ -27,19 +27,19 @@ public class ConfigMgr {
         LOGGER.info("--------------- LOAD CONFIG START ---------------");
 
         //
-        LOGGER.info("Finer print: " + DisClientComConfig.getInstance().getInstanceFingerprint());
+        LOGGER.info("Finer print: " + UyClientComConfig.getInstance().getInstanceFingerprint());
 
         // 导入系统配置
-        DisClientSysConfig.getInstance().loadConfig(null);
+        UyClientSysConfig.getInstance().loadConfig(null);
 
         // 校验 系统配置
-        DisInnerConfigHelper.verifySysConfig();
+        UyInnerConfigHelper.verifySysConfig();
 
         // 导入用户配置
-        DisClientConfig.getInstance().loadConfig(null);
+        UyClientConfig.getInstance().loadConfig(null);
 
         // 校验 用户配置
-        DisInnerConfigHelper.verifyUserConfig();
+        UyInnerConfigHelper.verifyUserConfig();
 
         isInit = true;
 

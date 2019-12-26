@@ -3,12 +3,12 @@ package com.broada.uyconf.web.innerapi.zookeeper;
 import java.util.List;
 import java.util.Map;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
-import com.broada.uyconf.web.service.zookeeper.dto.ZkDisconfData;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
+import com.broada.uyconf.web.service.zookeeper.dto.ZkUyconfData;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-24
+ * @author wnb
+ * 14-6-24
  */
 public interface ZooKeeperDriver {
 
@@ -18,10 +18,10 @@ public interface ZooKeeperDriver {
      * @param app
      * @param env
      * @param version
-     * @param disConfigTypeEnum
+     * @param uyConfigTypeEnum
      */
     void notifyNodeUpdate(String app, String env, String version, String key, String value,
-                          DisConfigTypeEnum disConfigTypeEnum);
+                          UyConfigTypeEnum uyConfigTypeEnum);
 
     /**
      * 获取分布式配置 Map
@@ -32,7 +32,7 @@ public interface ZooKeeperDriver {
      *
      * @return
      */
-    Map<String, ZkDisconfData> getDisconfData(String app, String env, String version);
+    Map<String, ZkUyconfData> getUyconfData(String app, String env, String version);
 
     /**
      * 获取分布式配置 Map
@@ -43,8 +43,8 @@ public interface ZooKeeperDriver {
      *
      * @return
      */
-    ZkDisconfData getDisconfData(String app, String env, String version, DisConfigTypeEnum disConfigTypeEnum,
-                                 String keyName);
+    ZkUyconfData getUyconfData(String app, String env, String version, UyConfigTypeEnum uyConfigTypeEnum,
+                               String keyName);
 
     /**
      * 返回groupName结点向下的所有zookeeper信息

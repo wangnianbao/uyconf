@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * @author wnb
  * 标记其对应的数据库字段信息的annotation
  */
 @Retention(RetentionPolicy.RUNTIME)

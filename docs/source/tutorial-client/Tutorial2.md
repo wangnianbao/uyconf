@@ -58,8 +58,8 @@ Tutorial 2 注解式分布式的配置文件高级篇: 配置更新的通知（�
     /**
      * 一个简单的Redis服务
      *
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @Scope("singleton")
@@ -134,8 +134,8 @@ Tutorial 2 注解式分布式的配置文件高级篇: 配置更新的通知（�
     import org.springframework.context.annotation.Scope;
     import org.springframework.stereotype.Service;
     
-    import com.broada.uyconf.client.common.annotations.DisconfUpdateService;
-    import com.broada.uyconf.client.common.update.IDisconfUpdate;
+    import com.broada.uyconf.client.common.annotations.UyconfUpdateService;
+    import com.broada.uyconf.client.common.update.IUyconfUpdate;
     import com.example.disconf.demo.config.Coefficients;
     import com.example.disconf.demo.config.JedisConfig;
     import com.example.disconf.demo.service.SimpleRedisService;
@@ -143,8 +143,8 @@ Tutorial 2 注解式分布式的配置文件高级篇: 配置更新的通知（�
     /**
      * 更新Redis配置时的回调函数
      *
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @Scope("singleton")
@@ -180,8 +180,8 @@ confFileKeys 也可以。
     /**
      * Redis配置文件
      *
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @Scope("singleton")

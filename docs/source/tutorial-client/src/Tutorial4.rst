@@ -11,14 +11,14 @@ Tutorial 4 注解式分布式静态配置文件和静态配置项（最佳实践
 
     package com.example.disconf.demo.config;
 
-    import com.broada.uyconf.client.common.annotations.DisconfFile;
-    import com.broada.uyconf.client.common.annotations.DisconfFileItem;
+    import com.broada.uyconf.client.common.annotations.UyconfFile;
+    import com.broada.uyconf.client.common.annotations.UyconfFileItem;
 
     /**
      * 静态 配置文件 示例
      *
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @DisconfFile(filename = "static.properties")
     public class StaticConfig {
@@ -43,7 +43,7 @@ Tutorial 4 注解式分布式静态配置文件和静态配置项（最佳实践
 
     package com.example.disconf.demo.service;
 
-    import com.broada.uyconf.client.common.annotations.DisconfItem;
+    import com.broada.uyconf.client.common.annotations.UyconfItem;
     import com.example.disconf.demo.config.StaticConfig;
 
     /**
@@ -51,8 +51,8 @@ Tutorial 4 注解式分布式静态配置文件和静态配置项（最佳实践
      * Plus <br/>
      * 静态配置项 使用示例
      * 
-     * @author liaoqiqi
-     * @version 2014-8-14
+     * @author wnb
+     * 14-8-14
      */
     public class SimpleStaticService {
 
@@ -85,7 +85,7 @@ Tutorial 4 注解式分布式静态配置文件和静态配置项（最佳实践
 
     package com.example.disconf.demo.service;
 
-    import com.broada.uyconf.client.common.annotations.DisconfItem;
+    import com.broada.uyconf.client.common.annotations.UyconfItem;
     import com.example.disconf.demo.config.StaticConfig;
 
     /**
@@ -93,8 +93,8 @@ Tutorial 4 注解式分布式静态配置文件和静态配置项（最佳实践
      * Plus <br/>
      * 静态配置项 使用示例
      * 
-     * @author liaoqiqi
-     * @version 2014-8-14
+     * @author wnb
+     * 14-8-14
      */
     public class SimpleStaticService {
 

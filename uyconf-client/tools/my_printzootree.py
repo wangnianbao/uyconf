@@ -3,7 +3,7 @@
 """
 Created on 2013-5-23
 
-@author: liaoqiqi
+@author: wnb
 
 打印zookeeper树
 

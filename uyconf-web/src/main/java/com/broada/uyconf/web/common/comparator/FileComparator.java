@@ -12,7 +12,7 @@ import difflib.DiffUtils;
 import difflib.Patch;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 public class FileComparator extends CommonComparator {
 

@@ -5,8 +5,8 @@ import com.broada.uyconf.core.common.restful.core.UnreliableInterface;
 /**
  * 重试的策略
  *
- * @author liaoqiqi
- * @version 2014-6-10
+ * @author wnb
+ * 14-6-10
  */
 public interface RetryStrategy {
 

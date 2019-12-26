@@ -7,7 +7,7 @@ import com.broada.uyconf.web.service.config.dao.ConfigHistoryDao;
 import com.broada.dsp.common.dao.AbstractDao;
 
 /**
- * Created by knightliao on 15/12/25.
+ * Created by wnb on 15/12/25.
  */
 @Service
 public class ConfigHistoryDaoImpl extends AbstractDao<Long, ConfigHistory> implements ConfigHistoryDao {

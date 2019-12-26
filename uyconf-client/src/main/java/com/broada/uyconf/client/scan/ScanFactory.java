@@ -6,8 +6,8 @@ import com.broada.uyconf.client.support.registry.Registry;
 /**
  * 扫描器工厂
  *
- * @author liaoqiqi
- * @version 2014-7-29
+ * @author wnb
+ * 14-7-29
  */
 public class ScanFactory {
 

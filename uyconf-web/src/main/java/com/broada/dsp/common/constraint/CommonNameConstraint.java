@@ -12,8 +12,8 @@ import javax.validation.constraints.Pattern;
 /**
  * 中文正则匹配校验
  *
- * @author zhangbi
- * @date 2014年1月16日下午4:50:15
+ * @author wnb
+ *  2014年1月16日下午4:50:15
  */
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)

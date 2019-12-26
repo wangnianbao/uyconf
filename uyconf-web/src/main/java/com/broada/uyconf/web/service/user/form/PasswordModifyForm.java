@@ -9,8 +9,8 @@ import com.broada.dsp.common.form.RequestFormBase;
 import lombok.Data;
 
 /**
- * @author liaoqiqi
- * @version 2014-1-24
+ * @author wnb
+ * 14-1-24
  */
 @Data
 public class PasswordModifyForm extends RequestFormBase {

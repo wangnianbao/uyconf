@@ -9,8 +9,8 @@ import com.broada.uyconf.web.service.app.form.AppNewForm;
 import com.broada.uyconf.web.service.app.vo.AppListVo;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public interface AppMgr {
 

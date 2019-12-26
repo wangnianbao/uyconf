@@ -4,47 +4,58 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.Set;
 
-import com.broada.uyconf.client.common.update.IDisconfUpdatePipeline;
+import com.broada.uyconf.client.common.update.IUyconfUpdatePipeline;
 import org.reflections.Reflections;
 
 /**
  * 扫描静态存储的对象
  *
- * @author liaoqiqi
- * @version 2014-6-9
+ * @author wnb
+ * 14-6-9
  */
 public class ScanStaticModel {
 
     private Reflections reflections;
 
-    //
-    // 配置文件
-    private Set<Class<?>> disconfFileClassSet;
+    /**
+     *  配置文件
+     */
+    private Set<Class<?>> uyconfFileClassSet;
 
-    // 配置文件中的函数
-    private Set<Method> disconfFileItemMethodSet;
+    /**
+     * 配置文件中的函数
+     */
+    private Set<Method> uyconfFileItemMethodSet;
 
-    //
-    // 配置文件及其函数的MAP, KEY为配置文件类
-    private Map<Class<?>, Set<Method>> disconfFileItemMap;
+    /**
+     *  配置文件及其函数的MAP, KEY为配置文件类
+     */
+    private Map<Class<?>, Set<Method>> uyconfFileItemMap;
 
-    //
-    // 配置ITEM
-    private Set<Method> disconfItemMethodSet;
+    /**
+     * 配置ITEM
+     */
+    private Set<Method> uyconfItemMethodSet;
 
-    //
-    // 主从切换的回调函数类
-    private Set<Class<?>> disconfActiveBackupServiceClassSet;
+    /**
+     * 主从切换的回调函数类
+     */
+    private Set<Class<?>> uyconfActiveBackupServiceClassSet;
 
-    //
-    // 更新 回调函数类
-    private Set<Class<?>> disconfUpdateService;
-    private Class<IDisconfUpdatePipeline> iDisconfUpdatePipeline = null;
+    /**
+     * 更新 回调函数类
+     */
+    private Set<Class<?>> uyconfUpdateService;
+    private Class<IUyconfUpdatePipeline> iUyconfUpdatePipeline = null;
 
-    // 只是托管的配置文件，没有注入到类中
+    /**
+     * 只是托管的配置文件，没有注入到类中
+     */
     private Set<String> justHostFiles;
 
-    // reload files
+    /**
+     *  reload files
+     */
     private Set<String> reloadableFiles;
 
     public Reflections getReflections() {
@@ -55,52 +66,52 @@ public class ScanStaticModel {
         this.reflections = reflections;
     }
 
-    public Set<Class<?>> getDisconfFileClassSet() {
-        return disconfFileClassSet;
+    public Set<Class<?>> getUyconfFileClassSet() {
+        return uyconfFileClassSet;
     }
 
-    public void setDisconfFileClassSet(Set<Class<?>> disconfFileClassSet) {
-        this.disconfFileClassSet = disconfFileClassSet;
+    public void setUyconfFileClassSet(Set<Class<?>> uyconfFileClassSet) {
+        this.uyconfFileClassSet = uyconfFileClassSet;
     }
 
-    public Map<Class<?>, Set<Method>> getDisconfFileItemMap() {
-        return disconfFileItemMap;
+    public Map<Class<?>, Set<Method>> getUyconfFileItemMap() {
+        return uyconfFileItemMap;
     }
 
-    public void setDisconfFileItemMap(Map<Class<?>, Set<Method>> disconfFileItemMap) {
-        this.disconfFileItemMap = disconfFileItemMap;
+    public void setUyconfFileItemMap(Map<Class<?>, Set<Method>> uyconfFileItemMap) {
+        this.uyconfFileItemMap = uyconfFileItemMap;
     }
 
-    public Set<Method> getDisconfItemMethodSet() {
-        return disconfItemMethodSet;
+    public Set<Method> getUyconfItemMethodSet() {
+        return uyconfItemMethodSet;
     }
 
-    public void setDisconfItemMethodSet(Set<Method> disconfItemMethodSet) {
-        this.disconfItemMethodSet = disconfItemMethodSet;
+    public void setUyconfItemMethodSet(Set<Method> uyconfItemMethodSet) {
+        this.uyconfItemMethodSet = uyconfItemMethodSet;
     }
 
-    public Set<Method> getDisconfFileItemMethodSet() {
-        return disconfFileItemMethodSet;
+    public Set<Method> getUyconfFileItemMethodSet() {
+        return uyconfFileItemMethodSet;
     }
 
-    public void setDisconfFileItemMethodSet(Set<Method> disconfFileItemMethodSet) {
-        this.disconfFileItemMethodSet = disconfFileItemMethodSet;
+    public void setUyconfFileItemMethodSet(Set<Method> uyconfFileItemMethodSet) {
+        this.uyconfFileItemMethodSet = uyconfFileItemMethodSet;
     }
 
-    public Set<Class<?>> getDisconfActiveBackupServiceClassSet() {
-        return disconfActiveBackupServiceClassSet;
+    public Set<Class<?>> getUyconfActiveBackupServiceClassSet() {
+        return uyconfActiveBackupServiceClassSet;
     }
 
-    public void setDisconfActiveBackupServiceClassSet(Set<Class<?>> disconfActiveBackupServiceClassSet) {
-        this.disconfActiveBackupServiceClassSet = disconfActiveBackupServiceClassSet;
+    public void setUyconfActiveBackupServiceClassSet(Set<Class<?>> uyconfActiveBackupServiceClassSet) {
+        this.uyconfActiveBackupServiceClassSet = uyconfActiveBackupServiceClassSet;
     }
 
-    public Set<Class<?>> getDisconfUpdateService() {
-        return disconfUpdateService;
+    public Set<Class<?>> getUyconfUpdateService() {
+        return uyconfUpdateService;
     }
 
-    public void setDisconfUpdateService(Set<Class<?>> disconfUpdateService) {
-        this.disconfUpdateService = disconfUpdateService;
+    public void setUyconfUpdateService(Set<Class<?>> uyconfUpdateService) {
+        this.uyconfUpdateService = uyconfUpdateService;
     }
 
     public Set<String> getReloadableFiles() {
@@ -119,26 +130,26 @@ public class ScanStaticModel {
         this.justHostFiles = justHostFiles;
     }
 
-    public Class<IDisconfUpdatePipeline> getiDisconfUpdatePipeline() {
-        return iDisconfUpdatePipeline;
+    public Class<IUyconfUpdatePipeline> getiUyconfUpdatePipeline() {
+        return iUyconfUpdatePipeline;
     }
 
-    public void setiDisconfUpdatePipeline(
-            Class<IDisconfUpdatePipeline> iDisconfUpdatePipeline) {
-        this.iDisconfUpdatePipeline = iDisconfUpdatePipeline;
+    public void setiUyconfUpdatePipeline(
+            Class<IUyconfUpdatePipeline> iUyconfUpdatePipeline) {
+        this.iUyconfUpdatePipeline = iUyconfUpdatePipeline;
     }
 
     @Override
     public String toString() {
         return "ScanStaticModel{" +
                 "reflections=" + reflections +
-                ", disconfFileClassSet=" + disconfFileClassSet +
-                ", disconfFileItemMethodSet=" + disconfFileItemMethodSet +
-                ", disconfFileItemMap=" + disconfFileItemMap +
-                ", disconfItemMethodSet=" + disconfItemMethodSet +
-                ", iDisconfUpdatePipeline=" + iDisconfUpdatePipeline +
-                ", disconfActiveBackupServiceClassSet=" + disconfActiveBackupServiceClassSet +
-                ", disconfUpdateService=" + disconfUpdateService +
+                ", uyconfFileClassSet=" + uyconfFileClassSet +
+                ", uyconfFileItemMethodSet=" + uyconfFileItemMethodSet +
+                ", uyconfFileItemMap=" + uyconfFileItemMap +
+                ", uyconfItemMethodSet=" + uyconfItemMethodSet +
+                ", iUyconfUpdatePipeline=" + iUyconfUpdatePipeline +
+                ", uyconfActiveBackupServiceClassSet=" + uyconfActiveBackupServiceClassSet +
+                ", uyconfUpdateService=" + uyconfUpdateService +
                 ", justHostFiles=" + justHostFiles +
                 ", reloadableFiles=" + reloadableFiles +
                 '}';

@@ -1,22 +1,22 @@
 package com.broada.uyconf.client.test.model;
 
-import com.broada.uyconf.client.common.annotations.DisconfFile;
-import com.broada.uyconf.client.common.annotations.DisconfFileItem;
+import com.broada.uyconf.client.common.annotations.UyconfFile;
+import com.broada.uyconf.client.common.annotations.UyconfFileItem;
 
 /**
  * 静态配置文件
  *
- * @author liaoqiqi
- * @version 2014-8-14
+ * @author wnb
+ * 14-8-14
  */
-@DisconfFile(filename = "staticConf.properties")
+@UyconfFile(filename = "staticConf.properties")
 public class StaticConf {
 
     private static int staticvar = 40;
 
     private static double staticvar2 = 50;
 
-    @DisconfFileItem(name = "staticvar", associateField = "staticvar")
+    @UyconfFileItem(name = "staticvar", associateField = "staticvar")
     public static int getStaticVar() {
         return staticvar;
     }
@@ -33,7 +33,7 @@ public class StaticConf {
         StaticConf.staticvar = staticvar;
     }
 
-    @DisconfFileItem(name = "staticvar2", associateField = "staticvar2")
+    @UyconfFileItem(name = "staticvar2", associateField = "staticvar2")
     public static double getStaticvar2() {
         return staticvar2;
     }

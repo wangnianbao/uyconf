@@ -3,8 +3,8 @@ package com.broada.uyconf.web.service.config.form;
 import javax.validation.constraints.NotNull;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-22
+ * @author wnb
+ * 14-6-22
  */
 public class VersionListForm {
 

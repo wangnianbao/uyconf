@@ -1,7 +1,7 @@
 package com.broada.uyconf.web.tasks;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 public interface IConfigConsistencyMonitorService {
 

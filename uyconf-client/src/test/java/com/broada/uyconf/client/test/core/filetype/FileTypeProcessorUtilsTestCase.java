@@ -9,7 +9,7 @@ import com.broada.uyconf.client.common.constants.SupportFileTypeEnum;
 import com.broada.uyconf.client.core.filetype.FileTypeProcessorUtils;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 public class FileTypeProcessorUtilsTestCase {
 

@@ -34,8 +34,8 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
     /**
      * Redis配置文件
      * 
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @Scope("singleton")
@@ -117,8 +117,8 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
     /**
      * 一个简单的Redis服务
      * 
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @Scope("singleton")
@@ -192,8 +192,8 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
     /**
      * 演示分布式配置文件、分布式配置的更新Demo
      * 
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     public class DisconfDemoTask {
@@ -243,11 +243,11 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
 在applicationContext.xml里添加Bean定义：
 
     <!-- 使用disconf必须添加以下配置 -->
-    <bean id="disconfMgrBean" class="com.broada.uyconf.client.DisconfMgrBean"
+    <bean id="disconfMgrBean" class="com.broada.uyconf.client.UyconfMgrBean"
           destroy-method="destroy">
         <property name="scanPackage" value="com.example.disconf.demo"/>
     </bean>
-    <bean id="disconfMgrBean2" class="com.broada.uyconf.client.DisconfMgrBeanSecond"
+    <bean id="disconfMgrBean2" class="com.broada.uyconf.client.UyconfMgrBeanSecond"
           init-method="init" destroy-method="destroy">
     </bean>
 
@@ -256,7 +256,7 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
 
 另外，从2.6.23起，这里的 `scanPackage` 属性支持扫描多包，逗号分隔，例如：
 
-    <bean id="disconfMgrBean" class="com.broada.uyconf.client.DisconfMgrBean"
+    <bean id="disconfMgrBean" class="com.broada.uyconf.client.UyconfMgrBean"
           destroy-method="destroy">
         <property name="scanPackage" value="com.example.disconf.demo,com.example.disconf.demo2"/>
     </bean>
@@ -288,14 +288,14 @@ Tutorial 1 注解式分布式的配置文件（最佳实践）
     import org.springframework.context.annotation.Scope;
     import org.springframework.stereotype.Service;
     
-    import com.broada.uyconf.client.common.annotations.DisconfFile;
-    import com.broada.uyconf.client.common.annotations.DisconfFileItem;
+    import com.broada.uyconf.client.common.annotations.UyconfFile;
+    import com.broada.uyconf.client.common.annotations.UyconfFileItem;
     
     /**
      * Redis配置文件
      *
-     * @author liaoqiqi
-     * @version 2014-6-17
+     * @author wnb
+     * @author 2019-12-23
      */
     @Service
     @Scope("singleton")

@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 import com.broada.dsp.common.constraint.DoubleMin;
 
 /**
- * @author liaoqiqi
+ * @author wnb
  */
 public class MinValidatorForDouble implements ConstraintValidator<DoubleMin, Double> {
 

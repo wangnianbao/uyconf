@@ -8,8 +8,8 @@ import java.util.Set;
 /**
  * 类工具
  *
- * @author liaoqiqi
- * @version 2014-6-11
+ * @author wnb
+ * 14-6-11
  */
 public class ClassUtils {
 

@@ -9,8 +9,8 @@ import com.broada.uyconf.core.common.zookeeper.inner.ConnectionWatcher;
 /**
  * 递归进行删除
  *
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public class DeleteGroup extends ConnectionWatcher {
 
@@ -50,7 +50,7 @@ public class DeleteGroup extends ConnectionWatcher {
 
         DeleteGroup deleteGroup = new DeleteGroup();
         deleteGroup.connect(hosts);
-        deleteGroup.delete("/disconf");
+        deleteGroup.delete("/uyconf");
         deleteGroup.close();
     }
 }

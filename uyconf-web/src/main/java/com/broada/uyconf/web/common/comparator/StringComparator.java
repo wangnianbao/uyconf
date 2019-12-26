@@ -11,7 +11,7 @@ import difflib.DiffUtils;
 import difflib.Patch;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 public class StringComparator extends CommonComparator {
 

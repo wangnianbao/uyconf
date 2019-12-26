@@ -3,8 +3,8 @@ package com.broada.uyconf.client.scan;
 import java.util.List;
 
 /**
- * @author liaoqiqi
- * @version 2014-7-29
+ * @author wnb
+ * 14-7-29
  */
 public interface ScanMgr {
 

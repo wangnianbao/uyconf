@@ -10,7 +10,7 @@ import com.broada.uyconf.web.service.user.service.AuthMgr;
 import com.broada.uyconf.web.service.user.service.UserInnerMgr;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 @Service
 public class AuthMgrImpl implements AuthMgr {

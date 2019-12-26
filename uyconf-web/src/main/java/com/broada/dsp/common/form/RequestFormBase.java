@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author liaoqiqi
+ * @author wnb
  */
 public abstract class RequestFormBase implements Serializable {
 

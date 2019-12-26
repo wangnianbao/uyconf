@@ -6,20 +6,20 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
+import com.broada.uyconf.client.common.annotations.UyconfFile;
 import org.reflections.Reflections;
 import org.reflections.Store;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.broada.uyconf.client.common.annotations.DisconfFile;
-import com.broada.uyconf.client.common.annotations.DisconfItem;
+import com.broada.uyconf.client.common.annotations.UyconfItem;
 import com.google.common.collect.Multimap;
 
 /**
  * 扫描打印器
  *
- * @author liaoqiqi
- * @version 2014-6-9
+ * @author wnb
+ * 14-6-9
  */
 public class ScanPrinterUtils {
 
@@ -52,9 +52,9 @@ public class ScanPrinterUtils {
     /**
      *
      */
-    public static void printFileItem(Set<Field> disconfFileItemSet) {
+    public static void printFileItem(Set<Field> uyconfFileItemSet) {
 
-        for (Field item : disconfFileItemSet) {
+        for (Field item : uyconfFileItemSet) {
 
             LOGGER.info(item.toString());
         }
@@ -63,9 +63,9 @@ public class ScanPrinterUtils {
     /**
      *
      */
-    public static void printFileItemMethod(Set<Method> disconfFileItemSet) {
+    public static void printFileItemMethod(Set<Method> uyconfFileItemSet) {
 
-        for (Method item : disconfFileItemSet) {
+        for (Method item : uyconfFileItemSet) {
 
             LOGGER.info(item.toString());
         }
@@ -79,22 +79,22 @@ public class ScanPrinterUtils {
         for (Class<?> item : classdata) {
 
             LOGGER.info(item.toString());
-            DisconfFile disconfFile = item.getAnnotation(DisconfFile.class);
-            LOGGER.info("\tfile name: " + disconfFile.filename());
-            LOGGER.info("\tenv: " + disconfFile.env());
-            LOGGER.info("\tversion: " + disconfFile.env());
+            UyconfFile uyconfFile = item.getAnnotation(UyconfFile.class);
+            LOGGER.info("\tfile name: " + uyconfFile.filename());
+            LOGGER.info("\tenv: " + uyconfFile.env());
+            LOGGER.info("\tversion: " + uyconfFile.env());
         }
     }
 
     /**
      *
      */
-    public static void printFileMap(Map<Class<?>, Set<Field>> disconfFileItemMap) {
+    public static void printFileMap(Map<Class<?>, Set<Field>> uyconfFileItemMap) {
 
-        for (Class<?> thisClass : disconfFileItemMap.keySet()) {
+        for (Class<?> thisClass : uyconfFileItemMap.keySet()) {
 
             LOGGER.info(thisClass + " -> ");
-            Set<Field> fields = disconfFileItemMap.get(thisClass);
+            Set<Field> fields = uyconfFileItemMap.get(thisClass);
             for (Field field : fields) {
                 LOGGER.info("\t\t" + field.toString());
             }
@@ -109,10 +109,10 @@ public class ScanPrinterUtils {
         for (Field item : af1) {
 
             LOGGER.info(item.toString());
-            DisconfItem disconfItem = item.getAnnotation(DisconfItem.class);
-            LOGGER.info("\tkey: " + disconfItem.key());
-            LOGGER.info("\tenv: " + disconfItem.env());
-            LOGGER.info("\tversion: " + disconfItem.version());
+            UyconfItem uyconfItem = item.getAnnotation(UyconfItem.class);
+            LOGGER.info("\tkey: " + uyconfItem.key());
+            LOGGER.info("\tenv: " + uyconfItem.env());
+            LOGGER.info("\tversion: " + uyconfItem.version());
 
         }
     }

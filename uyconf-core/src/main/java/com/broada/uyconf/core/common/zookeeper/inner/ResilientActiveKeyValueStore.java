@@ -16,8 +16,8 @@ import org.slf4j.LoggerFactory;
 /**
  * ZK读写
  *
- * @author liaoqiqi
- * @version 2014-7-7
+ * @author wnb
+ * 14-7-7
  */
 public class ResilientActiveKeyValueStore extends ConnectionWatcher {
 
@@ -47,8 +47,8 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
      * @throws InterruptedException
      * @throws KeeperException
      * @Description: 写PATH数据, 是持久化的
-     * @author liaoqiqi
-     * @date 2013-6-14
+     * @author wnb
+     *  2013-6-14
      */
     public void write(String path, String value) throws InterruptedException, KeeperException {
 
@@ -98,8 +98,8 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
      * @throws InterruptedException
      * @throws KeeperException
      * @Description: 创建一个临时结点，如果原本存在，则不新建, 如果存在，则更新值
-     * @author liaoqiqi
-     * @date 2013-6-14
+     * @author wnb
+     *  2013-6-14
      */
     public String createEphemeralNode(String path, String value, CreateMode createMode)
         throws InterruptedException, KeeperException {
@@ -201,8 +201,8 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
      * @throws InterruptedException
      * @throws KeeperException
      * @Description: 读数据
-     * @author liaoqiqi
-     * @date 2013-6-14
+     * @author wnb
+     *  2013-6-14
      */
     public String read(String path, Watcher watcher, Stat stat) throws InterruptedException, KeeperException {
 
@@ -214,8 +214,8 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
      * @return List<String>
      *
      * @Description: 获取子孩子数据
-     * @author liaoqiqi
-     * @date 2013-6-14
+     * @author wnb
+     *  2013-6-14
      */
     public List<String> getRootChildren() {
 
@@ -237,8 +237,8 @@ public class ResilientActiveKeyValueStore extends ConnectionWatcher {
      * @return void
      *
      * @Description: 删除结点
-     * @author liaoqiqi
-     * @date 2013-6-17
+     * @author wnb
+     *  2013-6-17
      */
     public void deleteNode(String path) {
 

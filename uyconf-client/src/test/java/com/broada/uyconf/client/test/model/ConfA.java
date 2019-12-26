@@ -1,16 +1,15 @@
 package com.broada.uyconf.client.test.model;
 
+import com.broada.uyconf.client.common.annotations.UyconfFile;
+import com.broada.uyconf.client.common.annotations.UyconfFileItem;
 import org.springframework.stereotype.Service;
-
-import com.broada.uyconf.client.common.annotations.DisconfFile;
-import com.broada.uyconf.client.common.annotations.DisconfFileItem;
 
 /**
  * 1. 分布式配置文件，fileName 是配置文件名<br/>
  * 2. 使用Spring Bean托管方式
  */
 @Service
-@DisconfFile(filename = "confA.properties")
+@UyconfFile(filename = "confA.properties")
 public class ConfA {
 
     /**
@@ -28,7 +27,7 @@ public class ConfA {
      *
      * @return
      */
-    @DisconfFileItem(name = "confa.varA", associateField = "varA")
+    @UyconfFileItem(name = "confa.varA", associateField = "varA")
     public Long getVarA() {
         return varA;
     }
@@ -37,7 +36,7 @@ public class ConfA {
         this.varA = varA;
     }
 
-    @DisconfFileItem(name = "confa.varA2")
+    @UyconfFileItem(name = "confa.varA2")
     public Long getVarA2() {
         return varA2;
     }

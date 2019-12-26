@@ -1,4 +1,4 @@
-Tutorial 12 disconf-web 为客户端 开放的 Http API
+Tutorial 12 uyconf-web 为客户端 开放的 Http API
 =======
 
 ## 前言
@@ -8,8 +8,8 @@ Tutorial 12 disconf-web 为客户端 开放的 Http API
 
 ## 准备
 
-- 1. 获取配置时是从disconf-web获取
-- 2. 得到配置更新时是从ZK上获取，得到通知后，再从disconf-web上获取配置值
+- 1. 获取配置时是从uyconf-web获取
+- 2. 得到配置更新时是从ZK上获取，得到通知后，再从uyconf-web上获取配置值
 
 ### 获取配置接口
 
@@ -18,7 +18,7 @@ Tutorial 12 disconf-web 为客户端 开放的 Http API
 #### /api/config/item
 
 - 描述：获取配置项
-- url示例: /api/config/item?app=disconf_demo&env=rd&version=1_0_0_0&key=discountRate
+- url示例: /api/config/item?app=uyconf_demo&env=rd&version=1_0_0_0&key=discountRate
 - 请求类型: GET
 - 参数
 
@@ -35,14 +35,14 @@ Tutorial 12 disconf-web 为客户端 开放的 Http API
     
 - curl 示例
 
-        ➜  disconf git:(dev) curl 'http://disconf.com/api/config/item?app=disconf_demo&env=rd&version=1_0_0_0&key=discountRate'
+        ➜  uyconf git:(dev) curl 'http://uyconf.com/api/config/item?app=uyconf_demo&env=rd&version=1_0_0_0&key=discountRate'
         {"status":1,"message":"","value":"0.5"}
 
     
 #### /api/config/file
 
 - 描述：获取配置文件
-- url示例: /api/config/file?app=disconf_demo&env=rd&version=1_0_0_0&key=autoconfig.properties
+- url示例: /api/config/file?app=uyconf_demo&env=rd&version=1_0_0_0&key=autoconfig.properties
 - 请求类型: GET
 - 参数
 
@@ -56,7 +56,7 @@ Tutorial 12 disconf-web 为客户端 开放的 Http API
 - 返回示例: 文件
 - curl 示例
 
-        ➜  disconf git:(dev) curl 'http://disconf.com/api/config/file?app=disconf_demo&env=rd&version=1_0_0_0&key=autoconfig.properties'
+        ➜  uyconf git:(dev) curl 'http://uyconf.com/api/config/file?app=uyconf_demo&env=rd&version=1_0_0_0&key=autoconfig.properties'
         auto=bbdxxjdccdcccdxdcdc
         xx%
 
@@ -67,11 +67,11 @@ Tutorial 12 disconf-web 为客户端 开放的 Http API
 
 在上面的两个示例中，需要分别订阅的结点是：
 
-- /disconf/disconf_demo_1_0_0_0_rd/item/discountRate
-- /disconf/disconf_demo_1_0_0_0_rd/file/autoconfig.properties
+- /uyconf/uyconf_demo_1_0_0_0_rd/item/discountRate
+- /uyconf/uyconf_demo_1_0_0_0_rd/file/autoconfig.properties
 
 格式是
 
-- `/disconf/{{app_name}}_{{version}}_{{env}}/item/keyname`
-- `/disconf/{{app_name}}_{{version}}_{{env}}/file/keyname`
+- `/uyconf/{{app_name}}_{{version}}_{{env}}/item/keyname`
+- `/uyconf/{{app_name}}_{{version}}_{{env}}/file/keyname`
 

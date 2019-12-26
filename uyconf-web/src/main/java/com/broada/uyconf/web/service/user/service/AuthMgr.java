@@ -1,7 +1,7 @@
 package com.broada.uyconf.web.service.user.service;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 public interface AuthMgr {
 

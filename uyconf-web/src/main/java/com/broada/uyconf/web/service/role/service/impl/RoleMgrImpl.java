@@ -10,7 +10,7 @@ import com.broada.uyconf.web.service.role.dao.RoleDao;
 import com.broada.uyconf.web.service.role.service.RoleMgr;
 
 /**
- *
+ * @author wnb
  */
 @Service
 public class RoleMgrImpl implements RoleMgr {

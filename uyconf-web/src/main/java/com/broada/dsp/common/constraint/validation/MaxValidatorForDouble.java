@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 import com.broada.dsp.common.constraint.DoubleMax;
 
 /**
- * @author liaoqiqi
+ * @author wnb
  */
 public class MaxValidatorForDouble implements ConstraintValidator<DoubleMax, Double> {
 

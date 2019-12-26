@@ -7,7 +7,7 @@ import com.broada.uyconf.core.common.utils.MyStringUtils;
 /**
  * MyStringUtilsTestCase
  *
- * @author knightliao
+ * @author wnb
  */
 public class MyStringUtilsTestCase {
 

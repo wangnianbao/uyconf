@@ -13,7 +13,7 @@ import com.broada.uyconf.core.common.utils.OsUtil;
 /**
  * 下载文件
  *
- * @author liaoqiqi
+ * @author wnb
  */
 public class FetchConfFile implements UnreliableInterface {
 

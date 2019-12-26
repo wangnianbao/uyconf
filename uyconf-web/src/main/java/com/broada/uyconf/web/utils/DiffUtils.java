@@ -36,7 +36,7 @@ public class DiffUtils {
     }
 
     /**
-     * 专门为disconf打造的对照工具
+     * 专门为uyconf打造的对照工具
      *
      * @param old
      * @param newData

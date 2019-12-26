@@ -1,16 +1,16 @@
 package com.broada.uyconf.client.scan.inner.common;
 
-import com.broada.uyconf.client.common.annotations.DisconfFile;
+import com.broada.uyconf.client.common.annotations.UyconfFile;
 import com.broada.uyconf.client.common.constants.SupportFileTypeEnum;
-import com.broada.uyconf.client.common.update.IDisconfUpdate;
+import com.broada.uyconf.client.common.update.IUyconfUpdate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * 扫描校验模块
  *
- * @author liaoqiqi
- * @version 2014-6-15
+ * @author wnb
+ * 14-6-15
  */
 public class ScanVerify {
 
@@ -19,18 +19,18 @@ public class ScanVerify {
     /**
      * 判断回调函数实现的接口是否正确
      */
-    public static boolean hasIDisconfUpdate(Class<?> disconfUpdateServiceClass) {
+    public static boolean hasIUyconfUpdate(Class<?> uyconfUpdateServiceClass) {
 
-        Class<?>[] interfaceClasses = disconfUpdateServiceClass.getInterfaces();
+        Class<?>[] interfaceClasses = uyconfUpdateServiceClass.getInterfaces();
         boolean hasInterface = false;
         for (Class<?> infClass : interfaceClasses) {
-            if (infClass.equals(IDisconfUpdate.class)) {
+            if (infClass.equals(IUyconfUpdate.class)) {
                 hasInterface = true;
             }
         }
         if (!hasInterface) {
-            LOGGER.error("Your class " + disconfUpdateServiceClass.toString() + " should implement interface: " +
-                             IDisconfUpdate.class.toString());
+            LOGGER.error("Your class " + uyconfUpdateServiceClass.toString() + " should implement interface: " +
+                             IUyconfUpdate.class.toString());
             return false;
         }
 
@@ -40,15 +40,15 @@ public class ScanVerify {
     /**
      * 判断配置文件的类型是否正确
      */
-    public static boolean isDisconfFileTypeRight(DisconfFile disconfFile) {
+    public static boolean isUyconfFileTypeRight(UyconfFile uyconfFile) {
 
-        String fileName = disconfFile.filename();
+        String fileName = uyconfFile.filename();
 
         SupportFileTypeEnum supportFileTypeEnum = SupportFileTypeEnum.getByFileName(fileName);
 
         if (supportFileTypeEnum == null) {
 
-            LOGGER.error("now we only support this type of conf: " + disconfFile.toString());
+            LOGGER.error("now we only support this type of conf: " + uyconfFile.toString());
             return false;
         }
 

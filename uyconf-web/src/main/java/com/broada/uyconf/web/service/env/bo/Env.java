@@ -7,8 +7,8 @@ import com.broada.unbiz.common.genericdao.annotation.Table;
 import com.github.knightliao.apollo.db.bo.BaseObject;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Table(db = DB.DB_NAME, name = "env", keyColumn = Columns.ENV_ID)
 public class Env extends BaseObject<Long> {

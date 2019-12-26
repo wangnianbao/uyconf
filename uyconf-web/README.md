@@ -1,4 +1,4 @@
-disconf-web
+uyconf-web
 ===========
 
 分布式配置Web平台服务 模块
@@ -9,7 +9,7 @@ disconf-web
 
 ## 开放API
 
-- 让开发者具有自定义定制web控制台界面的能力: [Tutorial12 web开放API](https://github.com/knightliao/disconf/wiki/Tutorial12-web%E5%BC%80%E6%94%BEAPI)  
+- 让开发者具有自定义定制web控制台界面的能力: [Tutorial12 web开放API](https://github.com/knightliao/uyconf/wiki/Tutorial12-web%E5%BC%80%E6%94%BEAPI)  
 
 ## 运行样式 ##
 
@@ -64,8 +64,8 @@ disconf-web
 	
 **将你的配置文件放到此地址目录下（以下地址可自行设定）：**
 
-	home/work/dsp/disconf-rd/online-resources
-**如果不确定如何配置，可以拷贝/disconf-web/profile/rd/目录下的文件，拷贝过去后修改即可。**
+	home/work/dsp/uyconf-rd/online-resources
+**如果不确定如何配置，可以拷贝/uyconf-web/profile/rd/目录下的文件，拷贝过去后修改即可。**
 
 配置文件包括：
 
@@ -83,21 +83,21 @@ disconf-web
 
 **设置War包将要被部署的地址（以下地址可自行设定）：**
 
-	/home/work/dsp/disconf-rd/war
+	/home/work/dsp/uyconf-rd/war
 
 
 ### 构建 ###
 
-	ONLINE_CONFIG_PATH=/home/work/dsp/disconf-rd/online-resources
-	WAR_ROOT_PATH=/home/work/dsp/disconf-rd/war
+	ONLINE_CONFIG_PATH=/home/work/dsp/uyconf-rd/online-resources
+	WAR_ROOT_PATH=/home/work/dsp/uyconf-rd/war
 	export ONLINE_CONFIG_PATH
 	export WAR_ROOT_PATH
-	cd disconf-web
+	cd uyconf-web
 	sh deploy/deploy.sh
 
-这样会在	/home/work/dsp/disconf-rd/war 生成以下结果：
+这样会在	/home/work/dsp/uyconf-rd/war 生成以下结果：
 
-	-disconf-web.war  
+	-uyconf-web.war  
 	-html  
 	-META-INF  
 	-WEB-INF
@@ -125,13 +125,13 @@ testUser5 | MhxzKhl112
 
 如果想自己设置初始化的用户名信息，可以参考代码来自己生成用户：
 
-    src/main/java/com/baidu/disconf/web/tools/UserCreateTools.java
+    src/main/java/com/baidu/uyconf/web/tools/UserCreateTools.java
 
 ### 部署War ###
 
 修改server.xml文件，在Host结点下设定Context：
 
-	<Context path="" docBase="/home/work/dsp/disconf-rd/war"></Context>
+	<Context path="" docBase="/home/work/dsp/uyconf-rd/war"></Context>
 
 并设置端口为 8015
 
@@ -141,19 +141,19 @@ testUser5 | MhxzKhl112
 
 修改 nginx.conf
 
-    upstream disconf {
+    upstream uyconf {
         server 127.0.0.1:8015;
     }
 
     server {
 
         listen   8081;
-        server_name disconf.com;
-        access_log /home/work/var/logs/disconf/access.log;
-        error_log /home/work/var/logs/disconf/error.log;
+        server_name uyconf.com;
+        access_log /home/work/var/logs/uyconf/access.log;
+        error_log /home/work/var/logs/uyconf/error.log;
 
         location / {
-            root /home/work/dsp/disconf-rd/war/html;
+            root /home/work/dsp/uyconf-rd/war/html;
             if ($query_string) {
                 expires max;
             }
@@ -165,13 +165,13 @@ testUser5 | MhxzKhl112
             proxy_redirect off;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Scheme $scheme;
-            proxy_pass http://disconf;
+            proxy_pass http://uyconf;
         }
     }
     
 ### 关于host
 
-这里的 host 设置成 disconf.com （可以自定义），但它 必须与 application.properties 里的domain一样。
+这里的 host 设置成 uyconf.com （可以自定义），但它 必须与 application.properties 里的domain一样。
 
 然后浏览器的访问域名也是这个。
 

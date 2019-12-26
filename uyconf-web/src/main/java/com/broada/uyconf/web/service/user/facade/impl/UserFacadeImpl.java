@@ -9,8 +9,8 @@ import com.broada.uyconf.web.service.user.facade.UserFacade;
 import com.broada.uyconf.web.service.user.service.UserMgr;
 
 /**
- * @author liaoqiqi
- * @version 2014-1-13
+ * @author wnb
+ * 14-1-13
  */
 @Service
 public class UserFacadeImpl implements UserFacade {

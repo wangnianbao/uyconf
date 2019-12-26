@@ -2,11 +2,11 @@ package com.broada.uyconf.web.service.config.vo;
 
 import java.util.List;
 
-import com.broada.uyconf.web.service.zookeeper.dto.ZkDisconfData;
+import com.broada.uyconf.web.service.zookeeper.dto.ZkUyconfData;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-23
+ * @author wnb
+ * 14-6-23
  */
 public class ConfListVo {
 
@@ -33,7 +33,7 @@ public class ConfListVo {
     // zk data
     //
     private int machineSize;
-    private List<ZkDisconfData.ZkDisconfDataItem> machineList;
+    private List<ZkUyconfData.ZkUyconfDataItem> machineList;
     private int errorNum = 0;
 
     public String getAppName() {
@@ -148,11 +148,11 @@ public class ConfListVo {
         this.machineSize = machineSize;
     }
 
-    public List<ZkDisconfData.ZkDisconfDataItem> getMachineList() {
+    public List<ZkUyconfData.ZkUyconfDataItem> getMachineList() {
         return machineList;
     }
 
-    public void setMachineList(List<ZkDisconfData.ZkDisconfDataItem> machineList) {
+    public void setMachineList(List<ZkUyconfData.ZkUyconfDataItem> machineList) {
         this.machineList = machineList;
     }
 

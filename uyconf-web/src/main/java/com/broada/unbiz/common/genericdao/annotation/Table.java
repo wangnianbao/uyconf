@@ -9,6 +9,7 @@ import java.lang.annotation.Target;
 import com.github.knightliao.apollo.utils.common.StringUtil;
 
 /**
+ * @author wnb
  * 表示主键名的注释，添加<code>@Inherited</code>以便零注解
  */
 @Inherited

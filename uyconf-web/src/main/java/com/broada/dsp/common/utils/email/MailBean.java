@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 /**
  * 邮件发送公共类
  *
- * @author modi
+ * @author 风云卖菜
  * @version 1.0.0
  */
 @Service
@@ -29,7 +29,9 @@ public class MailBean implements InitializingBean {
     @Autowired
     private ApplicationPropertyConfig emailProperties;
 
-    // mail sender
+    /**
+     * mail sender
+     */
     private JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 
     /**

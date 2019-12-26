@@ -10,8 +10,8 @@ import lombok.Data;
 /**
  * 多层结构的 成功返回
  *
- * @author liaoqiqi
- * @version 2013-12-3
+ * @author wnb
+ * 13-12-3
  */
 @Data
 public class JsonObject extends JsonObjectBase {

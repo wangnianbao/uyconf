@@ -5,8 +5,8 @@ import com.broada.uyconf.core.common.restful.core.RemoteUrl;
 /**
  * Restful 抓取工具
  *
- * @author liaoqiqi
- * @version 2014-7-29
+ * @author wnb
+ * 14-7-29
  */
 public interface RestfulMgr {
 

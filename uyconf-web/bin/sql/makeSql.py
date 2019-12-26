@@ -3,7 +3,7 @@
 """
 Created on 2014年2月15日
 
-@author: liaoqiqi
+@author: wnb
 """
 
 myfile = open("url_resources.txt")

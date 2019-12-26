@@ -8,7 +8,7 @@ TutorialSummary 分布式配置系统功能概述
 当配置被更新后，**注解类的数据自动同步**。
 
     @Service
-    @DisconfFile(filename = "redis.properties")
+    @UyconfFile(filename = "redis.properties")
     public class JedisConfig {
     
         // 代表连接地址
@@ -22,7 +22,7 @@ TutorialSummary 分布式配置系统功能概述
          * 
          * @return
          */
-        @DisconfFileItem(name = "redis.host", associateField = "host")
+        @UyconfFileItem(name = "redis.host", associateField = "host")
         public String getHost() {
             return host;
         }
@@ -36,7 +36,7 @@ TutorialSummary 分布式配置系统功能概述
          * 
          * @return
          */
-        @DisconfFileItem(name = "redis.port", associateField = "port")
+        @UyconfFileItem(name = "redis.port", associateField = "port")
         public int getPort() {
             return port;
         }
@@ -54,8 +54,8 @@ TutorialSummary 分布式配置系统功能概述
 
     @Service
     @Scope("singleton")
-    @DisconfUpdateService(classes = { JedisConfig.class }) // 这里或者写成 @DisconfUpdateService(confFileKeys = { "redis.properties" })
-    public class SimpleRedisServiceUpdateCallback implements IDisconfUpdate 
+    @UyconfUpdateService(classes = { JedisConfig.class }) // 这里或者写成 @UyconfUpdateService(confFileKeys = { "redis.properties" })
+    public class SimpleRedisServiceUpdateCallback implements IUyconfUpdate 
 
 [Tutorial2](../../tutorial-client/Tutorial2.html)
 
@@ -65,7 +65,7 @@ TutorialSummary 分布式配置系统功能概述
 
 （properties文件更新时数据自动同步reload，非properties文件需要写回调来支持数据自动同步）
 
-    <bean id="configproperties_disconf"
+    <bean id="configproperties_uyconf"
           class="com.broada.uyconf.client.addons.properties.ReloadablePropertiesFactoryBean">
         <property name="locations">
             <list>
@@ -83,12 +83,12 @@ TutorialSummary 分布式配置系统功能概述
           class="com.broada.uyconf.client.addons.properties.ReloadingPropertyPlaceholderConfigurer">
         <property name="propertiesArray">
             <list>
-                <ref bean="configproperties_disconf"/>
+                <ref bean="configproperties_uyconf"/>
             </list>
         </property>
     </bean>
     
-    <bean id="autoService" class="com.example.disconf.demo.service.AutoService">
+    <bean id="autoService" class="com.example.uyconf.demo.service.AutoService">
         <property name="auto" value="${auto=100}"/>
     </bean>
 
@@ -98,7 +98,7 @@ TutorialSummary 分布式配置系统功能概述
 
 变量亦支持分布式配置哦
 
-    @DisconfItem(key = key)
+    @UyconfItem(key = key)
     public Double getMoneyInvest() {
         return moneyInvest;
     }
@@ -110,12 +110,12 @@ TutorialSummary 分布式配置系统功能概述
 
 除了支持@Service类以外，我们还支持 静态配置
 
-    @DisconfFile(filename = "static.properties")
+    @UyconfFile(filename = "static.properties")
     public class StaticConfig {
     
         private static int staticVar;
     
-        @DisconfFileItem(name = "staticVar", associateField = "staticVar")
+        @UyconfFileItem(name = "staticVar", associateField = "staticVar")
         public static int getStaticVar() {
             return staticVar;
         }
@@ -129,8 +129,8 @@ TutorialSummary 分布式配置系统功能概述
 
 值得说的是，此种方式支持 任意类型 格式配置文件。
 
-    <!-- 使用托管方式的disconf配置(无代码侵入, 配置更改不会自动reload)-->
-    <bean id="configproperties_no_reloadable_disconf"
+    <!-- 使用托管方式的uyconf配置(无代码侵入, 配置更改不会自动reload)-->
+    <bean id="configproperties_no_reloadable_uyconf"
           class="com.broada.uyconf.client.addons.properties.ReloadablePropertiesFactoryBean">
         <property name="locations">
             <list>
@@ -145,7 +145,7 @@ TutorialSummary 分布式配置系统功能概述
         <property name="ignoreUnresolvablePlaceholders" value="true"/>
         <property name="propertiesArray">
             <list>
-                <ref bean="configproperties_no_reloadable_disconf"/>
+                <ref bean="configproperties_no_reloadable_uyconf"/>
             </list>
         </property>
     </bean>

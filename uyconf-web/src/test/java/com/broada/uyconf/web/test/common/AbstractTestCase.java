@@ -18,8 +18,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 /**
- * @author liaoqiqi
- * @version 2014-1-23
+ * @author wnb
+ * 14-1-23
  */
 public abstract class AbstractTestCase extends AbstractTransactionalJUnit4SpringContextTests {
 

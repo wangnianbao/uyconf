@@ -1,7 +1,7 @@
 Install
 =======
 
-目前项目包含了 客户端disconf-Client和 管理端disconf-Web两个模块。目前所有模块代码均是Java实现。
+目前项目包含了 客户端uyconf-Client和 管理端uyconf-Web两个模块。目前所有模块代码均是Java实现。
 
 
 .. toctree::

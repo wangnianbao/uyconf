@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 /**
  * 远程对象URL表示，包括Host地址 和 URL
  *
- * @author liaoqiqi
- * @version 2014-6-10
+ * @author wnb
+ * 14-6-10
  */
 public class RemoteUrl {
 

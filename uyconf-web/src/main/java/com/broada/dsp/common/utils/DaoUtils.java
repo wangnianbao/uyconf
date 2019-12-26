@@ -12,7 +12,7 @@ import com.broada.ub.common.db.DaoPage;
 /**
  * DAO有用的Utils
  *
- * @author liaoqiqi
+ * @author wnb
  */
 public class DaoUtils {
 

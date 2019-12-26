@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-17
+ * @author wnb
+ * @author 2019-12-23
  */
 public class DirUtils {
 

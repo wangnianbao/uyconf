@@ -4,8 +4,8 @@ import com.broada.uyconf.core.common.restful.impl.RestfulMgrImpl;
 import com.broada.uyconf.core.common.restful.retry.impl.RetryStrategyRoundBin;
 
 /**
- * @author liaoqiqi
- * @version 2014-8-4
+ * @author wnb
+ * 14-8-4
  */
 public class RestfulFactory {
 

@@ -29,8 +29,8 @@ import com.broada.dsp.common.vo.JsonObjectBase;
 import com.broada.ub.common.commons.ThreadContext;
 
 /**
- * @author liaoqiqi
- * @version 2014-1-20
+ * @author wnb
+ * 14-1-20
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/account")

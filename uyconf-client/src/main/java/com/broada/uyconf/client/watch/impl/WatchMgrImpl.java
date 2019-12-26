@@ -1,16 +1,16 @@
 package com.broada.uyconf.client.watch.impl;
 
-import com.broada.uyconf.client.common.model.DisConfCommonModel;
-import com.broada.uyconf.client.config.inner.DisClientComConfig;
-import com.broada.uyconf.client.watch.inner.DisconfSysUpdateCallback;
+import com.broada.uyconf.client.common.model.UyConfCommonModel;
+import com.broada.uyconf.client.config.inner.UyClientComConfig;
+import com.broada.uyconf.client.core.processor.UyconfCoreProcessor;
+import com.broada.uyconf.client.watch.inner.UyconfSysUpdateCallback;
 import com.broada.uyconf.client.watch.inner.NodeWatcher;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import org.apache.zookeeper.CreateMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.broada.uyconf.client.core.processor.DisconfCoreProcessor;
 import com.broada.uyconf.client.watch.WatchMgr;
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
 import com.broada.uyconf.core.common.path.ZooPathMgr;
 import com.broada.uyconf.core.common.utils.ZooUtils;
 import com.broada.uyconf.core.common.zookeeper.ZookeeperMgr;
@@ -18,8 +18,8 @@ import com.broada.uyconf.core.common.zookeeper.ZookeeperMgr;
 /**
  * Watch 模块的一个实现
  *
- * @author liaoqiqi
- * @version 2014-6-10
+ * @author wnb
+ * 14-6-10
  */
 public class WatchMgrImpl implements WatchMgr {
 
@@ -38,6 +38,7 @@ public class WatchMgrImpl implements WatchMgr {
     /**
      * @Description: 获取自己的主备类型
      */
+    @Override
     public void init(String hosts, String zooUrlPrefix, boolean debug) throws Exception {
 
         this.zooUrlPrefix = zooUrlPrefix;
@@ -52,34 +53,34 @@ public class WatchMgrImpl implements WatchMgr {
      *
      * @throws Exception
      */
-    private String makeMonitorPath(DisConfigTypeEnum disConfigTypeEnum, DisConfCommonModel disConfCommonModel,
+    private String makeMonitorPath(UyConfigTypeEnum uyConfigTypeEnum, UyConfCommonModel uyConfCommonModel,
                                    String key, String value) throws Exception {
 
         // 应用根目录
         /*
             应用程序的 Zoo 根目录
         */
-        String clientRootZooPath = ZooPathMgr.getZooBaseUrl(zooUrlPrefix, disConfCommonModel.getApp(),
-                disConfCommonModel.getEnv(),
-                disConfCommonModel.getVersion());
+        String clientRootZooPath = ZooPathMgr.getZooBaseUrl(zooUrlPrefix, uyConfCommonModel.getApp(),
+                uyConfCommonModel.getEnv(),
+                uyConfCommonModel.getVersion());
         ZookeeperMgr.getInstance().makeDir(clientRootZooPath, ZooUtils.getIp());
 
         // 监控路径
         String monitorPath;
-        if (disConfigTypeEnum.equals(DisConfigTypeEnum.FILE)) {
+        if (uyConfigTypeEnum.equals(UyConfigTypeEnum.FILE)) {
 
             // 新建Zoo Store目录
-            String clientDisconfFileZooPath = ZooPathMgr.getFileZooPath(clientRootZooPath);
-            makePath(clientDisconfFileZooPath, ZooUtils.getIp());
+            String clientUyconfFileZooPath = ZooPathMgr.getFileZooPath(clientRootZooPath);
+            makePath(clientUyconfFileZooPath, ZooUtils.getIp());
 
-            monitorPath = ZooPathMgr.joinPath(clientDisconfFileZooPath, key);
+            monitorPath = ZooPathMgr.joinPath(clientUyconfFileZooPath, key);
 
         } else {
 
             // 新建Zoo Store目录
-            String clientDisconfItemZooPath = ZooPathMgr.getItemZooPath(clientRootZooPath);
-            makePath(clientDisconfItemZooPath, ZooUtils.getIp());
-            monitorPath = ZooPathMgr.joinPath(clientDisconfItemZooPath, key);
+            String clientUyconfItemZooPath = ZooPathMgr.getItemZooPath(clientRootZooPath);
+            makePath(clientUyconfItemZooPath, ZooUtils.getIp());
+            monitorPath = ZooPathMgr.joinPath(clientUyconfItemZooPath, key);
         }
 
         // 先新建路径
@@ -104,7 +105,7 @@ public class WatchMgrImpl implements WatchMgr {
      */
     private void makeTempChildPath(String path, String data) {
 
-        String finerPrint = DisClientComConfig.getInstance().getInstanceFingerprint();
+        String finerPrint = UyClientComConfig.getInstance().getInstanceFingerprint();
 
         String mainTypeFullStr = path + "/" + finerPrint;
         try {
@@ -117,15 +118,16 @@ public class WatchMgrImpl implements WatchMgr {
     /**
      * 监控路径,监控前会事先创建路径,并且会新建一个自己的Temp子结点
      */
-    public void watchPath(DisconfCoreProcessor disconfCoreMgr, DisConfCommonModel disConfCommonModel, String keyName,
-                          DisConfigTypeEnum disConfigTypeEnum, String value) throws Exception {
+    @Override
+    public void watchPath(UyconfCoreProcessor uyconfCoreMgr, UyConfCommonModel uyConfCommonModel, String keyName,
+                          UyConfigTypeEnum uyConfigTypeEnum, String value) throws Exception {
 
         // 新建
-        String monitorPath = makeMonitorPath(disConfigTypeEnum, disConfCommonModel, keyName, value);
+        String monitorPath = makeMonitorPath(uyConfigTypeEnum, uyConfCommonModel, keyName, value);
 
         // 进行监控
         NodeWatcher nodeWatcher =
-                new NodeWatcher(disconfCoreMgr, monitorPath, keyName, disConfigTypeEnum, new DisconfSysUpdateCallback(),
+                new NodeWatcher(uyconfCoreMgr, monitorPath, keyName, uyConfigTypeEnum, new UyconfSysUpdateCallback(),
                         debug);
         nodeWatcher.monitorMaster();
     }

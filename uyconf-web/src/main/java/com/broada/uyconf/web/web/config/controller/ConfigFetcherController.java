@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.core.common.json.ValueVo;
 import com.broada.uyconf.web.web.config.dto.ConfigFullModel;
 import com.broada.uyconf.web.web.config.validator.ConfigValidator;
@@ -30,10 +30,10 @@ import com.broada.dsp.common.exception.DocumentNotFoundException;
 import com.broada.dsp.common.vo.JsonObjectBase;
 
 /**
- * 配置获取Controller, Disconf-client专门使用的
+ * 配置获取Controller, Uyconf-client专门使用的
  *
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/config")
@@ -129,7 +129,7 @@ public class ConfigFetcherController extends BaseController {
                 Config config = configFetchMgr
                         .getConfByParameter(configModel.getApp().getId(), configModel.getEnv().getId(),
                                 configModel.getVersion(), configModel.getKey(),
-                                DisConfigTypeEnum.FILE);
+                                UyConfigTypeEnum.FILE);
                 if (config == null) {
                     hasError = true;
                     throw new DocumentNotFoundException(configModel.getKey());

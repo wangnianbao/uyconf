@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 支持的文件后缀类型
  *
- * @author knightliao
+ * @author wnb
  */
 public enum SupportFileTypeEnum {
 

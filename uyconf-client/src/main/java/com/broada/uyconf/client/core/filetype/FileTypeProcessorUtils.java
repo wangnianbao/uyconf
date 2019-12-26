@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.broada.uyconf.client.common.constants.SupportFileTypeEnum;
-import com.broada.uyconf.client.core.filetype.impl.DisconfAnyFileProcessorImpl;
-import com.broada.uyconf.client.core.filetype.impl.DisconfXmlProcessorImpl;
+import com.broada.uyconf.client.core.filetype.impl.UyconfAnyFileProcessorImpl;
+import com.broada.uyconf.client.core.filetype.impl.UyconfXmlProcessorImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.broada.uyconf.client.core.filetype.impl.DisconfPropertiesProcessorImpl;
+import com.broada.uyconf.client.core.filetype.impl.UyconfPropertiesProcessorImpl;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 public class FileTypeProcessorUtils {
 
@@ -24,7 +24,7 @@ public class FileTypeProcessorUtils {
     public static Map<String, Object> getKvMap(SupportFileTypeEnum supportFileTypeEnum, String fileName)
         throws Exception {
 
-        DisconfFileTypeProcessor disconfFileTypeProcessor;
+        UyconfFileTypeProcessor uyconfFileTypeProcessor;
 
         //
         // 获取数据
@@ -33,18 +33,18 @@ public class FileTypeProcessorUtils {
 
         if (supportFileTypeEnum.equals(SupportFileTypeEnum.PROPERTIES)) {
 
-            disconfFileTypeProcessor = new DisconfPropertiesProcessorImpl();
+            uyconfFileTypeProcessor = new UyconfPropertiesProcessorImpl();
 
         } else if (supportFileTypeEnum.equals(SupportFileTypeEnum.XML)) {
 
-            disconfFileTypeProcessor = new DisconfXmlProcessorImpl();
+            uyconfFileTypeProcessor = new UyconfXmlProcessorImpl();
 
         } else {
 
-            disconfFileTypeProcessor = new DisconfAnyFileProcessorImpl();
+            uyconfFileTypeProcessor = new UyconfAnyFileProcessorImpl();
         }
 
-        dataMap = disconfFileTypeProcessor.getKvMap(fileName);
+        dataMap = uyconfFileTypeProcessor.getKvMap(fileName);
 
         if (dataMap == null) {
             dataMap = new HashMap<String, Object>();

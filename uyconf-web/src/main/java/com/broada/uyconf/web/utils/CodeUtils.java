@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by knightliao on 15/1/7.
+ * Created by wnb on 15/1/7.
  */
 public class CodeUtils {
 

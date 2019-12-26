@@ -1,6 +1,5 @@
-# disconf-readthedocs
+# uyconf-readthedocs
 
-readthedocs for disconf
+readthedocs for uyconf
 
-- docs: http://disconf.readthedocs.io
-- source: https://github.com/knightliao/disconf
+- docs: http://uyconf.readthedocs.io

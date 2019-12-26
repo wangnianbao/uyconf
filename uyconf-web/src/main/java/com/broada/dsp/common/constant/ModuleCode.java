@@ -1,8 +1,8 @@
 package com.broada.dsp.common.constant;
 
 /**
- * @author liaoqiqi
- * @version 2013-12-2
+ * @author wnb
+ * 13-12-2
  */
 public enum ModuleCode {
 

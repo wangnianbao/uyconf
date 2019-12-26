@@ -3,6 +3,7 @@ package com.broada.uyconf.web.web.config.controller;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.web.service.config.form.ConfNewForm;
 import com.broada.uyconf.web.service.config.form.ConfNewItemForm;
 import com.broada.uyconf.web.service.config.service.ConfigMgr;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
 import com.broada.uyconf.web.web.config.validator.ConfigValidator;
 import com.broada.uyconf.web.web.config.validator.FileUploadValidator;
 import com.broada.dsp.common.constant.WebConstants;
@@ -27,8 +27,8 @@ import com.broada.dsp.common.vo.JsonObjectBase;
 /**
  * 专用于配置新建
  *
- * @author liaoqiqi
- * @version 2014-6-24
+ * @author wnb
+ * 14-6-24
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/web/config")
@@ -57,10 +57,10 @@ public class ConfigNewController extends BaseController {
     public JsonObjectBase newItem(@Valid ConfNewItemForm confNewForm) {
 
         // 业务校验
-        configValidator.validateNew(confNewForm, DisConfigTypeEnum.ITEM);
+        configValidator.validateNew(confNewForm, UyConfigTypeEnum.ITEM);
 
         //
-        configMgr.newConfig(confNewForm, DisConfigTypeEnum.ITEM);
+        configMgr.newConfig(confNewForm, UyConfigTypeEnum.ITEM);
 
         return buildSuccess("创建成功");
     }
@@ -107,10 +107,10 @@ public class ConfigNewController extends BaseController {
         confNewItemForm.setValue(fileContent);
 
         // 业务校验
-        configValidator.validateNew(confNewItemForm, DisConfigTypeEnum.FILE);
+        configValidator.validateNew(confNewItemForm, UyConfigTypeEnum.FILE);
 
         //
-        configMgr.newConfig(confNewItemForm, DisConfigTypeEnum.FILE);
+        configMgr.newConfig(confNewItemForm, UyConfigTypeEnum.FILE);
 
         return buildSuccess("创建成功");
     }
@@ -137,10 +137,10 @@ public class ConfigNewController extends BaseController {
         confNewItemForm.setValue(fileContent);
 
         // 业务校验
-        configValidator.validateNew(confNewItemForm, DisConfigTypeEnum.FILE);
+        configValidator.validateNew(confNewItemForm, UyConfigTypeEnum.FILE);
 
         //
-        configMgr.newConfig(confNewItemForm, DisConfigTypeEnum.FILE);
+        configMgr.newConfig(confNewItemForm, UyConfigTypeEnum.FILE);
 
         return buildSuccess("创建成功");
     }

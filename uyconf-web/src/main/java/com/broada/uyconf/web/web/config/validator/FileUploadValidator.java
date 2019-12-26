@@ -11,8 +11,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.broada.dsp.common.exception.FieldException;
 
 /**
- * @author liaoqiqi
- * @version 2014-2-20
+ * @author wnb
+ * 14-2-20
  */
 @Component
 public class FileUploadValidator {

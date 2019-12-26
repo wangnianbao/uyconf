@@ -3,29 +3,29 @@ package com.broada.uyconf.web.innerapi.zookeeper.impl;
 import java.util.List;
 import java.util.Map;
 
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
 import com.broada.uyconf.web.innerapi.zookeeper.ZooKeeperDriver;
-import com.broada.uyconf.web.service.zookeeper.dto.ZkDisconfData;
+import com.broada.uyconf.web.service.zookeeper.dto.ZkUyconfData;
 
 /**
- * Created by knightliao on 15/1/14.
+ * Created by wnb on 15/1/14.
  */
 public class ZookeeperDriverMock implements ZooKeeperDriver {
 
     @Override
     public void notifyNodeUpdate(String app, String env, String version, String key, String value,
-                                 DisConfigTypeEnum disConfigTypeEnum) {
+                                 UyConfigTypeEnum uyConfigTypeEnum) {
 
     }
 
     @Override
-    public Map<String, ZkDisconfData> getDisconfData(String app, String env, String version) {
+    public Map<String, ZkUyconfData> getUyconfData(String app, String env, String version) {
         return null;
     }
 
     @Override
-    public ZkDisconfData getDisconfData(String app, String env, String version, DisConfigTypeEnum disConfigTypeEnum,
-                                        String keyName) {
+    public ZkUyconfData getUyconfData(String app, String env, String version, UyConfigTypeEnum uyConfigTypeEnum,
+                                      String keyName) {
         return null;
     }
 

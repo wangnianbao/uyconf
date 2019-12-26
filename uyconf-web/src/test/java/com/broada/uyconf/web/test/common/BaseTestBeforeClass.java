@@ -5,8 +5,8 @@ import org.springframework.test.context.support.AbstractTestExecutionListener;
 
 /**
  * 
- * @author liaoqiqi
- * @version 2014-1-14
+ * @author wnb
+ * 14-1-14
  */
 public class BaseTestBeforeClass extends AbstractTestExecutionListener {
 

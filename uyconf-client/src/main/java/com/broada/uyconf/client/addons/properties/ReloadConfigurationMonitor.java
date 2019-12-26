@@ -22,6 +22,7 @@ public class ReloadConfigurationMonitor extends TimerTask {
         reconfigurableBeans.add(reconfigurableBean);
     }
 
+    @Override
     public void run() {
         reload();
     }

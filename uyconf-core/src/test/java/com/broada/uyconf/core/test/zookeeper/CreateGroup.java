@@ -12,8 +12,8 @@ import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.ZooKeeper;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public class CreateGroup implements Watcher {
 
@@ -53,7 +53,7 @@ public class CreateGroup implements Watcher {
 
         CreateGroup createGroup = new CreateGroup();
         createGroup.connect(hosts);
-        createGroup.create("disconfserver_test");
+        createGroup.create("uyconfserver_test");
         createGroup.close();
     }
 }

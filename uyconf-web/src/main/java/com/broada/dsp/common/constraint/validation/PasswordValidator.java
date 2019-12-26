@@ -6,8 +6,8 @@ import javax.validation.ConstraintValidatorContext;
 import com.broada.dsp.common.constraint.PasswordConstraint;
 
 /**
- * @author liaoqiqi
- * @version 2014-1-14
+ * @author wnb
+ * 14-1-14
  */
 public class PasswordValidator implements ConstraintValidator<PasswordConstraint, String> {
 

@@ -7,8 +7,8 @@ import com.broada.uyconf.web.service.app.bo.App;
 import com.broada.unbiz.common.genericdao.dao.BaseDao;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public interface AppDao extends BaseDao<Long, App> {
 

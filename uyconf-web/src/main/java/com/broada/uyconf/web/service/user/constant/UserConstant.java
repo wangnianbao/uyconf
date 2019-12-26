@@ -4,8 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author liaoqiqi
- * @version 2014-1-13
+ * @author wnb
+ * 14-1-13
  */
 public class UserConstant {
 

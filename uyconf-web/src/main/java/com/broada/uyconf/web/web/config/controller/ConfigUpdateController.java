@@ -24,8 +24,8 @@ import com.broada.dsp.common.vo.JsonObjectBase;
 /**
  * 专用于配置更新、删除
  *
- * @author liaoqiqi
- * @version 2014-6-24
+ * @author wnb
+ * 14-6-24
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/web/config")

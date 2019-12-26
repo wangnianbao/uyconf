@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `disconf`;
-USE `disconf`;
+CREATE DATABASE IF NOT EXISTS `uyconf`;
+USE `uyconf`;
 
 CREATE TABLE `app` (
     `app_id` BIGINT(20) NOT NULL AUTO_INCREMENT COMMENT '唯一的ID（没有啥意义，主键，自增长而已）',

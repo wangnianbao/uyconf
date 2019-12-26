@@ -7,8 +7,8 @@ import com.broada.uyconf.web.service.user.bo.User;
 import com.broada.uyconf.web.service.user.dto.Visitor;
 
 /**
- * @author liaoqiqi
- * @version 2014-2-4
+ * @author wnb
+ * 14-2-4
  */
 public interface RedisLogin {
 

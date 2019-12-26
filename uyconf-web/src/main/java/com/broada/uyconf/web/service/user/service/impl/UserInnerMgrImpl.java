@@ -15,7 +15,7 @@ import com.broada.uyconf.web.service.user.dto.Visitor;
 import com.broada.ub.common.commons.ThreadContext;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

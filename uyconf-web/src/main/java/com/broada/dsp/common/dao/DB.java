@@ -1,8 +1,8 @@
 package com.broada.dsp.common.dao;
 
 /**
- * @author liaoqiqi
- * @version 2014-1-14
+ * @author wnb
+ * 14-1-14
  */
 public class DB {
 

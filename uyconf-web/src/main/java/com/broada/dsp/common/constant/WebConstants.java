@@ -1,8 +1,8 @@
 package com.broada.dsp.common.constant;
 
 /**
- * @author liaoqiqi
- * @version 2013-11-26
+ * @author wnb
+ * 13-11-26
  */
 public class WebConstants {
 

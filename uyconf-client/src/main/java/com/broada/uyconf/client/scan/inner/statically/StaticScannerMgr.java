@@ -5,8 +5,8 @@ import java.util.Set;
 import com.broada.uyconf.client.scan.inner.statically.model.ScanStaticModel;
 
 /**
- * @author liaoqiqi
- * @version 2014-9-9
+ * @author wnb
+ * 14-9-9
  */
 public interface StaticScannerMgr {
 

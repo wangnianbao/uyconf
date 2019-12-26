@@ -7,22 +7,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import com.broada.uyconf.client.common.annotations.DisconfItem;
-import com.broada.uyconf.client.common.model.DisConfCommonModel;
-import com.broada.uyconf.client.common.model.DisconfCenterBaseModel;
-import com.broada.uyconf.client.common.model.DisconfCenterItem;
-import com.broada.uyconf.client.config.DisClientSysConfig;
+import com.broada.uyconf.client.common.annotations.UyconfItem;
+import com.broada.uyconf.client.common.model.UyConfCommonModel;
+import com.broada.uyconf.client.common.model.UyconfCenterBaseModel;
+import com.broada.uyconf.client.common.model.UyconfCenterItem;
+import com.broada.uyconf.client.config.UyClientSysConfig;
 import com.broada.uyconf.client.scan.inner.statically.model.ScanStaticModel;
-import com.broada.uyconf.client.store.DisconfStoreProcessorFactory;
+import com.broada.uyconf.client.store.UyconfStoreProcessorFactory;
 import com.broada.uyconf.client.support.utils.MethodUtils;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
+import com.broada.uyconf.core.common.path.UyconfWebPathMgr;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.broada.uyconf.client.scan.inner.statically.StaticScannerMgr;
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
-import com.broada.uyconf.core.common.path.DisconfWebPathMgr;
 
-/*
+/**
  * 配置项的静态扫描 
  */
 public class StaticScannerItemMgrImpl extends StaticScannerMgrImplBase implements StaticScannerMgr {
@@ -33,8 +33,8 @@ public class StaticScannerItemMgrImpl extends StaticScannerMgrImplBase implement
     public void scanData2Store(ScanStaticModel scanModel) {
 
         // 转换配置项
-        List<DisconfCenterBaseModel> disconfCenterItems = getDisconfItems(scanModel);
-        DisconfStoreProcessorFactory.getDisconfStoreItemProcessor().transformScanData(disconfCenterItems);
+        List<UyconfCenterBaseModel> uyconfCenterItems = getUyconfItems(scanModel);
+        UyconfStoreProcessorFactory.getUyconfStoreItemProcessor().transformScanData(uyconfCenterItems);
 
     }
 
@@ -43,35 +43,35 @@ public class StaticScannerItemMgrImpl extends StaticScannerMgrImplBase implement
      */
     @Override
     public void exclude(Set<String> keySet) {
-        DisconfStoreProcessorFactory.getDisconfStoreItemProcessor().exclude(keySet);
+        UyconfStoreProcessorFactory.getUyconfStoreItemProcessor().exclude(keySet);
     }
 
     /**
      * 转换配置项
      */
-    private static List<DisconfCenterBaseModel> getDisconfItems(ScanStaticModel scanModel) {
+    private static List<UyconfCenterBaseModel> getUyconfItems(ScanStaticModel scanModel) {
 
-        List<DisconfCenterBaseModel> disconfCenterItems = new ArrayList<DisconfCenterBaseModel>();
+        List<UyconfCenterBaseModel> uyconfCenterItems = new ArrayList<UyconfCenterBaseModel>();
 
-        Set<Method> methods = scanModel.getDisconfItemMethodSet();
+        Set<Method> methods = scanModel.getUyconfItemMethodSet();
         for (Method method : methods) {
 
-            DisconfCenterItem disconfCenterItem = transformScanItem(method);
+            UyconfCenterItem uyconfCenterItem = transformScanItem(method);
 
-            if (disconfCenterItem != null) {
-                disconfCenterItems.add(disconfCenterItem);
+            if (uyconfCenterItem != null) {
+                uyconfCenterItems.add(uyconfCenterItem);
             }
         }
 
-        return disconfCenterItems;
+        return uyconfCenterItems;
     }
 
     /**
      * 转换配置项
      */
-    private static DisconfCenterItem transformScanItem(Method method) {
+    private static UyconfCenterItem transformScanItem(Method method) {
 
-        DisconfCenterItem disconfCenterItem = new DisconfCenterItem();
+        UyconfCenterItem uyconfCenterItem = new UyconfCenterItem();
 
         // class
         Class<?> cls = method.getDeclaringClass();
@@ -80,60 +80,60 @@ public class StaticScannerItemMgrImpl extends StaticScannerMgrImplBase implement
         Field[] expectedFields = cls.getDeclaredFields();
 
         // field
-        Field field = MethodUtils.getFieldFromMethod(method, expectedFields, DisConfigTypeEnum.ITEM);
+        Field field = MethodUtils.getFieldFromMethod(method, expectedFields, UyConfigTypeEnum.ITEM);
 
         if (field == null) {
             return null;
         }
 
         // 获取标注
-        DisconfItem disconfItem = method.getAnnotation(DisconfItem.class);
+        UyconfItem uyconfItem = method.getAnnotation(UyconfItem.class);
 
         // 去掉空格
-        String key = disconfItem.key().replace(" ", "");
+        String key = uyconfItem.key().replace(" ", "");
 
         // get setter method
         Method setterMethod = MethodUtils.getSetterMethodFromField(cls, field);
-        disconfCenterItem.setSetMethod(setterMethod);
+        uyconfCenterItem.setSetMethod(setterMethod);
 
         // field
-        disconfCenterItem.setField(field);
+        uyconfCenterItem.setField(field);
 
         // key
-        disconfCenterItem.setKey(key);
+        uyconfCenterItem.setKey(key);
 
         // access
         field.setAccessible(true);
 
         // object
-        disconfCenterItem.setObject(null);
+        uyconfCenterItem.setObject(null);
 
         // value
         if (Modifier.isStatic(field.getModifiers())) {
             try {
-                disconfCenterItem.setValue(field.get(null));
+                uyconfCenterItem.setValue(field.get(null));
             } catch (Exception e) {
                 LOGGER.error(e.toString());
-                disconfCenterItem.setValue(null);
+                uyconfCenterItem.setValue(null);
             }
         } else {
-            disconfCenterItem.setValue(null);
+            uyconfCenterItem.setValue(null);
         }
 
         //
-        // disConfCommonModel
-        DisConfCommonModel disConfCommonModel = makeDisConfCommonModel(disconfItem.app(), disconfItem.env(),
-                disconfItem.version());
-        disconfCenterItem.setDisConfCommonModel(disConfCommonModel);
+        // uyConfCommonModel
+        UyConfCommonModel uyConfCommonModel = makeUyConfCommonModel(uyconfItem.app(), uyconfItem.env(),
+                uyconfItem.version());
+        uyconfCenterItem.setUyConfCommonModel(uyConfCommonModel);
 
-        // Disconf-web url
-        String url = DisconfWebPathMgr.getRemoteUrlParameter(DisClientSysConfig.getInstance().CONF_SERVER_STORE_ACTION,
-                disConfCommonModel.getApp(),
-                disConfCommonModel.getVersion(),
-                disConfCommonModel.getEnv(), key,
-                DisConfigTypeEnum.ITEM);
-        disconfCenterItem.setRemoteServerUrl(url);
+        // Uyconf-web url
+        String url = UyconfWebPathMgr.getRemoteUrlParameter(UyClientSysConfig.getInstance().CONF_SERVER_STORE_ACTION,
+                uyConfCommonModel.getApp(),
+                uyConfCommonModel.getVersion(),
+                uyConfCommonModel.getEnv(), key,
+                UyConfigTypeEnum.ITEM);
+        uyconfCenterItem.setRemoteServerUrl(url);
 
-        return disconfCenterItem;
+        return uyconfCenterItem;
     }
 }

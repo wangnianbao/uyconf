@@ -11,7 +11,7 @@ import com.broada.uyconf.web.service.config.service.ConfigMgr;
 import com.broada.uyconf.web.service.config.vo.ConfListVo;
 import com.broada.uyconf.web.service.env.bo.Env;
 import com.broada.uyconf.web.service.env.service.EnvMgr;
-import com.broada.uyconf.web.service.zookeeper.dto.ZkDisconfData;
+import com.broada.uyconf.web.service.zookeeper.dto.ZkUyconfData;
 import com.broada.uyconf.web.service.zookeeper.service.ZkDeployMgr;
 import com.broada.uyconf.web.tasks.IConfigConsistencyMonitorService;
 import org.slf4j.Logger;
@@ -30,7 +30,7 @@ import com.github.knightliao.apollo.utils.tool.TokenUtil;
  * http://blog.csdn.net/sd4000784/article/details/7745947 <br/>
  * http://blog.sina.com.cn/s/blog_6925c03c0101d1hi.html
  *
- * @author knightliao
+ * @author wnb
  */
 @Component
 public class ConfigConsistencyMonitorServiceImpl implements IConfigConsistencyMonitorService {
@@ -155,12 +155,12 @@ public class ConfigConsistencyMonitorServiceImpl implements IConfigConsistencyMo
 
             if (confListVo.getErrorNum() != 0) {
 
-                List<ZkDisconfData.ZkDisconfDataItem> zkDisconfDataItems = confListVo.getMachineList();
-                for (ZkDisconfData.ZkDisconfDataItem zkDisconfDataItem : zkDisconfDataItems) {
+                List<ZkUyconfData.ZkUyconfDataItem> zkUyconfDataItems = confListVo.getMachineList();
+                for (ZkUyconfData.ZkUyconfDataItem zkUyconfDataItem : zkUyconfDataItems) {
 
-                    if (zkDisconfDataItem.getErrorList().size() != 0) {
+                    if (zkUyconfDataItem.getErrorList().size() != 0) {
 
-                        String data = zkDisconfDataItem.toString() + "<br/><br/><br/><br/><br/><br/>original:" +
+                        String data = zkUyconfDataItem.toString() + "<br/><br/><br/><br/><br/><br/>original:" +
                                 confListVo.getValue();
 
                         LOG.warn(data);

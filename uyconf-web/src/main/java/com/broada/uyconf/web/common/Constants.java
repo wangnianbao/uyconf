@@ -1,7 +1,7 @@
 package com.broada.uyconf.web.common;
 
 /**
- * Created by knightliao on 15/12/25.
+ * Created by wnb on 15/12/25.
  */
 public class Constants {
 

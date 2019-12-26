@@ -3,7 +3,7 @@ package com.broada.uyconf.web.config;
 import org.springframework.stereotype.Service;
 
 /**
- * @author knightliao
+ * @author wnb
  */
 @Service
 public class ApplicationPropertyConfig {

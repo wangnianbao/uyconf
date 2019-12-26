@@ -7,8 +7,8 @@ import java.util.concurrent.TimeUnit;
 import org.apache.zookeeper.KeeperException;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 public class ConfigUpdater {
 

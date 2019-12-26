@@ -7,8 +7,8 @@ import com.broada.dsp.common.exception.base.RuntimeGlobalException;
 /**
  * 文件上传错误
  *
- * @author liaoqiqi
- * @version 2014-2-20
+ * @author wnb
+ * 14-2-20
  */
 public class FileUploadException extends RuntimeGlobalException {
 

@@ -37,8 +37,8 @@ import com.broada.dsp.common.vo.JsonObjectUtils;
 import com.github.knightliao.apollo.utils.io.FileUtils;
 
 /**
- * @author liaoqiqi
- * @version 2013-12-2
+ * @author wnb
+ * 13-12-2
  */
 @Service
 public class MyExceptionHandler extends SimpleMappingExceptionResolver implements ApplicationContextAware {

@@ -11,8 +11,8 @@ import com.github.knightliao.apollo.db.bo.BaseObject;
 /**
  * Service层工具
  *
- * @author liaoqiqi
- * @version 2014-2-20
+ * @author wnb
+ * 14-2-20
  */
 public class ServiceUtil {
 

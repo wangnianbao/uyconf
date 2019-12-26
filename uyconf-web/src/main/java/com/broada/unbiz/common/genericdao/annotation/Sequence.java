@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * @author wnb
  * 配置Sequence的annotation
  */
 @Retention(RetentionPolicy.RUNTIME)

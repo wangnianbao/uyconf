@@ -12,10 +12,12 @@ public class ContextListener extends ContextLoaderListener {
 
     private static boolean isInitialized = false;
 
+    @Override
     public void contextDestroyed(ServletContextEvent arg0) {
         super.contextDestroyed(arg0);
     }
 
+    @Override
     public void contextInitialized(ServletContextEvent arg0) {
 
         super.contextInitialized(arg0);

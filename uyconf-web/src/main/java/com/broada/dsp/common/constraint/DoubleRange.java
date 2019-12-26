@@ -19,7 +19,7 @@ import javax.validation.ReportAsSingleViolation;
 import org.hibernate.validator.constraints.Range;
 
 /**
- * @author liaoqiqi
+ * @author wnb
  */
 @Documented
 @Constraint(validatedBy = {})

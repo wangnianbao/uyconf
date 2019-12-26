@@ -14,7 +14,7 @@ import com.broada.ub.common.commons.ThreadContext;
 import com.github.knightliao.apollo.utils.time.DateUtils;
 
 /**
- * Created by knightliao on 15/12/25.
+ * Created by wnb on 15/12/25.
  */
 @Service
 public class ConfigHistoryMgrImpl implements ConfigHistoryMgr {

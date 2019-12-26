@@ -38,8 +38,8 @@ import com.broada.ub.common.db.DaoPageResult;
 /**
  * 专用于配置读取
  *
- * @author liaoqiqi
- * @version 2014-6-22
+ * @author wnb
+ * 14-6-22
  */
 @Controller
 @RequestMapping(WebConstants.API_PREFIX + "/web/config")
@@ -201,7 +201,7 @@ public class ConfigReadController extends BaseController {
         //
         // get files
         //
-        List<File> fileList = configMgr.getDisconfFileList(confListForm);
+        List<File> fileList = configMgr.getUyconfFileList(confListForm);
 
         //
         // prefix

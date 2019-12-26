@@ -15,8 +15,8 @@ import com.broada.uyconf.web.service.env.service.EnvMgr;
 import com.broada.uyconf.web.service.env.vo.EnvListVo;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-16
+ * @author wnb
+ * 14-6-16
  */
 @Service
 public class EnvMgrImpl implements EnvMgr {

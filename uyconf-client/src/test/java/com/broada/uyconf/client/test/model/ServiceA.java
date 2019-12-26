@@ -1,16 +1,15 @@
 package com.broada.uyconf.client.test.model;
 
+import com.broada.uyconf.client.common.annotations.UyconfItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.broada.uyconf.client.common.annotations.DisconfItem;
-
 /**
  * 服务A，他使用的是 ConfA
  *
- * @author liaoqiqi
- * @version 2014-5-16
+ * @author wnb
+ * 14-5-16
  */
 @Service
 public class ServiceA {
@@ -34,7 +33,7 @@ public class ServiceA {
         return confA.getVarA2();
     }
 
-    @DisconfItem(key = ServiceA.keyA)
+    @UyconfItem(key = ServiceA.keyA)
     public int getVarAA() {
         return varAA;
     }

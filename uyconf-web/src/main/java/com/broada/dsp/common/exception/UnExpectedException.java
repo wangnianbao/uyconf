@@ -5,8 +5,8 @@ import com.broada.dsp.common.constant.ModuleCode;
 import com.broada.dsp.common.exception.base.RuntimeGlobalException;
 
 /**
- * @author liaoqiqi
- * @version 2014-6-24
+ * @author wnb
+ * 14-6-24
  */
 public class UnExpectedException extends RuntimeGlobalException {
 

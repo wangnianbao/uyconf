@@ -13,8 +13,8 @@ import com.broada.dsp.common.constraint.validation.ListInValidator;
 /**
  * in 操作，目前仅支持 Integer，用逗号分隔
  *
- * @author liaoqiqi
- * @version 2014-1-26
+ * @author wnb
+ * 14-1-26
  */
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)

@@ -1,43 +1,43 @@
 package com.broada.uyconf.client.scan.inner.statically.impl;
 
-import com.broada.uyconf.client.common.model.DisConfCommonModel;
-import com.broada.uyconf.client.config.DisClientConfig;
+import com.broada.uyconf.client.common.model.UyConfCommonModel;
+import com.broada.uyconf.client.config.UyClientConfig;
 
 /**
- * @author liaoqiqi
- * @version 2014-9-9
+ * @author wnb
+ * 14-9-9
  */
 public class StaticScannerMgrImplBase {
 
     /**
      * env/version 默认是应用整合设置的，但用户可以在配置中更改它
      */
-    protected static DisConfCommonModel makeDisConfCommonModel(String app, String env, String version) {
+    protected static UyConfCommonModel makeUyConfCommonModel(String app, String env, String version) {
 
-        DisConfCommonModel disConfCommonModel = new DisConfCommonModel();
+        UyConfCommonModel uyConfCommonModel = new UyConfCommonModel();
 
         // app
         if (!app.isEmpty()) {
-            disConfCommonModel.setApp(app);
+            uyConfCommonModel.setApp(app);
         } else {
-            disConfCommonModel.setApp(DisClientConfig.getInstance().APP);
+            uyConfCommonModel.setApp(UyClientConfig.getInstance().APP);
         }
 
         // env
         if (!env.isEmpty()) {
-            disConfCommonModel.setEnv(env);
+            uyConfCommonModel.setEnv(env);
         } else {
-            disConfCommonModel.setEnv(DisClientConfig.getInstance().ENV);
+            uyConfCommonModel.setEnv(UyClientConfig.getInstance().ENV);
         }
 
         // version
         if (!version.isEmpty()) {
-            disConfCommonModel.setVersion(version);
+            uyConfCommonModel.setVersion(version);
         } else {
-            disConfCommonModel.setVersion(DisClientConfig.getInstance().VERSION);
+            uyConfCommonModel.setVersion(UyClientConfig.getInstance().VERSION);
         }
 
-        return disConfCommonModel;
+        return uyConfCommonModel;
     }
 
 }

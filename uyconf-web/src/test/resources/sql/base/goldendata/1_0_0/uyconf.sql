@@ -5,7 +5,7 @@ INSERT INTO `env` VALUES (2, 'qa');
 INSERT INTO `env` VALUES (3, 'local');
 
 
-INSERT INTO `app` VALUES (1, 'disconf_demo', 'disconf_demo', '20140415155127', '20140415155127',
+INSERT INTO `app` VALUES (1, 'uyconf_demo', 'uyconf_demo', '20140415155127', '20140415155127',
 'knightliao@gmail.com');
 
 

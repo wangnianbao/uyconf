@@ -5,15 +5,15 @@ import java.util.List;
 import java.util.Set;
 
 import com.broada.uyconf.client.common.constants.SupportFileTypeEnum;
-import com.broada.uyconf.client.common.model.DisConfCommonModel;
-import com.broada.uyconf.client.common.model.DisconfCenterBaseModel;
-import com.broada.uyconf.client.common.model.DisconfCenterFile;
-import com.broada.uyconf.client.config.DisClientSysConfig;
+import com.broada.uyconf.client.common.model.UyConfCommonModel;
+import com.broada.uyconf.client.common.model.UyconfCenterBaseModel;
+import com.broada.uyconf.client.common.model.UyconfCenterFile;
+import com.broada.uyconf.client.config.UyClientSysConfig;
 import com.broada.uyconf.client.scan.inner.statically.StaticScannerMgr;
 import com.broada.uyconf.client.scan.inner.statically.model.ScanStaticModel;
-import com.broada.uyconf.client.store.DisconfStoreProcessorFactory;
-import com.broada.uyconf.core.common.constants.DisConfigTypeEnum;
-import com.broada.uyconf.core.common.path.DisconfWebPathMgr;
+import com.broada.uyconf.client.store.UyconfStoreProcessorFactory;
+import com.broada.uyconf.core.common.constants.UyConfigTypeEnum;
+import com.broada.uyconf.core.common.path.UyconfWebPathMgr;
 
 /**
  * 非注解配置文件的扫描器
@@ -29,9 +29,9 @@ public class StaticScannerNonAnnotationFileMgrImpl extends StaticScannerMgrImplB
         //
         //
         //
-        List<DisconfCenterBaseModel> disconfCenterBaseModels = getDisconfCenterFiles(scanModel.getJustHostFiles());
+        List<UyconfCenterBaseModel> uyconfCenterBaseModels = getUyconfCenterFiles(scanModel.getJustHostFiles());
 
-        DisconfStoreProcessorFactory.getDisconfStoreFileProcessor().transformScanData(disconfCenterBaseModels);
+        UyconfStoreProcessorFactory.getUyconfStoreFileProcessor().transformScanData(uyconfCenterBaseModels);
     }
 
     /**
@@ -39,10 +39,10 @@ public class StaticScannerNonAnnotationFileMgrImpl extends StaticScannerMgrImplB
      */
     public static void scanData2Store(String fileName) {
 
-        DisconfCenterBaseModel disconfCenterBaseModel =
-                StaticScannerNonAnnotationFileMgrImpl.getDisconfCenterFile(fileName);
+        UyconfCenterBaseModel uyconfCenterBaseModel =
+                StaticScannerNonAnnotationFileMgrImpl.getUyconfCenterFile(fileName);
 
-        DisconfStoreProcessorFactory.getDisconfStoreFileProcessor().transformScanData(disconfCenterBaseModel);
+        UyconfStoreProcessorFactory.getUyconfStoreFileProcessor().transformScanData(uyconfCenterBaseModel);
     }
 
     /**
@@ -50,58 +50,58 @@ public class StaticScannerNonAnnotationFileMgrImpl extends StaticScannerMgrImplB
      */
     @Override
     public void exclude(Set<String> keySet) {
-        DisconfStoreProcessorFactory.getDisconfStoreFileProcessor().exclude(keySet);
+        UyconfStoreProcessorFactory.getUyconfStoreFileProcessor().exclude(keySet);
     }
 
     /**
      *
      */
-    public static List<DisconfCenterBaseModel> getDisconfCenterFiles(Set<String> fileNameList) {
+    public static List<UyconfCenterBaseModel> getUyconfCenterFiles(Set<String> fileNameList) {
 
-        List<DisconfCenterBaseModel> disconfCenterFiles = new ArrayList<DisconfCenterBaseModel>();
+        List<UyconfCenterBaseModel> uyconfCenterFiles = new ArrayList<UyconfCenterBaseModel>();
 
         for (String fileName : fileNameList) {
 
-            disconfCenterFiles.add(getDisconfCenterFile(fileName));
+            uyconfCenterFiles.add(getUyconfCenterFile(fileName));
         }
 
-        return disconfCenterFiles;
+        return uyconfCenterFiles;
     }
 
     /**
      *
      */
-    public static DisconfCenterBaseModel getDisconfCenterFile(String fileName) {
+    public static UyconfCenterBaseModel getUyconfCenterFile(String fileName) {
 
-        DisconfCenterFile disconfCenterFile = new DisconfCenterFile();
+        UyconfCenterFile uyconfCenterFile = new UyconfCenterFile();
 
         fileName = fileName.trim();
 
         //
         // file name
-        disconfCenterFile.setFileName(fileName);
+        uyconfCenterFile.setFileName(fileName);
 
         // 非注解式
-        disconfCenterFile.setIsTaggedWithNonAnnotationFile(true);
+        uyconfCenterFile.setIsTaggedWithNonAnnotationFile(true);
 
         // file type
-        disconfCenterFile.setSupportFileTypeEnum(SupportFileTypeEnum.getByFileName(fileName));
+        uyconfCenterFile.setSupportFileTypeEnum(SupportFileTypeEnum.getByFileName(fileName));
 
         //
-        // disConfCommonModel
-        DisConfCommonModel disConfCommonModel = makeDisConfCommonModel("", "", "");
-        disconfCenterFile.setDisConfCommonModel(disConfCommonModel);
+        // uyConfCommonModel
+        UyConfCommonModel uyConfCommonModel = makeUyConfCommonModel("", "", "");
+        uyconfCenterFile.setUyConfCommonModel(uyConfCommonModel);
 
         // Remote URL
-        String url = DisconfWebPathMgr.getRemoteUrlParameter(DisClientSysConfig.getInstance().CONF_SERVER_STORE_ACTION,
-                disConfCommonModel.getApp(),
-                disConfCommonModel.getVersion(),
-                disConfCommonModel.getEnv(),
-                disconfCenterFile.getFileName(),
-                DisConfigTypeEnum.FILE);
-        disconfCenterFile.setRemoteServerUrl(url);
+        String url = UyconfWebPathMgr.getRemoteUrlParameter(UyClientSysConfig.getInstance().CONF_SERVER_STORE_ACTION,
+                uyConfCommonModel.getApp(),
+                uyConfCommonModel.getVersion(),
+                uyConfCommonModel.getEnv(),
+                uyconfCenterFile.getFileName(),
+                UyConfigTypeEnum.FILE);
+        uyconfCenterFile.setRemoteServerUrl(url);
 
-        return disconfCenterFile;
+        return uyconfCenterFile;
     }
 
 }
