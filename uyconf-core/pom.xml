@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>uyconf-core</artifactId>
-    <version>${uyconf-core.version}</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>uyconf-core</name>
@@ -211,18 +211,18 @@
         </plugins>
     </build>
 
-    <url>https://github.com/knightliao/disconf/tree/master/disconf-core</url>
-    <description>https://github.com/knightliao/disconf/tree/master/disconf-core</description>
+    <url>https://github.com/wangnianbao/uyconf/uyconf-core</url>
+    <description>https://github.com/wangnianbao/uyconf/uyconf-core</description>
 
     <organization>
-        <name>Baidu</name>
-        <url>http://www.example.com</url>
+        <name>broada</name>
+        <url>http://www.uyun.com</url>
     </organization>
 
     <scm>
-        <url>scm:git:git@github.com:knightliao/disconf</url>
-        <connection>scm:git:git@github.com:knightliao/disconf</connection>
-        <tag>disconf-core</tag>
+        <url>scm:git:git@github.com:wangnianbao/uyconf</url>
+        <connection>scm:git:git@github.com:wangnianbao/uyconf</connection>
+        <tag>uyconf-core</tag>
     </scm>
 
     <profiles>
@@ -231,11 +231,11 @@
             <distributionManagement>
                 <snapshotRepository>
                     <id>nexus-release</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                    <url>http://www.uyunsoft.cn/nexus/content/repositories/snapshots/</url>
                 </snapshotRepository>
                 <repository>
                     <id>nexus-release</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                    <url>http://www.uyunsoft.cn/nexus/content/repositories/releases/</url>
                 </repository>
             </distributionManagement>
             <build>

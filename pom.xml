@@ -3,6 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>uyun.whale</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.1.9</version>
+    </parent>
+
     <groupId>com.broada.uyconf</groupId>
     <artifactId>uyconf-base</artifactId>
     <version>2.6.36</version>
@@ -11,6 +17,7 @@
     <modules>
         <module>uyconf-client</module>
         <module>uyconf-core</module>
+        <module>uyconf-web</module>
     </modules>
 
     <inceptionYear>2015</inceptionYear>
@@ -51,6 +58,16 @@
 
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>uyun-release</id>
+            <url>http://www.uyunsoft.cn/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>uyun-snapshot</id>
+            <url>http://www.uyunsoft.cn/nexus/content/repositories/snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <dependencyManagement>
         <dependencies>
 
@@ -798,33 +815,6 @@
 
         </plugins>
     </reporting>
-
-    <developers>
-        <developer>
-            <name>Liao Qiqi</name>
-            <id>knightliao</id>
-            <email>knightliao@gmail.com</email>
-            <roles>
-                <role>Developer</role>
-            </roles>
-            <timezone>+8</timezone>
-        </developer>
-    </developers>
-
-    <organization>
-        <name>KNIGHT</name>
-        <url>http://www.liaoqiqi.com</url>
-    </organization>
-
-    <scm>
-        <url>scm:git:git@github.com:knightliao/disconf</url>
-        <connection>scm:git:git@github.com:knightliao/disconf</connection>
-        <tag>disconf-base</tag>
-    </scm>
-
-    <url>https://github.com/knightliao/disconf</url>
-    <name>disconf</name>
-    <description>Distributed Configuration Management Platform.</description>
 
     <profiles>
         <profile>

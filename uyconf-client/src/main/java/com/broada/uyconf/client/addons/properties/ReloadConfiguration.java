@@ -17,6 +17,7 @@ public class ReloadConfiguration implements Runnable {
         }
     }
 
+    @Override
     public void run() {
         for (ReconfigurableBean bean : reconfigurableBeans) {
             try {
