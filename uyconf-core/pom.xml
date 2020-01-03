@@ -210,8 +210,8 @@
         </plugins>
     </build>
 
-    <url>https://github.com/wangnianbao/uyconf/uyconf-core</url>
-    <description>https://github.com/wangnianbao/uyconf/uyconf-core</description>
+    <url>https://github.com/wangnianbao/uyconf/tree/master/uyconf-core</url>
+    <description>https://github.com/wangnianbao/uyconf/tree/master/uyconf-core</description>
 
     <organization>
         <name>broada</name>
@@ -221,9 +221,18 @@
     <!--<scm>-->
         <!--<url>scm:git:git@github.com:wangnianbao/uyconf</url>-->
         <!--<connection>scm:git:git@github.com:wangnianbao/uyconf</connection>-->
-        <!--<tag>uyconf-core-1.0.0</tag>-->
+        <!--<tag>uyconf-core</tag>-->
     <!--</scm>-->
 
+    <scm>
+        <url>scm:git:https://github.com/wangnianbao/uyconf/tree/master/uyconf-core</url>
+        <connection>scm:git:https://github.com/wangnianbao/uyconf/tree/master/uyconf-core</connection>
+        <tag>uyconf-core</tag>
+    </scm>
+    <!--<scm>-->
+        <!--<developerConnection>scm:git:https://git.uyunsoft.cn/Kber/disconf.git</developerConnection>-->
+        <!--<tag>HEAD</tag>-->
+    <!--</scm>-->
     <profiles>
         <profile>
             <id>release</id>
