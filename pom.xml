@@ -20,7 +20,7 @@
         <module>uyconf-web</module>
     </modules>
 
-    <inceptionYear>2015</inceptionYear>
+    <inceptionYear>2019</inceptionYear>
     <licenses>
         <license>
             <name>Apache 2</name>
@@ -822,59 +822,63 @@
             <distributionManagement>
                 <snapshotRepository>
                     <id>nexus-release</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                    <url>http://www.uyunsoft.cn/nexus/content/repositories/snapshots/</url>
                 </snapshotRepository>
                 <repository>
                     <id>nexus-release</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                    <url>http://www.uyunsoft.cn/nexus/content/repositories/releases/</url>
                 </repository>
             </distributionManagement>
             <build>
                 <plugins>
                     <!-- Source -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>2.2.1</version>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <!-- Javadoc -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9.1</version>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-source-plugin</artifactId>-->
+                        <!--<version>2.2.1</version>-->
+                        <!--<executions>-->
+                            <!--<execution>-->
+                                <!--<phase>package</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>jar-no-fork</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                        <!--</executions>-->
+                    <!--</plugin>-->
+                    <!--&lt;!&ndash; Javadoc &ndash;&gt;-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                        <!--<version>2.9.1</version>-->
+                        <!--<executions>-->
+                            <!--<execution>-->
+                                <!--<phase>package</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>jar</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                        <!--</executions>-->
+                    <!--</plugin>-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-gpg-plugin</artifactId>-->
+                        <!--<version>1.5</version>-->
+                        <!--<executions>-->
+                            <!--<execution>-->
+                                <!--<id>sign-artifacts</id>-->
+                                <!--<phase>verify</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>sign</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                        <!--</executions>-->
+                    <!--</plugin>-->
+
                 </plugins>
+
+
             </build>
+
         </profile>
     </profiles>
 
