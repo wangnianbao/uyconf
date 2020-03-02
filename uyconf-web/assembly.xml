@@ -8,76 +8,10 @@
 	</formats>
 
 	<fileSets>
+
 		<fileSet>
-			<lineEnding>unix</lineEnding>
-			<directory>src/main/resources</directory>
-			<includes>
-				<include>*.*</include>
-			</includes>
+			<directory>/targz</directory>
 			<outputDirectory>./webapps/ROOT</outputDirectory>
-			<fileMode>0755</fileMode>
-		</fileSet>
-
-		<fileSet>
-			<directory>src/main/resources</directory>
-			<includes>
-				<include>/messages/*</include>
-				<include>/myconfig/*</include>
-			</includes>
-			<outputDirectory>./webapps/ROOT</outputDirectory>
-			<fileMode>0755</fileMode>
-		</fileSet>
-
-
-		<fileSet>
-            <lineEnding>unix</lineEnding>
-            <directory>/target/classes</directory>
-			<!--<includes>-->
-				<!--<include>/*</include>-->
-			<!--</includes>-->
-			<outputDirectory>./webapps/ROOT/WEB-INF/classes</outputDirectory>
-			<fileMode>0755</fileMode>
-		</fileSet>
-
-		<fileSet>
-			<lineEnding>unix</lineEnding>
-			<directory>src/main/webapp</directory>
-			<includes>
-				<include>jpaas_control</include>
-				<include>Release</include>
-			</includes>
-			<outputDirectory>./webapps/ROOT</outputDirectory>
-			<fileMode>0755</fileMode>
-		</fileSet>
-
-		<fileSet>
-			<lineEnding>unix</lineEnding>
-			<directory>src/main/webapp/WEB-INF</directory>
-			<includes>
-				<include>*.xml</include>
-			</includes>
-			<outputDirectory>./webapps/ROOT/WEB-INF</outputDirectory>
-			<fileMode>0755</fileMode>
-		</fileSet>
-
-		<fileSet>
-			<lineEnding>unix</lineEnding>
-			<directory>target/maven-archiver</directory>
-			<includes>
-				<include>pom.properties</include>
-			</includes>
-			<outputDirectory>./webapps/ROOT/META-INF/maven/com.broada.uyconf/uyconf-web</outputDirectory>
-			<fileMode>0755</fileMode>
-		</fileSet>
-
-		<fileSet>
-			<lineEnding>unix</lineEnding>
-			<directory>.</directory>
-			<includes>
-				<include>pom.xml</include>
-			</includes>
-			<outputDirectory>./webapps/ROOT/META-INF/maven/com.broada.uyconf/uyconf-web</outputDirectory>
-			<fileMode>0755</fileMode>
 		</fileSet>
 
 		<fileSet>
@@ -91,16 +25,16 @@
 		</fileSet>
 	</fileSets>
 
-	<dependencySets>
-		<dependencySet>
-			<!-- 将当前项目构建打包进来 -->
-			<useProjectArtifact>true</useProjectArtifact>
-			<!-- 依赖构建最后输出路径 -->
-			<outputDirectory>./webapps/ROOT/WEB-INF/lib</outputDirectory>
-			<!-- 依赖构建最终归档文件中的名称定义，默认为(构建artifactId-版本.构建后缀类型) -->
-			<outputFileNameMapping>${artifact.groupId}-${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
-			<!-- 依赖构建是compile范围的才归档进来 -->
-			<scope>compile</scope>
-		</dependencySet>
-	</dependencySets>
+	<!--<dependencySets>-->
+		<!--<dependencySet>-->
+			<!--&lt;!&ndash; 将当前项目构建打包进来 &ndash;&gt;-->
+			<!--<useProjectArtifact>fase</useProjectArtifact>-->
+			<!--&lt;!&ndash; 依赖构建最后输出路径 &ndash;&gt;-->
+			<!--<outputDirectory>./webapps/ROOT/WEB-INF/lib</outputDirectory>-->
+			<!--&lt;!&ndash; 依赖构建最终归档文件中的名称定义，默认为(构建artifactId-版本.构建后缀类型) &ndash;&gt;-->
+			<!--<outputFileNameMapping>${artifact.groupId}-${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>-->
+			<!--&lt;!&ndash; 依赖构建是compile范围的才归档进来 &ndash;&gt;-->
+			<!--<scope>compile</scope>-->
+		<!--</dependencySet>-->
+	<!--</dependencySets>-->
 </assembly>
